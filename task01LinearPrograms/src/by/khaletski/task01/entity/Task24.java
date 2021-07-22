@@ -18,7 +18,7 @@ public final class Task24 {
             sideB = NumberInput.getPositiveNumber();
             System.out.println("Введите значение стороны c треугольника:");
             sideC = NumberInput.getPositiveNumber();
-            if (!(((sideA + sideB) > sideC) && ((sideA + sideC) > sideB) && ((sideB + sideC) > sideA))) {
+            if (sideA + sideB > sideC || sideA + sideC > sideB || sideB + sideC > sideA) {
                 isTriangleValid = false;
                 System.out.println("Такого треугольника не существует. Попробуйте ещё раз.");
             }

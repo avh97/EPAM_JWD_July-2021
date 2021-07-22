@@ -44,11 +44,8 @@ public final class TaskSwitcher {
 
     public static boolean ifExit() {
         Scanner scan = new Scanner(System.in);
-        boolean boolExit;
         System.out.println("Для продолжения выполнения программы введите любой символ. "
                 + "Для выхода из программы введите exit.");
-        String ifExit = scan.nextLine();
-        boolExit = ifExit.equals("exit");
-        return boolExit;
+        return scan.nextLine().equals("exit");
     }
 }

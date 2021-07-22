@@ -32,7 +32,7 @@ public final class NumberInput {
             if (num < 0) {
                 System.out.println("Вы не ввели положительное число. Введите положительное число!");
             }
-        } while (num <= 0);
+        } while (num < 0);
         return num;
     }
 }
