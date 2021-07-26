@@ -1,4 +1,4 @@
-package by.khaletski.task01.entity;
+package by.khaletski.task01.util;
 
 import java.util.Scanner;
 

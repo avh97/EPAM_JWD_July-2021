@@ -1,5 +1,7 @@
 package by.khaletski.task01.entity;
 
+import by.khaletski.task01.util.NumberInput;
+
 public final class Task9 {
 
     private Task9() {
