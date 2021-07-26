@@ -4,21 +4,19 @@ import by.khaletski.task01.util.NumberInput;
 
 public final class Task24 {
 
-    private Task24() {
-    }
-
-    public static void propertiesOfTriangle() {
+    public void propertiesOfTriangle() {
         System.out.println("Задача №24. Найти (в радианах, в градусах) все углы треугольника со сторонами a, b, c");
         double sideA;
         double sideB;
         double sideC;
+        NumberInput numberInput = new NumberInput();
         while (true) {
             System.out.println("Введите значение стороны a треугольника:");
-            sideA = NumberInput.getPositiveNumber();
+            sideA = numberInput.getPositiveNumber();
             System.out.println("Введите значение стороны b треугольника:");
-            sideB = NumberInput.getPositiveNumber();
+            sideB = numberInput.getPositiveNumber();
             System.out.println("Введите значение стороны c треугольника:");
-            sideC = NumberInput.getPositiveNumber();
+            sideC = numberInput.getPositiveNumber();
             if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
                 break;
             }

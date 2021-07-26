@@ -4,6 +4,7 @@ import by.khaletski.task01.util.TaskSwitcher;
 
 public class Runner {
     public static void main(String[] args) {
-        TaskSwitcher.startApplication();
+        TaskSwitcher taskSwitcher = new TaskSwitcher();
+        taskSwitcher.startApplication();
     }
 }

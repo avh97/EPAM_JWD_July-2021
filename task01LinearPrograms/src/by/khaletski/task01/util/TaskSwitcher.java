@@ -5,27 +5,38 @@ import by.khaletski.task01.entity.*;
 import java.util.Scanner;
 
 public final class TaskSwitcher {
-
-    private TaskSwitcher() {
-    }
-
-    public static void startApplication() {
+    public void startApplication() {
         do {
             System.out.println("Введите номер задачи: 4, 9, 19, 24 или 34");
             String num = getTaskNumber();
             switch (num) {
-                case "4" -> Task4.valueOfFunction();
-                case "9" -> Task9.valueOfExpression();
-                case "19" -> Task19.propertiesOfTriangle();
-                case "24" -> Task24.propertiesOfTriangle();
-                case "34" -> Task34.solutionOfEquation();
+                case "4" -> {
+                    Task4 task4 = new Task4();
+                    task4.valueOfFunction();
+                }
+                case "9" -> {
+                    Task9 task9 = new Task9();
+                    task9.valueOfExpression();
+                }
+                case "19" -> {
+                    Task19 task19 = new Task19();
+                    task19.propertiesOfTriangle();
+                }
+                case "24" -> {
+                    Task24 task24 = new Task24();
+                    task24.propertiesOfTriangle();
+                }
+                case "34" -> {
+                    Task34 task34 = new Task34();
+                    task34.solutionOfEquation();
+                }
                 default -> throw new IllegalStateException("Unexpected value: " + num);
             }
         } while (!ifExit());
         System.out.println("Программа выполнена успешно");
     }
 
-    public static String getTaskNumber() {
+    private String getTaskNumber() {
         Scanner scan = new Scanner(System.in);
         String num;
         boolean isValid;
@@ -44,7 +55,7 @@ public final class TaskSwitcher {
         return num;
     }
 
-    public static boolean ifExit() {
+    private boolean ifExit() {
         Scanner scan = new Scanner(System.in);
         System.out.println("Для продолжения выполнения программы введите любой символ. "
                 + "Для выхода из программы введите exit.");

@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public final class NumberInput {
 
-    private NumberInput() {
+    public NumberInput() {
     }
 
-    public static double getNumber() {
+    public double getNumber() {
         Scanner sc = new Scanner(System.in);
         double num;
 //        System.out.println("Введите вещественное число");
@@ -19,7 +19,7 @@ public final class NumberInput {
         return num;
     }
 
-    public static double getPositiveNumber() {
+    public double getPositiveNumber() {
         Scanner sc = new Scanner(System.in);
         double num;
         do {
