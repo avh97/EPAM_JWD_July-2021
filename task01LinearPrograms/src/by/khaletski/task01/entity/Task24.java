@@ -10,19 +10,18 @@ public final class Task24 {
         double sideA;
         double sideB;
         double sideC;
-        boolean isTriangleValid = true;
-        do {
+        while (true) {
             System.out.println("Введите значение стороны a треугольника:");
             sideA = NumberInput.getPositiveNumber();
             System.out.println("Введите значение стороны b треугольника:");
             sideB = NumberInput.getPositiveNumber();
             System.out.println("Введите значение стороны c треугольника:");
             sideC = NumberInput.getPositiveNumber();
-            if (sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA) {
-                isTriangleValid = false;
-                System.out.println("Такого треугольника не существует. Попробуйте ещё раз.");
+            if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
+                break;
             }
-        } while (!isTriangleValid);
+            System.out.println("Такого треугольника не существует. Попробуйте ещё раз.");
+        }
         System.out.println("Угол x = " + (Math.acos((sideB * sideB + sideC * sideC - sideA * sideA)
                 / (2 * sideB * sideC))) * (180 / Math.PI));
         System.out.println("Угол y = " + (Math.acos((sideA * sideA + sideC * sideC - sideB * sideB)
