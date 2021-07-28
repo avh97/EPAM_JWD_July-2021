@@ -4,6 +4,10 @@ import by.khaletski.task01.util.NumberInput;
 
 public final class SolutionOfEquation {
 
+    public double solutionOfEquation(double x) {
+        return (6 + x * (5 + x * (4 + x * (3 + 2 * x))));
+    }
+
     public double solutionOfEquation() {
         System.out.println("Введите число x:");
         NumberInput numberInput = new NumberInput();

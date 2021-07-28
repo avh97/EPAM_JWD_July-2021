@@ -4,6 +4,10 @@ import by.khaletski.task01.util.NumberInput;
 
 public final class ValueOfExpression {
 
+    public Double valueOfExpression(double varA, double varB, double varC, double varD) {
+        return ((varA / varC) * (varB / varD)) - ((varA * varB - varC) / varC * varD);
+    }
+
     public Double valueOfExpression() {
         System.out.println("Введите число а:");
         NumberInput numberInput = new NumberInput();
