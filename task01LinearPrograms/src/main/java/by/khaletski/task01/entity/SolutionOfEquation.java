@@ -2,7 +2,7 @@ package by.khaletski.task01.entity;
 
 import by.khaletski.task01.util.NumberInput;
 
-public final class Task34 {
+public final class SolutionOfEquation {
 
     public double solutionOfEquation() {
         System.out.println("Введите число x:");

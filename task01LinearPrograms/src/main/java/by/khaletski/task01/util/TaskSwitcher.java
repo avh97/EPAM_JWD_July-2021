@@ -11,23 +11,23 @@ public final class TaskSwitcher {
             String num = getTaskNumber();
             switch (num) {
                 case "4" -> {
-                    Task4 task4 = new Task4();
+                    ValueOfFunction task4 = new ValueOfFunction();
                     task4.printValueOfFunction();
                 }
                 case "9" -> {
-                    Task9 task9 = new Task9();
+                    ValueOfExpression task9 = new ValueOfExpression();
                     task9.printValueOfExpression();
                 }
                 case "19" -> {
-                    Task19 task19 = new Task19();
+                    EquilateralTriangle task19 = new EquilateralTriangle();
                     task19.printPropertiesOfTriangle();
                 }
                 case "24" -> {
-                    Task24 task24 = new Task24();
+                    DerivativeTriangle task24 = new DerivativeTriangle();
                     task24.printPropertiesOfTriangle();
                 }
                 case "34" -> {
-                    Task34 task34 = new Task34();
+                    SolutionOfEquation task34 = new SolutionOfEquation();
                     task34.printSolutionOfEquation();
                 }
                 default -> throw new IllegalStateException("Unexpected value: " + num);

@@ -2,10 +2,10 @@ package by.khaletski.task01.entity;
 
 import by.khaletski.task01.util.NumberInput;
 
-public final class Task24 {
+public final class DerivativeTriangle {
 
     public double[] getTriangleSides() {
-        double sides[] = new double[3];
+        double[] sides = new double[3];
         NumberInput numberInput = new NumberInput();
         while (true) {
             System.out.println("Введите значение стороны a треугольника:");
@@ -24,8 +24,8 @@ public final class Task24 {
     }
 
     public double[] getTriangleAngles() {
-        double angles[] = new double[3];
-        double sides[] = getTriangleSides();
+        double[] angles = new double[3];
+        double[] sides = getTriangleSides();
         angles[0] = (Math.acos((sides[1] * sides[1] + sides[2]
                 * sides[2] - sides[0] * sides[0])
                 / (2 * sides[1] * sides[2]))) * (180 / Math.PI);

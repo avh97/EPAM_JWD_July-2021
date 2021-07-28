@@ -2,7 +2,7 @@ package by.khaletski.task01.entity;
 
 import by.khaletski.task01.util.NumberInput;
 
-public final class Task9 {
+public final class ValueOfExpression {
 
     public Double valueOfExpression() {
         System.out.println("Введите число а:");

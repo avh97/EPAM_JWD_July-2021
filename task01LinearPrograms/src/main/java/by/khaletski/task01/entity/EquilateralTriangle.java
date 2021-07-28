@@ -2,13 +2,13 @@ package by.khaletski.task01.entity;
 
 import by.khaletski.task01.util.NumberInput;
 
-public final class Task19 {
+public final class EquilateralTriangle {
 
-    public Double areaOfEquilateralTriangle() {
+    public Double area() {
         return (Math.sqrt(3) / 4) * getSideA() * getSideA();
     }
 
-    public Double heightOfEquilateralTriangle() {
+    public Double height() {
         return (Math.sqrt(3) / 2) * getSideA();
     }
 
@@ -30,8 +30,8 @@ public final class Task19 {
         System.out.println("Задача №19. Дана сторона равностороннего треугольника. "
                 + "Найти площадь этого треугольника, его высоту, "
                 + "радиусы вписанной и описанной окружностей.");
-        System.out.println("Площадь: " + areaOfEquilateralTriangle());
-        System.out.println("Высота: " + heightOfEquilateralTriangle());
+        System.out.println("Площадь: " + area());
+        System.out.println("Высота: " + height());
         System.out.println("Радиус вписанной окружности: " + radiusOfInscribedCircle());
         System.out.println("Радиус описанной окружности: " + radiusOfCircumscribedCircle());
     }
