@@ -4,29 +4,47 @@ import by.khaletski.task01.util.NumberInput;
 
 public final class Task24 {
 
-    public void propertiesOfTriangle() {
-        System.out.println("Задача №24. Найти (в радианах, в градусах) все углы треугольника со сторонами a, b, c");
-        double sideA;
-        double sideB;
-        double sideC;
+    public double[] getTriangleSides() {
+        double sides[] = new double[3];
         NumberInput numberInput = new NumberInput();
         while (true) {
             System.out.println("Введите значение стороны a треугольника:");
-            sideA = numberInput.getPositiveNumber();
+            sides[0] = numberInput.getPositiveNumber();
             System.out.println("Введите значение стороны b треугольника:");
-            sideB = numberInput.getPositiveNumber();
+            sides[1] = numberInput.getPositiveNumber();
             System.out.println("Введите значение стороны c треугольника:");
-            sideC = numberInput.getPositiveNumber();
-            if ((sideA + sideB > sideC) && (sideA + sideC > sideB) && (sideB + sideC > sideA)) {
+            sides[2] = numberInput.getPositiveNumber();
+            if (sides[0] + sides[1] > sides[2]
+                    && sides[0] + sides[2] > sides[1]
+                    && sides[1] + sides[2] > sides[0]) {
                 break;
             }
-            System.out.println("Такого треугольника не существует. Попробуйте ещё раз.");
         }
-        System.out.println("Угол x = " + (Math.acos((sideB * sideB + sideC * sideC - sideA * sideA)
-                / (2 * sideB * sideC))) * (180 / Math.PI));
-        System.out.println("Угол y = " + (Math.acos((sideA * sideA + sideC * sideC - sideB * sideB)
-                / (2 * sideA * sideC))) * (180 / Math.PI));
-        System.out.println("Угол z = " + (Math.acos((sideA * sideA + sideB * sideB - sideC * sideC)
-                / (2 * sideA * sideB))) * (180 / Math.PI));
+        return sides;
     }
+
+    public double[] getTriangleAngles() {
+        double angles[] = new double[3];
+        double sides[] = getTriangleSides();
+        angles[0] = (Math.acos((sides[1] * sides[1] + sides[2]
+                * sides[2] - sides[0] * sides[0])
+                / (2 * sides[1] * sides[2]))) * (180 / Math.PI);
+        angles[1] = (Math.acos((sides[0] * sides[0] + sides[1]
+                * sides[1] - sides[2] * sides[2])
+                / (2 * sides[0] * sides[1]))) * (180 / Math.PI);
+        angles[2] = (Math.acos((sides[0] * sides[0] + sides[2]
+                * sides[2] - sides[1] * sides[1])
+                / (2 * sides[0] * sides[2]))) * (180 / Math.PI);
+        return angles;
+    }
+
+    public void printPropertiesOfTriangle() {
+        double[] angles = getTriangleAngles();
+        System.out.println("Задача №24. Найти (в радианах, в градусах) все углы треугольника со сторонами a, b, c");
+        System.out.println("Угол A = " + angles[0]);
+        System.out.println("Угол B = " + angles[1]);
+        System.out.println("Угол C = " + angles[2]);
+    }
+
+
 }

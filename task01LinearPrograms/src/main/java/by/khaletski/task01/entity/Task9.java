@@ -4,8 +4,7 @@ import by.khaletski.task01.util.NumberInput;
 
 public final class Task9 {
 
-    public void valueOfExpression() {
-        System.out.println("Задача №9. Найдите значение выражения ((a/c) * (b/d)) - ((a*b -c)/c*d)");
+    public Double valueOfExpression() {
         System.out.println("Введите число а:");
         NumberInput numberInput = new NumberInput();
         double varA = numberInput.getNumber();
@@ -15,6 +14,11 @@ public final class Task9 {
         double varC = numberInput.getPositiveNumber();
         System.out.println("Введите положительное число d:");
         double varD = numberInput.getPositiveNumber();
-        System.out.println("Ответ: " + (((varA / varC) * (varB / varD)) - ((varA * varB - varC) / varC * varD)));
+        return ((varA / varC) * (varB / varD)) - ((varA * varB - varC) / varC * varD);
+    }
+
+    public void printValueOfExpression() {
+        System.out.println("Задача №9. Найдите значение выражения ((a/c) * (b/d)) - ((a*b -c)/c*d)");
+        System.out.println("Значение выражения: " + valueOfExpression());
     }
 }

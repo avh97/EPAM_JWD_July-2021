@@ -12,28 +12,27 @@ public final class TaskSwitcher {
             switch (num) {
                 case "4" -> {
                     Task4 task4 = new Task4();
-                    task4.valueOfFunction();
+                    task4.printValueOfFunction();
                 }
                 case "9" -> {
                     Task9 task9 = new Task9();
-                    task9.valueOfExpression();
+                    task9.printValueOfExpression();
                 }
                 case "19" -> {
                     Task19 task19 = new Task19();
-                    task19.propertiesOfTriangle();
+                    task19.printPropertiesOfTriangle();
                 }
                 case "24" -> {
                     Task24 task24 = new Task24();
-                    task24.propertiesOfTriangle();
+                    task24.printPropertiesOfTriangle();
                 }
                 case "34" -> {
                     Task34 task34 = new Task34();
-                    task34.solutionOfEquation();
+                    task34.printSolutionOfEquation();
                 }
                 default -> throw new IllegalStateException("Unexpected value: " + num);
             }
         } while (!ifExit());
-        System.out.println("Программа выполнена успешно");
     }
 
     private String getTaskNumber() {
