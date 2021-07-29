@@ -1,50 +1,50 @@
 package by.khaletski.task01.entity;
 
-import by.khaletski.task01.util.NumberInput;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public final class DerivativeTriangle {
+public class DerivativeTriangle {
+    private double sideA;
+    private double sideB;
+    private double sideC;
 
-    public double[] getTriangleSides() {
-        double[] sides = new double[3];
-        NumberInput numberInput = new NumberInput();
-        while (true) {
-            System.out.println("Введите значение стороны a треугольника:");
-            sides[0] = numberInput.getPositiveNumber();
-            System.out.println("Введите значение стороны b треугольника:");
-            sides[1] = numberInput.getPositiveNumber();
-            System.out.println("Введите значение стороны c треугольника:");
-            sides[2] = numberInput.getPositiveNumber();
-            if (sides[0] + sides[1] > sides[2]
-                    && sides[0] + sides[2] > sides[1]
-                    && sides[1] + sides[2] > sides[0]) {
-                break;
-            }
+    static final Logger logger = LogManager.getLogger();
+
+    public DerivativeTriangle(double sideA, double sideB, double sideC) {
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0
+                || sideA + sideB < sideC
+                || sideA + sideC < sideB
+                || sideB + sideC < sideA) {
+            logger.error("Invalid triangle sides. Constructor has not been executed.");
+            throw new IllegalArgumentException();
+        } else {
+            this.sideA = sideA;
+            this.sideB = sideB;
+            this.sideC = sideC;
         }
-        return sides;
+        logger.info("Constructor has been successfully executed");
     }
 
-    public double[] getTriangleAngles() {
-        double[] angles = new double[3];
-        double[] sides = getTriangleSides();
-        angles[0] = (Math.acos((sides[1] * sides[1] + sides[2]
-                * sides[2] - sides[0] * sides[0])
-                / (2 * sides[1] * sides[2]))) * (180 / Math.PI);
-        angles[1] = (Math.acos((sides[0] * sides[0] + sides[1]
-                * sides[1] - sides[2] * sides[2])
-                / (2 * sides[0] * sides[1]))) * (180 / Math.PI);
-        angles[2] = (Math.acos((sides[0] * sides[0] + sides[2]
-                * sides[2] - sides[1] * sides[1])
-                / (2 * sides[0] * sides[2]))) * (180 / Math.PI);
-        return angles;
+    public double getAngleA() {
+        return (Math.acos((sideB * sideB + sideC * sideC - sideA * sideA)
+                / (2 * sideB * sideC))) * (180 / Math.PI);
+    }
+
+    public double getAngleB() {
+        return (Math.acos((sideA * sideA + sideB * sideB - sideC * sideC)
+                / (2 * sideA * sideB))) * (180 / Math.PI);
+    }
+
+    public double getAngleC() {
+        return (Math.acos((sideA * sideA + sideC * sideC - sideB * sideB)
+                / (2 * sideA * sideC))) * (180 / Math.PI);
     }
 
     public void printPropertiesOfTriangle() {
-        double[] angles = getTriangleAngles();
+        DerivativeTriangle triangle = new DerivativeTriangle(sideA, sideB, sideC);
         System.out.println("Задача №24. Найти (в радианах, в градусах) все углы треугольника со сторонами a, b, c");
-        System.out.println("Угол A = " + angles[0]);
-        System.out.println("Угол B = " + angles[1]);
-        System.out.println("Угол C = " + angles[2]);
+        System.out.println("Угол A = " + triangle.getAngleA());
+        System.out.println("Угол B = " + triangle.getAngleB());
+        System.out.println("Угол C = " + triangle.getAngleC());
     }
-
-
 }

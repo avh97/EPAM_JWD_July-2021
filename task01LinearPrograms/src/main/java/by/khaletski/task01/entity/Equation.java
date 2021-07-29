@@ -1,18 +1,20 @@
 package by.khaletski.task01.entity;
 
-import by.khaletski.task01.util.NumberInput;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public final class SolutionOfEquation {
+public class Equation {
+    private double varX;
 
-    public double solutionOfEquation(double x) {
-        return (6 + x * (5 + x * (4 + x * (3 + 2 * x))));
+    static final Logger logger = LogManager.getLogger();
+
+    public Equation(double varX) {
+        this.varX = varX;
+        logger.info("Constructor has been successfully executed");
     }
 
-    public double solutionOfEquation() {
-        System.out.println("Введите число x:");
-        NumberInput numberInput = new NumberInput();
-        double x = numberInput.getPositiveNumber();
-        return (6 + x * (5 + x * (4 + x * (3 + 2 * x))));
+    public double getSolutionOfEquation(Equation equation) {
+        return (6 + varX * (5 + varX * (4 + varX * (3 + 2 * varX))));
     }
 
     public void printSolutionOfEquation() {
@@ -21,6 +23,7 @@ public final class SolutionOfEquation {
                 + "кроме умножения, сложения и вычитания, "
                 + "вычислите за минимальное количество операций "
                 + "2*x^4 + 3*x^3 + 4*x^2 - 5*x + 6");
-        System.out.println("Решение: " + solutionOfEquation());
+        Equation equation = new Equation(varX);
+        System.out.println("Решение: " + getSolutionOfEquation(equation));
     }
 }

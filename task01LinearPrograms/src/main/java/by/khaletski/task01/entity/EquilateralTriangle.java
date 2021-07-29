@@ -1,29 +1,42 @@
 package by.khaletski.task01.entity;
 
-import by.khaletski.task01.util.NumberInput;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public final class EquilateralTriangle {
+public class EquilateralTriangle {
+    private double sideA;
 
-    public Double area() {
-        return (Math.sqrt(3) / 4) * getSideA() * getSideA();
+    static final Logger logger = LogManager.getLogger();
+
+    /**
+     * Задача №19. Дана сторона равностороннего треугольника. Найти площадь
+     * этого треугольника, его высоту, радиусы вписанной и описанной окружностей.
+     */
+
+    public EquilateralTriangle(double sideA) {
+        if (sideA <= 0) {
+            logger.error("Invalid triangle side. Constructor has not been executed.");
+            throw new IllegalArgumentException();
+        } else {
+            this.sideA = sideA;
+        }
+        logger.info("Constructor has been successfully executed");
     }
 
-    public Double height() {
-        return (Math.sqrt(3) / 2) * getSideA();
+    public double area() {
+        return (Math.sqrt(3) / 4) * this.sideA * this.sideA;
     }
 
-    public Double radiusOfInscribedCircle() {
-        return getSideA() / (2 * Math.sqrt(3));
+    public double height() {
+        return (Math.sqrt(3) / 2) * this.sideA;
     }
 
-    public Double radiusOfCircumscribedCircle() {
-        return radiusOfInscribedCircle() * 2;
+    public double radiusOfInscribedCircle() {
+        return sideA / (2 * Math.sqrt(3));
     }
 
-    public double getSideA() {
-        System.out.println("Введите значение стороны a треугольника:");
-        NumberInput numberInput = new NumberInput();
-        return numberInput.getPositiveNumber();
+    public double radiusOfCircumscribedCircle() {
+        return (sideA / (2 * Math.sqrt(3))) * 2;
     }
 
     public void printPropertiesOfTriangle() {
