@@ -9,23 +9,37 @@ public class Function {
 
     static final Logger logger = LogManager.getLogger();
 
-    public Function(double varA, double varB) {
-        this.varA = varA;
-        this.varB = varB;
-        logger.info("Constructor has been successfully executed");
+    public Function(double newA, double newB) {
+        varA = newA;
+        varB = newB;
     }
 
+    //    public Function(double varA, double varB) {
+//        this.varA = varA;
+//        this.varB = varB;
+//        logger.info("Constructor has been successfully executed");
+//    }
+
+//    /**
+//     * Задача №4. Найдите значение функции z (x) = ((a-3)*b/2)+3 * x
+//     *
+//     */
+
     /**
-     * Задача №4. Найдите значение функции z = ((a-3)*b/2)+3
+     * @param x
+     * @return
      */
 
-    public Double getValueOfFunction(Function function) {
+    public double getValueOfFunction(final double x) {
+        return ((varA - 3) * varB / 2) + 3 * x;
+    }
+
+    public double getValueOfFunction() {
         return ((varA - 3) * varB / 2) + 3;
     }
 
     public void printValueOfFunction() {
-        Function function = new Function(varA, varB);
         System.out.println("Задача №4. Найдите значение функции z = ((a-3)*b/2)+3");
-        System.out.println(("z = " + getValueOfFunction(function)));
+        System.out.println(("z = " + getValueOfFunction()));
     }
 }

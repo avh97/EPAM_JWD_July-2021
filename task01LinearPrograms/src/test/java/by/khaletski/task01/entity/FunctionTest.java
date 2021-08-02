@@ -22,7 +22,7 @@ public class FunctionTest {
     @Test (dataProvider = "dataProvider")
     public void testValueOfFunction(double varA, double varB, double expected) {
         Function value = new Function(varA, varB);
-        double actual = value.getValueOfFunction(value);
+        double actual = value.getValueOfFunction();
         assertEquals(actual, expected);
     }
 }
