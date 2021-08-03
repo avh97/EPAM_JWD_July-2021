@@ -16,7 +16,14 @@ public class IntegerNumbers {
         logger.debug("Object 'IntegerNumbers' has been successfully created");
     }
 
-    public IntegerNumbers(int startValue, int endValue) {
+    /**
+     * This constructor creates an IntegerNumbers object consisting of numbers
+     * in the range startValue and endValue.
+     * @param startValue
+     * @param endValue
+     */
+
+    public IntegerNumbers(final int startValue, final int endValue) {
         ArrayList<Integer> all = new ArrayList<>(Math.abs(startValue - endValue));
         for (int i = startValue; i <= endValue; i++) {
             all.add(i);
@@ -26,7 +33,7 @@ public class IntegerNumbers {
     }
 
     /**
-     * The method returns all even numbers in the range 2 to 100 inclusive
+     * This method returns all even numbers in the range 2 to 100 inclusive
      * from the given ArrayList
      */
 

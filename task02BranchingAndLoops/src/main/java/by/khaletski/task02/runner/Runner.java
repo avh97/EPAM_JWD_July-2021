@@ -25,8 +25,8 @@ public class Runner {
         IntegerNumbers integerNumbers1 = new IntegerNumbers(0, 7);
         integerNumbers1.printSumOfSquares();
 
-
-
-
+        NumberRow numberRow = new NumberRow(20,0.05);
+        numberRow.printSumOfNumbers();
     }
+
 }

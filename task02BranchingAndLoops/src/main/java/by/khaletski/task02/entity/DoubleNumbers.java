@@ -15,10 +15,10 @@ public class DoubleNumbers {
         logger.debug("Object 'DoubleNumbers' has been successfully created");
     }
 
-    public DoubleNumbers(double a, double b, double c) {
-        this.doubles.add(a);
-        this.doubles.add(b);
-        this.doubles.add(c);
+    public DoubleNumbers(final double newNumA, final double newNumB, final double newNumC) {
+        doubles.add(newNumA);
+        doubles.add(newNumB);
+        doubles.add(newNumC);
         logger.debug("Object 'DoubleNumbers' has been successfully created");
     }
 

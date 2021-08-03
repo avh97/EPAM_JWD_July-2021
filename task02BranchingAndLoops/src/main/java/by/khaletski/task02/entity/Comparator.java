@@ -9,7 +9,7 @@ public class Comparator {
 
     static final Logger logger = LogManager.getLogger(Comparator.class);
 
-    public Comparator(double newNumA, double newNumB) {
+    public Comparator(final double newNumA, final double newNumB) {
         numA = newNumA;
         numB = newNumB;
         logger.debug("Object 'Comparator' has been successfully created");
