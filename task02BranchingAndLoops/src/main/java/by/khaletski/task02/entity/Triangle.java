@@ -3,9 +3,9 @@ package by.khaletski.task02.entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * This class compares the transmitted values of the sides of a triangle for equilateralism
- * and returns the corresponding boolean value.
+/** This class is used to create the 'Triangle' objects with properties
+ @author Anton Khaletski
+ @version 1.0
  */
 
 public class Triangle {
@@ -13,22 +13,35 @@ public class Triangle {
     private double sideB;
     private double sideC;
 
-    static final Logger logger = LogManager.getLogger(Triangle.class);
+    static final Logger LOGGER = LogManager.getLogger(Triangle.class);
 
-    public Triangle(final double newSideA, final double newSideB, final double newSideC) {
-        if (newSideA <= 0 || newSideB <= 0 || newSideC <= 0
-                || newSideA + newSideB < newSideC
-                || newSideA + newSideC < newSideB
-                || newSideB + newSideC < newSideA) {
-            logger.error("Invalid triangle sides. Object 'Triangle' has not been created");
+    /**
+     * Default constructor creates the 'Triangle' object and check it for validity
+     * @param sideA  side A of a triangle
+     * @param sideB  side B of a triangle
+     * @param sideC  side C of a triangle
+     */
+
+    public Triangle(final double sideA, final double sideB, final double sideC) {
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0
+                || sideA + sideB < sideC
+                || sideA + sideC < sideB
+                || sideB + sideC < sideA) {
+            LOGGER.error("Invalid triangle sides. Object 'Triangle' has not been created");
             throw new IllegalArgumentException();
         } else {
-            sideA = newSideA;
-            sideB = newSideB;
-            sideC = newSideC;
+            this.sideA = sideA;
+            this.sideB = sideB;
+            this.sideC = sideC;
         }
-        logger.debug("Object 'Triangle' has been successfully created");
+        LOGGER.debug("Object 'Triangle' has been successfully created");
     }
+
+    /**
+     * This class compares the transmitted values of the sides of a triangle for equilateralism
+     * and returns the corresponding boolean value.
+     * @return
+     */
 
     public boolean ifEquilateralTriangle() {
         return (sideA == sideB && sideA == sideC && sideB == sideC);

@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class DoubleNumbersTest {
+public class CountOfNumbersTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class DoubleNumbersTest {
 
     @Test (dataProvider = "dataProvider")
     public void testPositiveNumbersCounter(double numA, double numB, double numC, int expected) {
-        DoubleNumbers doubleNumbers = new DoubleNumbers(numA, numB, numC);
-        int actual = doubleNumbers.positiveNumbersCounter();
+        CountOfNumbers countOfNumbers = new CountOfNumbers(numA, numB, numC);
+        int actual = countOfNumbers.positiveNumbersCounter();
         assertEquals(actual, expected);
     }
 }

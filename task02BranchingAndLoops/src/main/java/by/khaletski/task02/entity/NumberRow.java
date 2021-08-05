@@ -1,35 +1,54 @@
 package by.khaletski.task02.entity;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 
+/** This class is used to create the 'NumberRow' objects with properties
+ @author Anton Khaletski
+ @version 1.0
+ */
+
 public class NumberRow {
     private ArrayList<Double> numberRow;
+    private int sizeOfRow;
     private double numberE;
 
+    static final Logger LOGGER = LogManager.getLogger(NumberRow.class);
+
     /**
-     * Given a number series and some number e.
-     * The general term of the series is: a (nth) = 1/2 ^ n + 1/3 ^ n = 1/4 ^ n ...
+     * Default constructor creates a 'NumberRow' object, which creates a number series.
+     * The general term of the series is: a (n-th) = 1/2 ^ n + 1/3 ^ n = 1/4 ^ n ...
      * @param sizeOfRow
-     * @param givenNumberE
+     * @param numberE
      */
 
-    public NumberRow(final int sizeOfRow, final double givenNumberE) {
-        numberE = givenNumberE;
-        ArrayList<Double> numbers = new ArrayList<>();
-        double denominator = 1;
-        int counter = 0;
-        while (counter < sizeOfRow) {
-            numbers.add(counter, 1 / (denominator * (counter + 1)));
-            counter++;
-            denominator++;
+    public NumberRow(final int sizeOfRow, final double numberE) {
+        if (sizeOfRow < 0) {
+            LOGGER.error("Object 'NumberRow' has not been successfully created");
+            throw new IllegalArgumentException("Size of number row cannot be negative");
+        } else {
+
+            ArrayList<Double> numbers = new ArrayList<>();
+            double denominator = 1;
+            int counter = 0;
+            while (counter < sizeOfRow) {
+                numbers.add(counter, 1 / (denominator * (counter + 1)));
+                counter++;
+                denominator++;
+            }
+            this.sizeOfRow = sizeOfRow;
+            this.numberE = numberE;
+            numberRow = numbers;
         }
-        numberRow = numbers;
+        LOGGER.debug("Object 'NumberRow' has been successfully created");
     }
 
     /**
-     * This functions find the sum of those terms of the series whose modulus is greater than or
-     * equality to a given e
+     * This function finds the sum of those numbers in NumberRow,
+     * whose modulus is greater than or equal to a given e
      * @return
      */
 

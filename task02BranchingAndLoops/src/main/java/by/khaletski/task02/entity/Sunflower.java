@@ -3,17 +3,30 @@ package by.khaletski.task02.entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Petals {
+/** This class is used to create the 'Sunflower' objects with properties
+ @author Anton Khaletski
+ @version 1.0
+ */
+
+public class Sunflower {
     private int numberOfPetals;
 
-    static final Logger logger = LogManager.getLogger(Petals.class);
+    /**
+     * Given a number series and some number e.
+     * The general term of the series is: a (n-th) = 1/2 ^ n + 1/3 ^ n = 1/4 ^ n ...
+     * @param sizeOfRow
+     * @param givenNumberE
+     */
 
-    public Petals(int numberOfPetals) {
+    static final Logger LOGGER = LogManager.getLogger(Sunflower.class);
+
+    public Sunflower(final int numberOfPetals) {
         if (numberOfPetals < 1) {
-            throw new IllegalArgumentException();
+            LOGGER.error("Object 'Sunflower' has NOT been created");
+            throw new IllegalArgumentException("Number of petals cannot be negative");
         } else {
             this.numberOfPetals = numberOfPetals;
-            logger.debug("Object 'Petals' has been successfully created");
+            LOGGER.debug("Object 'Sunflower' has been successfully created");
         }
     }
 
@@ -21,6 +34,7 @@ public class Petals {
          * This method determines the result of divination on a chamomile -
          * "loves - doesn't love", taking as an argument the original
          * given number of petals n.
+         * @return
          */
 
     public boolean ifLoves() {

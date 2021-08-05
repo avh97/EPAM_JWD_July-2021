@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class PetalsTest {
+public class SunflowerTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class PetalsTest {
 
     @Test (dataProvider = "dataProvider")
     public void testIfLoves(int number, boolean expected) {
-        Petals petals = new Petals(number);
-        boolean actual = petals.ifLoves();
+        Sunflower sunflower = new Sunflower(number);
+        boolean actual = sunflower.ifLoves();
         assertEquals(actual, expected);
     }
 }

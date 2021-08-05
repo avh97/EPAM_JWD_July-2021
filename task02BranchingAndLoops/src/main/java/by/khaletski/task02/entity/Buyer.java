@@ -3,29 +3,42 @@ package by.khaletski.task02.entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * A method that implements an episode of using a computer in a bookstore.
- * Computer asks for the cost of books, the amount of money contributed by the buyer;
- * if no change is required, prints on the screen "thanks";
- * if more money is deposited than necessary, then it prints “take change” and indicates the amount of change;
- * if there is not enough money, then prints a message about it and indicates the amount of the missing amount.
+/** This class is used to store the 'Buyer' objects with properties.
+ @author Anton Khaletski
+ @version 1.0
  */
 
 public class Buyer {
     private double cash;
     private double price;
 
-    static final Logger logger = LogManager.getLogger(Buyer.class);
+    static final Logger LOGGER = LogManager.getLogger(Buyer.class);
 
-    public Buyer(final double newCash, final double newPrice) {
+    /**
+     * Default constructor creates a 'Buyer' object.
+     * @param cash   cash available from the buyer
+     * @param price  price of a purchase
+     */
+
+    public Buyer(final double cash, final double price) {
         if (cash < 0 || price < 0) {
-            throw new IllegalArgumentException();
+            LOGGER.error("Object 'Buyer' has NOT been created");
+            throw new IllegalArgumentException("Cash available or price of a purchase cannot be negative");
         } else {
-            cash = newCash;
-            price = newPrice;
-            logger.debug("Object 'DoubleNumbers' has been successfully created");
+            this.cash = cash;
+            this.price = price;
+            LOGGER.debug("Object 'Buyer' has been successfully created");
         }
     }
+
+    /**
+     * This method shows an episode of using a computer in a bookstore.
+     * Computer asks for the cost of books, the amount of money contributed by the buyer;
+     * if no change is required, prints on the screen "thanks";
+     * if more money is deposited than necessary, then it prints “take change” and indicates the amount of change;
+     * if there is not enough money, then prints a message about it and indicates the amount of the missing amount.
+     * @return
+     */
 
     public String checkout() {
         System.out.println("Задача №2.34. Составить программу, реализующую эпизод применения компьютера \n"
