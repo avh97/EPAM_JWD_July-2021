@@ -1,11 +1,11 @@
-package by.khaletski.task02.entity;
+package by.khaletski.task02.service;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class NumberRowTest {
+public class NumericRowServiceTest {
 
     @DataProvider(name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class NumberRowTest {
 
     @Test(dataProvider = "dataProvider")
     public void testSumOfNumbers(final int sizeOfRow, final double givenNumberE, double expected) {
-        NumberRow numberRow = new NumberRow(sizeOfRow, givenNumberE);
-        double actual = numberRow.sumOfNumbers();
+        NumericRowService numericRowService = new NumericRowService(sizeOfRow, givenNumberE);
+        double actual = numericRowService.sumOfNumbers();
         assertEquals(actual, expected, 0.01);
     }
 }

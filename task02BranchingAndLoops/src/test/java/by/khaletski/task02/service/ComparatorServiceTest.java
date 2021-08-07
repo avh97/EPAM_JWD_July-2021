@@ -1,11 +1,11 @@
-package by.khaletski.task02.entity;
+package by.khaletski.task02.service;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class ComparatorTest {
+public class ComparatorServiceTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -16,9 +16,9 @@ public class ComparatorTest {
     }
 
     @Test (dataProvider = "dataProvider")
-    public void testIfNumbersEqual(double numA, double numB, boolean expected) {
-        Comparator comparator = new Comparator(numA, numB);
-        boolean actual = comparator.ifNumbersEqual();
+    public void testIfNumbersEqual(double numberA, double numberB, boolean expected) {
+        ComparatorService comparatorService = new ComparatorService(numberA, numberB);
+        boolean actual = comparatorService.ifNumbersEqual();
         assertEquals(actual, expected);
     }
 }

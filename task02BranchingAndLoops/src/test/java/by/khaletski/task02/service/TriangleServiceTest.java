@@ -1,11 +1,11 @@
-package by.khaletski.task02.entity;
+package by.khaletski.task02.service;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class TriangleTest {
+public class TriangleServiceTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class TriangleTest {
 
     @Test (dataProvider = "dataProvider")
     public void testIfEquilateralTriangle(double sideA, double sideB, double sideC, boolean expected) {
-        Triangle triangle = new Triangle(sideA, sideB, sideC);
-        boolean actual = triangle.ifEquilateralTriangle();
+        TriangleService triangleService = new TriangleService(sideA, sideB, sideC);
+        boolean actual = triangleService.ifEquilateralTriangle();
         assertEquals(actual, expected);
     }
 }

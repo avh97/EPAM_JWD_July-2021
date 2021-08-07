@@ -1,11 +1,11 @@
-package by.khaletski.task02.entity;
+package by.khaletski.task02.service;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class CountOfNumbersTest {
+public class CountOfNumbersServiceTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class CountOfNumbersTest {
 
     @Test (dataProvider = "dataProvider")
     public void testPositiveNumbersCounter(double numA, double numB, double numC, int expected) {
-        CountOfNumbers countOfNumbers = new CountOfNumbers(numA, numB, numC);
-        int actual = countOfNumbers.positiveNumbersCounter();
+        CountOfNumbersService countOfNumbersService = new CountOfNumbersService(numA, numB, numC);
+        int actual = countOfNumbersService.positiveNumbersCounter();
         assertEquals(actual, expected);
     }
 }

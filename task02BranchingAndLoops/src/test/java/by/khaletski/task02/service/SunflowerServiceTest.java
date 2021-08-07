@@ -1,11 +1,11 @@
-package by.khaletski.task02.entity;
+package by.khaletski.task02.service;
 
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;
 
-public class SunflowerTest {
+public class SunflowerServiceTest {
 
     @DataProvider (name = "dataProvider")
     public Object[][] createData() {
@@ -17,8 +17,8 @@ public class SunflowerTest {
 
     @Test (dataProvider = "dataProvider")
     public void testIfLoves(int number, boolean expected) {
-        Sunflower sunflower = new Sunflower(number);
-        boolean actual = sunflower.ifLoves();
+        SunflowerService sunflowerService = new SunflowerService(number);
+        boolean actual = sunflowerService.ifLoves();
         assertEquals(actual, expected);
     }
 }
