@@ -3,9 +3,11 @@ package by.khaletski.task02.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/** This class creates 'TriangleService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates 'TriangleService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class TriangleService {
@@ -17,6 +19,7 @@ public class TriangleService {
 
     /**
      * Default constructor creates the 'Triangle' object and check it for validity.
+     *
      * @param sideA side A of the triangle
      * @param sideB side B of the triangle
      * @param sideC side C of the triangle
@@ -40,6 +43,7 @@ public class TriangleService {
     /**
      * This class compares the transmitted values of the sides of a triangle for equality
      * and returns the corresponding boolean value.
+     *
      * @return true/false
      */
 

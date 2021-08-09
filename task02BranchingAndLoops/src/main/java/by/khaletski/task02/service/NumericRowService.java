@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/** This class creates the 'NumericRowService' objects with properties
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates the 'NumericRowService' objects with properties
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class NumericRowService {
@@ -21,6 +23,7 @@ public class NumericRowService {
     /**
      * This constructor creates a 'NumericRow' object, which creates a number series.
      * The general term of the series is: a (n-th) = 1/2^n + 1/3^n = 1/4^n ...
+     *
      * @param sizeOfRow
      * @param numberE
      */
@@ -53,6 +56,7 @@ public class NumericRowService {
     /**
      * This function finds the sum of those numbers in NumericRowService,
      * whose modulus is greater or equal than given 'e'.
+     *
      * @return total sum of numbers, whose modulus is equal or equal than given 'e'
      */
 

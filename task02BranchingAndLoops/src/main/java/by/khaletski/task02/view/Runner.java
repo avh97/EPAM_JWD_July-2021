@@ -2,75 +2,56 @@ package by.khaletski.task02.view;
 
 import by.khaletski.task02.controller.TaskSwitcher;
 
+import java.util.Locale;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
 public class Runner {
     public static void main(String[] args) {
+        Locale usLocale = new Locale("en", "US");
+        Locale ruLocale = new Locale("ru", "RU");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("resources_RU", ruLocale);
         Scanner scanner = new Scanner(System.in);
         do {
-            System.out.println("Введите номер задачи: 2.4, 2.9, 2.19, 2.24, 2.34, 3.4, 3.9, 3.19, 3.24 или 3.34");
+            System.out.println(resourceBundle.getString("enter"));
             TaskSwitcher taskSwitcher = new TaskSwitcher();
             String task = scanner.nextLine();
             switch (task) {
                 case "2.4":
-                    System.out.println("Задача №2.4. Составить программу: равны ли два числа а и b?\n"
-                            + "Введите числа a и b: ");
+                    System.out.println(resourceBundle.getString("task2_4"));
                     break;
                 case "2.9":
-                    System.out.println("Задача №2.9. Составить программу, "
-                            + "которая определит по трем введенным сторонам,\n"
-                            + "является ли данный треугольник 'равносторонним'.\n"
-                            + "Введите стороны a, b, c: ");
+                    System.out.println(resourceBundle.getString("task2_9"));
                     break;
                 case "2.19":
-                    System.out.println("Задача №2.19. Подсчитать количество положительных среди чисел а, b, с.\n"
-                            + "Введите числа a, b, c: ");
+                    System.out.println(resourceBundle.getString("task2_19"));
                     break;
                 case "2.24":
-                    System.out.println("Задача №2.24. Составить программу, "
-                            + "определяющую результат гадания на ромашке — «любит — не любит»,\n"
-                            + " взяв за исходное данное количество лепестков n\n"
-                            + "Введите количество лепестков: ");
+                    System.out.println(resourceBundle.getString("task2_24"));
                     break;
                 case "2.34":
-                    System.out.println("Задача №2.34. Составить программу, реализующую эпизод применения компьютера\n"
-                            + "в книжном магазине. Компьютер запрашивает стоимость книг, сумму денег,\n"
-                            + "внесенную покупателем; если сдачи не требуется, печатает на экране «спасибо»;\n"
-                            + "если денег внесено больше, чем необходимо, то печатает «возьмите сдачу»\n"
-                            + "и указывает сумму сдачи; если денег недостаточно, то печатает сообщение\n"
-                            + "об этом и указывает размер недостающей суммы.\n"
-                            + "Введите количество наличных и стоимость книг соответственно: ");
+                    System.out.println(resourceBundle.getString("task2_34"));
                     break;
                 case "3.4":
-                    System.out.println("Задача №3.4. С помощью оператора while напишите программу\n"
-                            + "вывода всех четных чисел в диапазоне включительно.\n"
-                            + "Введите значения начала и конца диапазона соответственно: ");
+                    System.out.println(resourceBundle.getString("task3_4"));
                     break;
                 case "3.9":
-                    System.out.println("Задача №3.9. Найти сумму квадратов чисел.\n"
-                            + "Введите значения начала и конца диапазона соответственно: ");
+                    System.out.println(resourceBundle.getString("task3_9"));
                     break;
                 case "3.19":
-                    System.out.println("Задача 3.19. Даны числовой ряд и некоторое число е.\n"
-                            + "Найти сумму тех членов ряда, модуль которых больше или равен заданному е.\n"
-                            + "Общий член ряда имеет вид: a (n-ное) = 1/2^n + 1/3^n ...\n"
-                            + "Введите числа n и e: ");
+                    System.out.println(resourceBundle.getString("task3_19"));
                     break;
                 case "3.24":
-                    System.out.println("Задача №3.24. Вводится натуральное число. Найти сумму четных цифр,\n"
-                            + "входящих в его состав. Преобразовать его в другое число, цифры которого будут\n"
-                            + "следовать в обратном порядке по сравнению с введенным числом.\n"
-                            + "Введите число: ");
+                    System.out.println(resourceBundle.getString("task3_24"));
                     break;
                 case "3.34":
-                    System.out.println("Задача №3.34. Найдите все четырехзначные числа, сумма цифр "
-                            + "каждого из которых равна 15.\n" + "Введите количество цифр в числе и их сумму: ");
+                    System.out.println(resourceBundle.getString("task3_34"));
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + task);
             }
             taskSwitcher.taskSwitcher(task);
-            System.out.println("Для выхода их программы наберите 'exit'");
+            System.out.println(resourceBundle.getString("exit"));
         } while (!scanner.nextLine().equals("exit"));
     }
 }

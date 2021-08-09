@@ -7,9 +7,11 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Objects;
 
-/** This class creates the 'EvenNumbersService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates the 'EvenNumbersService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class EvenNumbersService {
@@ -20,6 +22,7 @@ public class EvenNumbersService {
     /**
      * Default constructor creates an 'EvenNumbersService' object consisting of numbers
      * in the range between two numbers.
+     *
      * @param startValue
      * @param extremeValue
      */

@@ -4,9 +4,11 @@ import by.khaletski.task02.service.*;
 
 import java.util.Scanner;
 
-/** This class is used to switch between different services and execute selected one.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class is used to switch between different services and execute selected one.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class TaskSwitcher {
@@ -40,7 +42,7 @@ public class TaskSwitcher {
             case "3.9":
                 SumOfNumberSquaresService sumOfNumberSquaresService =
                         new SumOfNumberSquaresService(getInt(), getInt());
-                System.out.println(sumOfNumberSquaresService.getNumbers());
+                System.out.println(sumOfNumberSquaresService.sumOfSquares());
                 break;
             case "3.19":
                 NumericRowService numericRowService = new NumericRowService(getInt(), getDouble());
@@ -55,6 +57,8 @@ public class TaskSwitcher {
                         new SumOfNDigitsService(getInt(), getInt());
                 System.out.println(sumOfNDigitsService.getNumbers());
                 break;
+            default:
+                throw new IllegalStateException("Unexpected value: " + string);
         }
     }
 

@@ -3,9 +3,11 @@ package by.khaletski.task02.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/** This class creates 'BuyerService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates 'BuyerService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class BuyerService {
@@ -16,6 +18,7 @@ public class BuyerService {
 
     /**
      * Default constructor creates a 'BuyerService' object.
+     *
      * @param cash  cash available from the buyer
      * @param price price of a purchase
      */
@@ -37,7 +40,8 @@ public class BuyerService {
      * - if no change is required, prints on the screen "thanks";
      * - if more money is deposited than necessary, then it prints “take change” and indicates the amount of change;
      * - if there is not enough money, then prints a message about it and indicates the amount of the missing amount.
-     * @return  response to user
+     *
+     * @return response to user
      */
 
     public String checkout() {

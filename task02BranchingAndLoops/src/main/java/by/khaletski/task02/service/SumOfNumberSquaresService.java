@@ -6,12 +6,14 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/** This class creates 'SumOfNumberSquaresService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates 'SumOfNumberSquaresService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
-public class SumOfNumberSquaresService  {
+public class SumOfNumberSquaresService {
     private ArrayList<Integer> numbers;
 
     static final Logger LOGGER = LogManager.getLogger(SumOfNumberSquaresService.class);
@@ -19,6 +21,7 @@ public class SumOfNumberSquaresService  {
     /**
      * This constructor creates an SumOfNumberSquaresService object, which contains an ArrayList
      * consisting of numbers in the range startValue and extremeValue.
+     *
      * @param startValue
      * @param extremeValue
      */
@@ -38,6 +41,7 @@ public class SumOfNumberSquaresService  {
 
     /**
      * This method finds the sum of squares of the elements from the given ArrayList.
+     *
      * @return sum of squares of each element
      */
 

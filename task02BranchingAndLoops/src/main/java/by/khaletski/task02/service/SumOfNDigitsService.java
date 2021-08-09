@@ -9,6 +9,7 @@ import java.util.Objects;
 
 /**
  * This class creates 'SumOfEvenDigitsService' objects with properties.
+ *
  * @author Anton Khaletski
  * @version 1.0
  */
@@ -20,6 +21,7 @@ public class SumOfNDigitsService {
 
     /**
      * This constructor creates 'SumOfNDigitsService' object consisting of numberOfDigits digit numbers.
+     *
      * @param numberOfDigits
      * @param desiredSumOfDigits
      */

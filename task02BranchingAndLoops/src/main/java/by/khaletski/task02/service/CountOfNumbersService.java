@@ -5,9 +5,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
-/** This class creates the 'CountOfNumbersService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates the 'CountOfNumbersService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class CountOfNumbersService {
@@ -17,6 +19,7 @@ public class CountOfNumbersService {
 
     /**
      * Default constructor creates a 'CountOfNumbersService' object.
+     *
      * @param numbers ArrayList of doubles
      */
 
@@ -27,6 +30,7 @@ public class CountOfNumbersService {
 
     /**
      * This constructor creates an 'CountOfNumbersService' object and adds three numbers.
+     *
      * @param numberA
      * @param numberB
      * @param numberC
@@ -42,6 +46,7 @@ public class CountOfNumbersService {
     /**
      * This method receives an ArrayList of numbers and returns the total
      * count of positive numbers in this ArrayList.
+     *
      * @return total count of positive numbers
      */
 

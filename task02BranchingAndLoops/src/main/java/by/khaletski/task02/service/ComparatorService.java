@@ -3,9 +3,11 @@ package by.khaletski.task02.service;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/** This class creates 'ComparatorService' objects with properties.
- @author Anton Khaletski
- @version 1.0
+/**
+ * This class creates 'ComparatorService' objects with properties.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class ComparatorService {
@@ -16,8 +18,9 @@ public class ComparatorService {
 
     /**
      * Default constructor creates a 'ComparatorService' object.
-     * @param numberA   first number to compare
-     * @param numberB   second number to compare
+     *
+     * @param numberA first number to compare
+     * @param numberB second number to compare
      */
 
     public ComparatorService(final double numberA, final double numberB) {
@@ -28,6 +31,7 @@ public class ComparatorService {
 
     /**
      * This method compares two real numbers and returns the corresponding boolean value.
+     *
      * @return true or false
      */
 

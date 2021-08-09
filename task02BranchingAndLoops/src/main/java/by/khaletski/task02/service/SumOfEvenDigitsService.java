@@ -5,9 +5,11 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Objects;
 
-/** This creates 'SumOfEvenDigitsService' objects with properties/
- @author Anton Khaletski
- @version 1.0
+/**
+ * This creates 'SumOfEvenDigitsService' objects with properties/
+ *
+ * @author Anton Khaletski
+ * @version 1.0
  */
 
 public class SumOfEvenDigitsService {
@@ -17,6 +19,7 @@ public class SumOfEvenDigitsService {
 
     /**
      * Default constructor creates 'SumOfEvenDigitsService' object.
+     *
      * @param number number of even digits in the number, reversed
      */
 
