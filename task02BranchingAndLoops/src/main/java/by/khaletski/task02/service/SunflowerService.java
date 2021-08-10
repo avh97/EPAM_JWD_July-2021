@@ -1,5 +1,6 @@
 package by.khaletski.task02.service;
 
+import by.khaletski.task02.entity.Sunflower;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,18 +12,13 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class SunflowerService {
-    private int numberOfPetals;
+    private Sunflower sunflower;
 
     static final Logger LOGGER = LogManager.getLogger(SunflowerService.class);
 
-    public SunflowerService(final int numberOfPetals) {
-        if (numberOfPetals < 1) {
-            LOGGER.error("Object 'SunflowerService' has NOT been created");
-            throw new IllegalArgumentException("Number of petals cannot be negative");
-        } else {
-            this.numberOfPetals = numberOfPetals;
-            LOGGER.debug("Object 'SunflowerService' has been successfully created");
-        }
+    public SunflowerService(Sunflower sunflower) {
+        this.sunflower = sunflower;
+        LOGGER.debug("Object 'SunflowerService' has been successfully created");
     }
 
     /**
@@ -33,6 +29,6 @@ public class SunflowerService {
      */
 
     public boolean ifLoves() {
-        return numberOfPetals % 2 != 0;
+        return sunflower.getNumberOfPetals() % 2 != 0;
     }
 }

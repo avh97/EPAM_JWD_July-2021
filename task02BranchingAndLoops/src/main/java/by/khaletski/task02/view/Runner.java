@@ -10,7 +10,7 @@ public class Runner {
     public static void main(String[] args) {
         Locale usLocale = new Locale("en", "US");
         Locale ruLocale = new Locale("ru", "RU");
-        ResourceBundle resourceBundle = ResourceBundle.getBundle("resources_RU", ruLocale);
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("locale_RU", ruLocale);
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println(resourceBundle.getString("enter"));

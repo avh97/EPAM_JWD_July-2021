@@ -1,5 +1,6 @@
 package by.khaletski.task02.service;
 
+import by.khaletski.task02.entity.Buyer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,28 +12,14 @@ import org.apache.logging.log4j.Logger;
  */
 
 public class BuyerService {
-    private double cash;
-    private double price;
+    private Buyer buyer;
+
+    public BuyerService(Buyer buyer) {
+        this.buyer = buyer;
+        LOGGER.debug("Object 'BuyerService' has been successfully created");
+    }
 
     static final Logger LOGGER = LogManager.getLogger(BuyerService.class);
-
-    /**
-     * Default constructor creates a 'BuyerService' object.
-     *
-     * @param cash  cash available from the buyer
-     * @param price price of a purchase
-     */
-
-    public BuyerService(final double cash, final double price) {
-        if (cash < 0 || price < 0) {
-            LOGGER.error("Object 'BuyerService' has NOT been created");
-            throw new IllegalArgumentException("Cash available or price of a purchase cannot be negative");
-        } else {
-            this.cash = cash;
-            this.price = price;
-            LOGGER.debug("Object 'BuyerService' has been successfully created");
-        }
-    }
 
     /**
      * This method shows an episode of using a computer in a bookstore.
@@ -45,15 +32,20 @@ public class BuyerService {
      */
 
     public String checkout() {
-        System.out.println("Cash available: " + cash + " USD");
-        System.out.println("Total cost: " + price + " USD");
-        if (cash > price) {
-            return "Here's your change: " + (cash - price) + " USD. " + "Thank you for the purchase!";
+        System.out.println("Cash available: " + buyer.getCash() + " USD");
+        System.out.println("Total cost: " + buyer.getPrice() + " USD");
+        if (buyer.getCash() > buyer.getPrice()) {
+            return "Here's your change: " + (buyer.getCash() - buyer.getPrice())
+                    + " USD. " + "Thank you for the purchase!";
         }
-        if (cash < price) {
-            return "You don't have enough: " + (price - cash) + " USD.";
+        if (buyer.getCash() < buyer.getPrice()) {
+            return "You don't have enough: " + (buyer.getPrice() - buyer.getCash()) + " USD.";
         } else {
             return "Thank you for no change. All the best!";
         }
+    }
+
+    public Buyer getBuyer() {
+        return buyer;
     }
 }

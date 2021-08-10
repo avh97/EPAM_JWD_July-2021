@@ -1,5 +1,8 @@
 package by.khaletski.task02.controller;
 
+import by.khaletski.task02.entity.Buyer;
+import by.khaletski.task02.entity.Sunflower;
+import by.khaletski.task02.entity.Triangle;
 import by.khaletski.task02.service.*;
 
 import java.util.Scanner;
@@ -19,7 +22,8 @@ public class TaskSwitcher {
                 System.out.println(comparatorService.ifNumbersEqual());
                 break;
             case "2.9":
-                TriangleService triangleService = new TriangleService(getDouble(), getDouble(), getDouble());
+                TriangleService triangleService = new TriangleService(
+                        new Triangle(getDouble(), getDouble(), getDouble()));
                 System.out.println(triangleService.ifEquilateralTriangle());
                 break;
             case "2.19":
@@ -28,11 +32,11 @@ public class TaskSwitcher {
                 System.out.println(countOfNumbersService.positiveNumbersCounter());
                 break;
             case "2.24":
-                SunflowerService sunflowerService = new SunflowerService(getInt());
+                SunflowerService sunflowerService = new SunflowerService(new Sunflower(getInt()));
                 System.out.println(sunflowerService.ifLoves());
                 break;
             case "2.34":
-                BuyerService buyerService = new BuyerService(getDouble(), getDouble());
+                BuyerService buyerService = new BuyerService(new Buyer(getDouble(), getDouble()));
                 System.out.println(buyerService.checkout());
                 break;
             case "3.4":
