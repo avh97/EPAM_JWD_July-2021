@@ -2,61 +2,60 @@ package by.khaletski.task03.entity;
 
 import by.khaletski.task03.exception.MatrixException;
 
-public class Matrix {
-    private int[][] elements;
 
-    public Matrix(int[][] elements) {
-        this.elements = elements;
+public class Matrix {
+    private int[][] a;
+
+    public Matrix(int[][] a) {
+        this.a = a;
     }
 
-    public Matrix(int numberOfColumns, int numberOfRows) throws MatrixException {
-        if (numberOfColumns < 1 || numberOfRows < 1) {
+    public Matrix(int n, int m) throws MatrixException {
+        if (n < 1 || m < 1) {// check input
             throw new MatrixException();
-        } else {
-            elements = new int[numberOfColumns][numberOfRows];
         }
+        a = new int[n][m];
     }
 
     public int getVerticalSize() {
-        return elements.length;
+        return a.length;
     }
 
     public int getHorizontalSize() {
-        return elements[0].length;
+        return a[0].length;
     }
 
-    public int getElement(int columnPosition, int rowPosition) throws MatrixException {
-        if (checkRange(columnPosition, rowPosition)) {
-            return elements[columnPosition][rowPosition];
+    public int getElement(int i, int j) throws MatrixException {
+        if (checkRange(i, j)) { // check i & j
+            return a[i][j];
         } else {
             throw new MatrixException();
         }
     }
 
-    public void setElement(int columnPosition, int rowPosition, int value) throws MatrixException {
-        if (checkRange(columnPosition, rowPosition)) {
-            elements[columnPosition][rowPosition] = value;
+    public void setElement(int i, int j, int value) throws MatrixException {
+        if (checkRange(i, j)) {
+            a[i][j] = value;
         } else {
             throw new MatrixException();
         }
-    }
-
-    private boolean checkRange(int columnPosition, int rowPosition) {
-        return (columnPosition >= 0 && columnPosition < elements.length
-                && rowPosition >= 0 && rowPosition < elements[0].length);
     }
 
     @Override
     public String toString() {
         final String BLANK = " ";
-        StringBuilder s = new StringBuilder("\nMatrix : " + elements.length + "x"
-                + elements[0].length + "\n");
-        for (int[] row : elements) {
+        StringBuilder s = new StringBuilder("\nMatrix : " + a.length + "x"
+                + a[0].length + "\n");
+        for (int[] row : a) {
             for (int value : row) {
                 s.append(value).append(BLANK);
             }
             s.append("\n");
         }
         return s.toString();
+    }
+
+    private boolean checkRange(int i, int j) {// check matrix range
+        return (i >= 0 && i < a.length && j >= 0 && j < a[0].length);
     }
 }
