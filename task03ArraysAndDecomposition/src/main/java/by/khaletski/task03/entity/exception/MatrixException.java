@@ -1,4 +1,4 @@
-package by.khaletski.task03.exception;
+package by.khaletski.task03.entity.exception;
 
 public class MatrixException extends Exception {
     public MatrixException() {
