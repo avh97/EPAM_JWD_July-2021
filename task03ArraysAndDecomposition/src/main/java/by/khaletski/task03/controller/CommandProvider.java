@@ -17,8 +17,10 @@ public class CommandProvider {
         repository.put(CommandName.MATRIX_TRANSPOSE, new MatrixTranspose());
         repository.put(CommandName.BUBBLE_SORT, new BubbleSort());
         repository.put(CommandName.SHAKER_SORT, new ShakerSort());
-        repository.put(CommandName.INSERTION_SORT, new InsertionSort());
         repository.put(CommandName.SELECTION_SORT, new SelectionSort());
+        repository.put(CommandName.INSERTION_SORT, new InsertionSort());
+        repository.put(CommandName.MERGE_SORT, new MergeSort());
+        repository.put(CommandName.SHELL_SORT, new ShellSort());
         repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
     }
 

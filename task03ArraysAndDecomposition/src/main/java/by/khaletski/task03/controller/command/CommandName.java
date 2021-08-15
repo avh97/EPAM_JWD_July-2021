@@ -9,5 +9,7 @@ public enum CommandName {
     SHAKER_SORT,
     SELECTION_SORT,
     INSERTION_SORT,
+    MERGE_SORT,
+    SHELL_SORT,
     WRONG_REQUEST
 }

@@ -2,7 +2,7 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class InsertionSortingService implements by.khaletski.task03.service.InsertionSortingService {
+public class InsertionSortService implements by.khaletski.task03.service.InsertionSortService {
 
     @Override
     public NumberArray insertionSort(NumberArray numberArray) {

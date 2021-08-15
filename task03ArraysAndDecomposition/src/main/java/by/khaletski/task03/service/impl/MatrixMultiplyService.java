@@ -3,7 +3,7 @@ package by.khaletski.task03.service.impl;
 import by.khaletski.task03.entity.Matrix;
 import by.khaletski.task03.entity.exception.MatrixException;
 
-public class MatrixMultiplicationService implements by.khaletski.task03.service.MatrixMultiplicationService {
+public class MatrixMultiplyService implements by.khaletski.task03.service.MatrixMultiplyService {
 
     @Override
     public Matrix multiply(Matrix p, Matrix q) throws MatrixException {

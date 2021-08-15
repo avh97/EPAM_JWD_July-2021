@@ -6,16 +6,18 @@ public class ServiceFactory {
     private static final ServiceFactory instance = new ServiceFactory();
 
     private final MatrixFillService matrixFillService = new MatrixFillService();
-    private final MatrixMultiplicationService matrixMultiplicationService = new MatrixMultiplicationService();
-    private final MatrixAdditionService matrixAdditionService = new MatrixAdditionService();
-    private final MatrixSubtractionService matrixSubtractionService = new MatrixSubtractionService();
+    private final MatrixMultiplyService matrixMultiplyService = new MatrixMultiplyService();
+    private final MatrixAddService matrixAddService = new MatrixAddService();
+    private final MatrixSubtractService matrixSubtractService = new MatrixSubtractService();
     private final MatrixTransposeService matrixTransposeService = new MatrixTransposeService();
 
     private final NumberArrayFillService numberArrayFillService = new NumberArrayFillService();
-    private final BubbleSortingService bubbleSortingService = new BubbleSortingService();
-    private final ShakerSortingService shakerSortingService = new ShakerSortingService();
-    private final SelectionSortingService selectionSortingService = new SelectionSortingService();
-    private final InsertionSortingService insertionSortingService = new InsertionSortingService();
+    private final BubbleSortService bubbleSortService = new BubbleSortService();
+    private final ShakerSortService shakerSortService = new ShakerSortService();
+    private final SelectionSortService selectionSortService = new SelectionSortService();
+    private final InsertionSortService insertionSortService = new InsertionSortService();
+    private final ShellSortService shellSortService = new ShellSortService();
+    private final MergeSortService mergeSortService = new MergeSortService();
 
     private ServiceFactory() {
 
@@ -29,16 +31,16 @@ public class ServiceFactory {
         return matrixFillService;
     }
 
-    public MatrixMultiplicationService getMatrixMultiplicationService() {
-        return matrixMultiplicationService;
+    public MatrixMultiplyService getMatrixMultiplyService() {
+        return matrixMultiplyService;
     }
 
-    public MatrixAdditionService getMatrixAdditionService() {
-        return matrixAdditionService;
+    public MatrixAddService getMatrixAddService() {
+        return matrixAddService;
     }
 
-    public MatrixSubtractionService getMatrixSubtractionService() {
-        return matrixSubtractionService;
+    public MatrixSubtractService getMatrixSubtractService() {
+        return matrixSubtractService;
     }
 
     public MatrixTransposeService getMatrixTransposeService() {
@@ -46,25 +48,31 @@ public class ServiceFactory {
     }
 
 
-
     public NumberArrayFillService getNumberArrayFillService() {
         return numberArrayFillService;
     }
 
-    public BubbleSortingService getBubbleSortingService() {
-        return bubbleSortingService;
+    public BubbleSortService getBubbleSortService() {
+        return bubbleSortService;
     }
 
-    public ShakerSortingService getShakerSortingService() {
-        return shakerSortingService;
+    public ShakerSortService getShakerSortService() {
+        return shakerSortService;
     }
 
-    public SelectionSortingService getSelectionSorterService() {
-        return selectionSortingService;
+    public SelectionSortService getSelectionSortService() {
+        return selectionSortService;
     }
 
-    public InsertionSortingService getInsertionSortingService() {
-        return insertionSortingService;
+    public InsertionSortService getInsertionSortService() {
+        return insertionSortService;
     }
 
+    public ShellSortService getShellSortService() {
+        return shellSortService;
+    }
+
+    public MergeSortService getMergeSortService() {
+        return mergeSortService;
+    }
 }
