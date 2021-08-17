@@ -27,7 +27,7 @@ public class MergeSortServiceTest {
     @Test(dataProvider = "dataProvider")
     public void testMergeSortService(NumberArray array, int[] expected) throws NumberArrayException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[] actual = serviceFactory.getMergeSortService().mergeSort(array).getArray();
+        int[] actual = serviceFactory.getMergeSortService().sort(array).getArray();
         assertEquals(actual, expected);
     }
 }

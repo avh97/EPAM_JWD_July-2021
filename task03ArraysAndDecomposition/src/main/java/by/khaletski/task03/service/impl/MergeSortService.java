@@ -4,10 +4,10 @@ import by.khaletski.task03.entity.NumberArray;
 
 import java.util.Arrays;
 
-public class MergeSortService implements by.khaletski.task03.service.MergeSortService {
+public class MergeSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray mergeSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] array1 = numberArray.getArray();
         int[] buffer1 = Arrays.copyOf(array1, array1.length);
         int[] buffer2 = new int[array1.length];

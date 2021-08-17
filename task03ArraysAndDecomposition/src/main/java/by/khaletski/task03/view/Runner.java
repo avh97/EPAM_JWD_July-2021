@@ -34,8 +34,7 @@ public class Runner {
                 "SELECTION_SORT\n" +
                 "INSERTION_SORT\n" +
                 "MERGE_SORT\n" +
-                "SHELL_SORT\n" +
-                "WRONG_REQUEST\n");
+                "SHELL_SORT\n");
         Controller controller = new Controller();
         System.out.println(controller.executeTask(getMenuName()));
     }

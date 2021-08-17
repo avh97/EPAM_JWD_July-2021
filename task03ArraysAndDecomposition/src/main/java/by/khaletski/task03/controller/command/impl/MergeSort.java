@@ -12,6 +12,6 @@ public class MergeSort implements Command {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         NumberArray numberArray = new NumberArray(25);
         serviceFactory.getNumberArrayFillService().fillRandomized(numberArray, 1, 100);
-        return "Result: " + serviceFactory.getMergeSortService().mergeSort(numberArray);
+        return "Result: " + serviceFactory.getMergeSortService().sort(numberArray);
     }
 }

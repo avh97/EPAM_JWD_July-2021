@@ -2,10 +2,10 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class SelectionSortService implements by.khaletski.task03.service.SelectionSortService {
+public class SelectionSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray selectionSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] array = numberArray.getArray();
         for (int i = 0; i < array.length; i++) {    // i - номер текущего шага
             int pos = i;

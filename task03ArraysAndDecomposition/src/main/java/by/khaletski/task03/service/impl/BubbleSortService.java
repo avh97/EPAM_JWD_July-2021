@@ -2,10 +2,10 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class BubbleSortService implements by.khaletski.task03.service.BubbleSortService {
+public class BubbleSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray bubbleSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] array = numberArray.getArray();
         boolean isSorted = false;
         int temp;

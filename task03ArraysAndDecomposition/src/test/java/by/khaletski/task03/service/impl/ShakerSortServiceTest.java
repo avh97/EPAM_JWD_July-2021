@@ -27,7 +27,7 @@ public class ShakerSortServiceTest {
     @Test(dataProvider = "dataProvider")
     public void testShakerSortService(NumberArray array, int[] expected) throws NumberArrayException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[] actual = serviceFactory.getShakerSortService().shakerSort(array).getArray();
+        int[] actual = serviceFactory.getShakerSortService().sort(array).getArray();
         assertEquals(actual, expected);
     }
 }

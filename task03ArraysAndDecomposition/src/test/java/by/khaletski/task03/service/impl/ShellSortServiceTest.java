@@ -27,7 +27,7 @@ public class ShellSortServiceTest {
     @Test(dataProvider = "dataProvider")
     public void testShellSortService(NumberArray array, int[] expected) throws NumberArrayException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[] actual = serviceFactory.getShellSortService().shellSort(array).getArray();
+        int[] actual = serviceFactory.getShellSortService().sort(array).getArray();
         assertEquals(actual, expected);
     }
 }

@@ -27,7 +27,7 @@ public class BubbleSortServiceTest {
     @Test(dataProvider = "dataProvider")
     public void testBubbleSortService(NumberArray array, int[] expected) throws NumberArrayException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[] actual = serviceFactory.getBubbleSortService().bubbleSort(array).getArray();
+        int[] actual = serviceFactory.getBubbleSortService().sort(array).getArray();
         assertEquals(actual, expected);
     }
 }

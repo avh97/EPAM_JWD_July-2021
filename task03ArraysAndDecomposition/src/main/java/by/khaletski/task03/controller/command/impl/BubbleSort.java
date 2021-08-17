@@ -12,6 +12,6 @@ public class BubbleSort implements Command {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         NumberArray numberArray = new NumberArray(25);
         serviceFactory.getNumberArrayFillService().fillRandomized(numberArray, 1, 100);
-        return "Result: " + serviceFactory.getBubbleSortService().bubbleSort(numberArray);
+        return "Result: " + serviceFactory.getBubbleSortService().sort(numberArray);
     }
 }

@@ -12,6 +12,6 @@ public class ShellSort implements Command {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         NumberArray numberArray = new NumberArray(25);
         serviceFactory.getNumberArrayFillService().fillRandomized(numberArray, 1, 100);
-        return "Result: " + serviceFactory.getShellSortService().shellSort(numberArray);
+        return "Result: " + serviceFactory.getShellSortService().sort(numberArray);
     }
 }

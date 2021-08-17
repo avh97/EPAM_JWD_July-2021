@@ -2,10 +2,10 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class InsertionSortService implements by.khaletski.task03.service.InsertionSortService {
+public class InsertionSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray insertionSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] array = numberArray.getArray();
         for (int i = 1; i < array.length; i++) {
             int current = array[i];

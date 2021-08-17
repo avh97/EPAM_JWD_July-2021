@@ -27,7 +27,7 @@ public class SelectionSortServiceTest {
     @Test(dataProvider = "dataProvider")
     public void testSelectionSortService(NumberArray array, int[] expected) throws NumberArrayException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[] actual = serviceFactory.getSelectionSortService().selectionSort(array).getArray();
+        int[] actual = serviceFactory.getSelectionSortService().sort(array).getArray();
         assertEquals(actual, expected);
     }
 }

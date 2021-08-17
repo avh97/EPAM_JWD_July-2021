@@ -2,10 +2,10 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class ShellSortService implements by.khaletski.task03.service.ShellSortService {
+public class ShellSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray shellSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] mass = numberArray.getArray();
         int i, j;
         int tmp;

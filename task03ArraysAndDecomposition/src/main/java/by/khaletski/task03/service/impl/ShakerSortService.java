@@ -2,10 +2,10 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
 
-public class ShakerSortService implements by.khaletski.task03.service.ShakerSortService {
+public class ShakerSortService implements by.khaletski.task03.service.SortService {
 
     @Override
-    public NumberArray shakerSort(NumberArray numberArray) {
+    public NumberArray sort(NumberArray numberArray) {
         int[] array = numberArray.getArray();
         int tempVariable;
         int left = 0;
