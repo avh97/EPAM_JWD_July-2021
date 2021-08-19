@@ -1,14 +1,13 @@
 package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
-import by.khaletski.task03.entity.exception.NumberArrayException;
 import by.khaletski.task03.service.factory.ServiceFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
-public class ShakerSortServiceTest {
+public class CocktailSortServiceTest {
 
     @DataProvider(name = "dataProvider")
     public Object[][] createData() {
@@ -25,7 +24,7 @@ public class ShakerSortServiceTest {
     }
 
     @Test(dataProvider = "dataProvider")
-    public void testShakerSortService(NumberArray array, int[] expected) throws NumberArrayException {
+    public void testCocktailSortService(NumberArray array, int[] expected) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         int[] actual = serviceFactory.getShakerSortService().sort(array).getArray();
         assertEquals(actual, expected);

@@ -1,18 +1,17 @@
 package by.khaletski.task03.controller;
 
-import by.khaletski.task03.controller.command.Command;
-import by.khaletski.task03.entity.exception.MatrixException;
-import by.khaletski.task03.entity.exception.NumberArrayException;
+import by.khaletski.task03.controller.command.ICommand;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class Controller {
     private final CommandProvider provider = new CommandProvider();
 
-    public String executeTask(String request) throws MatrixException, NumberArrayException {
-        String commandName;
-        Command executionCommand;
-        executionCommand = provider.getCommand(request);
-        String response;
-        response = executionCommand.execute(request);
-        return response;
+    static final Logger LOGGER = LogManager.getLogger(Controller.class);
+
+    public final String executeTask(final String request) {
+        ICommand executionCommand = provider.getCommand(request);
+        LOGGER.debug("Command has been executed.");
+        return executionCommand.execute(request);
     }
 }

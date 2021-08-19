@@ -1,7 +1,7 @@
 package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.Matrix;
-import by.khaletski.task03.entity.exception.MatrixException;
+import by.khaletski.task03.service.exception.MatrixServiceException;
 import by.khaletski.task03.service.factory.ServiceFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -18,9 +18,10 @@ public class MatrixMultiplyServiceTest {
     }
 
     @Test(dataProvider = "dataProvider")
-    public void testMatrixMultiplyService(Matrix p, Matrix q, int[][] expected) throws MatrixException {
+    public void testMatrixMultiplyService(Matrix p, Matrix q, int[][] expected) throws MatrixServiceException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        int[][] actual = serviceFactory.getMatrixMultiplyService().multiply(p, q).getElements();
+        int[][] actual = new int[0][];
+        actual = serviceFactory.getMatrixMultiplyService().multiply(p, q).getElements();
         assertEquals(actual, expected);
     }
 }

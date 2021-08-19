@@ -4,15 +4,15 @@ public class NumberArrayException extends Exception {
     public NumberArrayException() {
     }
 
-    public NumberArrayException(String message) {
+    public NumberArrayException(final String message) {
         super(message);
     }
 
-    public NumberArrayException(String message, Throwable cause) {
+    public NumberArrayException(final String message, final Throwable cause) {
         super(message, cause);
     }
 
-    public NumberArrayException(Throwable cause) {
+    public NumberArrayException(final Throwable cause) {
         super(cause);
     }
 }

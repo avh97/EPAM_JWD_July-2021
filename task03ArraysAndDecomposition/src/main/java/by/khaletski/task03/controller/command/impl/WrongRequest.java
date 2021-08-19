@@ -1,11 +1,11 @@
 package by.khaletski.task03.controller.command.impl;
 
-import by.khaletski.task03.controller.command.Command;
+import by.khaletski.task03.controller.command.ICommand;
 
-public class WrongRequest implements Command {
+public final class WrongRequest implements ICommand {
 
     @Override
-    public String execute(String request) {
+    public String execute(final String request) {
         return "Wrong input!";
     }
 }

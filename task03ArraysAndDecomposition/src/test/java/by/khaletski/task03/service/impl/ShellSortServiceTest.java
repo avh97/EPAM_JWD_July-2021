@@ -1,7 +1,6 @@
 package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.NumberArray;
-import by.khaletski.task03.entity.exception.NumberArrayException;
 import by.khaletski.task03.service.factory.ServiceFactory;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -25,7 +24,7 @@ public class ShellSortServiceTest {
     }
 
     @Test(dataProvider = "dataProvider")
-    public void testShellSortService(NumberArray array, int[] expected) throws NumberArrayException {
+    public void testShellSortService(NumberArray array, int[] expected) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         int[] actual = serviceFactory.getShellSortService().sort(array).getArray();
         assertEquals(actual, expected);

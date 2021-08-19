@@ -1,19 +1,25 @@
 package by.khaletski.task03.service.factory;
 
-import by.khaletski.task03.service.impl.*;
+import by.khaletski.task03.service.impl.BubbleSortService;
+import by.khaletski.task03.service.impl.InsertionSortService;
+import by.khaletski.task03.service.impl.MatrixAddService;
+import by.khaletski.task03.service.impl.MatrixMultiplyService;
+import by.khaletski.task03.service.impl.MatrixSubtractService;
+import by.khaletski.task03.service.impl.MatrixTransposeService;
+import by.khaletski.task03.service.impl.MergeSortService;
+import by.khaletski.task03.service.impl.SelectionSortService;
+import by.khaletski.task03.service.impl.CocktailSortService;
+import by.khaletski.task03.service.impl.ShellSortService;
 
-public class ServiceFactory {
-    private static final ServiceFactory instance = new ServiceFactory();
+public final class ServiceFactory {
+    private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final MatrixFillService matrixFillService = new MatrixFillService();
     private final MatrixMultiplyService matrixMultiplyService = new MatrixMultiplyService();
     private final MatrixAddService matrixAddService = new MatrixAddService();
     private final MatrixSubtractService matrixSubtractService = new MatrixSubtractService();
     private final MatrixTransposeService matrixTransposeService = new MatrixTransposeService();
-
-    private final NumberArrayFillService numberArrayFillService = new NumberArrayFillService();
     private final BubbleSortService bubbleSortService = new BubbleSortService();
-    private final ShakerSortService shakerSortService = new ShakerSortService();
+    private final CocktailSortService cocktailSortService = new CocktailSortService();
     private final SelectionSortService selectionSortService = new SelectionSortService();
     private final InsertionSortService insertionSortService = new InsertionSortService();
     private final ShellSortService shellSortService = new ShellSortService();
@@ -24,11 +30,7 @@ public class ServiceFactory {
     }
 
     public static ServiceFactory getInstance() {
-        return instance;
-    }
-
-    public MatrixFillService getMatrixFillService() {
-        return matrixFillService;
+        return INSTANCE;
     }
 
     public MatrixMultiplyService getMatrixMultiplyService() {
@@ -47,17 +49,12 @@ public class ServiceFactory {
         return matrixTransposeService;
     }
 
-
-    public NumberArrayFillService getNumberArrayFillService() {
-        return numberArrayFillService;
-    }
-
     public BubbleSortService getBubbleSortService() {
         return bubbleSortService;
     }
 
-    public ShakerSortService getShakerSortService() {
-        return shakerSortService;
+    public CocktailSortService getShakerSortService() {
+        return cocktailSortService;
     }
 
     public SelectionSortService getSelectionSortService() {

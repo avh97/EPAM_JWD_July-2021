@@ -1,20 +1,58 @@
 package by.khaletski.task03.service.impl;
 
+import by.khaletski.task03.dao.exception.DAOException;
+import by.khaletski.task03.dao.factory.DAOFactory;
 import by.khaletski.task03.entity.Matrix;
 import by.khaletski.task03.entity.exception.MatrixException;
+import by.khaletski.task03.service.IMatrixSubtractService;
+import by.khaletski.task03.service.exception.MatrixServiceException;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
-public class MatrixSubtractService implements by.khaletski.task03.service.MatrixSubtractService {
+/**
+ * This class creates 'MatrixSubtractService' objects.
+ *
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
+
+public class MatrixSubtractService implements IMatrixSubtractService {
+
+    static final Logger LOGGER = LogManager.getLogger(MatrixSubtractService.class);
 
     @Override
-    public Matrix subtract(Matrix p, Matrix q) throws MatrixException {
-        if (p.getVerticalSize() != q.getVerticalSize() || q.getVerticalSize() != q.getVerticalSize()) {
-            throw new MatrixException("Incompatible matrices");
+    public final Matrix subtract(final Matrix p, final Matrix q) throws MatrixServiceException {
+        if (p.getVerticalSize() != q.getVerticalSize()) {
+            throw new MatrixServiceException("Incompatible matrices");
         }
-        Matrix result = new Matrix(p.getHorizontalSize(), p.getVerticalSize());
-        for (int i = 0; i < p.getHorizontalSize(); i++) {
-            for (int j = 0; j < p.getVerticalSize(); j++) {
-                result.setElement(i, j, (p.getElement(i, j) - q.getElement(i, j)));
+        Matrix result = null;
+        try {
+            result = new Matrix(p.getHorizontalSize(), p.getVerticalSize());
+            for (int i = 0; i < p.getHorizontalSize(); i++) {
+                for (int j = 0; j < p.getVerticalSize(); j++) {
+                    result.setElement(i, j, (p.getElement(i, j) - q.getElement(i, j)));
+                }
             }
+        } catch (MatrixException e) {
+            LOGGER.error("Cannot create matrix.");
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    public final Matrix subtract() throws MatrixServiceException {
+        DAOFactory daoFactory = DAOFactory.getInstance();
+        Matrix p;
+        Matrix q;
+        Matrix result = null;
+        try {
+            q = daoFactory.getMatricesFill().fill()[1];
+            p = daoFactory.getMatricesFill().fill()[0];
+            result = subtract(p, q);
+        } catch (DAOException e) {
+            LOGGER.error("Cannot access data.");
+            e.printStackTrace();
         }
         return result;
     }

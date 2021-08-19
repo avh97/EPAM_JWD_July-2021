@@ -3,13 +3,16 @@ package by.khaletski.task03.entity.exception;
 public class MatrixException extends Exception {
     public MatrixException() {
     }
-    public MatrixException(String message) {
+
+    public MatrixException(final String message) {
         super(message);
     }
-    public MatrixException(String message, Throwable cause) {
+
+    public MatrixException(final String message, final Throwable cause) {
         super(message, cause);
     }
-    public MatrixException(Throwable cause) {
+
+    public MatrixException(final Throwable cause) {
         super(cause);
     }
 }

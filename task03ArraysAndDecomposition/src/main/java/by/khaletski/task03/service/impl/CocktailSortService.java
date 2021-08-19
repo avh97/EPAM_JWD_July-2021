@@ -11,35 +11,45 @@ import java.io.FileNotFoundException;
 import java.util.Objects;
 
 /**
- * This class creates 'BubbleSortService' objects.
- * Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are
- * in wrong order.
- * Complexity: О(n^{2})
+ * This class creates 'CocktailSortService' objects
+ * Cocktail Sort is a variation of Bubble sort. The Bubble sort algorithm always traverses elements from left and
+ * moves the largest element to its correct position. Cocktail Sort traverses through a given array in both directions
+ * alternatively.
+ * Complexity: O(n * 2})
  *
  * @author Anton Khaletski
  * @version 1.0
  */
 
-public class BubbleSortService implements ISortService {
 
-    static final Logger LOGGER = LogManager.getLogger(BubbleSortService.class);
+public class CocktailSortService implements ISortService {
+
+    static final Logger LOGGER = LogManager.getLogger(CocktailSortService.class);
 
     @Override
     public final NumberArray sort(final NumberArray numberArray) {
         int[] array = numberArray.getArray();
-        boolean isSorted = false;
-        int temp;
-        while (!isSorted) {
-            isSorted = true;
-            for (int i = 0; i < array.length - 1; i++) {
+        int tempVariable;
+        int left = 0;
+        int right = array.length - 1;
+        do {
+            for (int i = left; i < right; i++) {
                 if (array[i] > array[i + 1]) {
-                    isSorted = false;
-                    temp = array[i];
+                    tempVariable = array[i];
                     array[i] = array[i + 1];
-                    array[i + 1] = temp;
+                    array[i + 1] = tempVariable;
                 }
             }
-        }
+            right--;
+            for (int i = right; i > left; i--) {
+                if (array[i] < array[i - 1]) {
+                    tempVariable = array[i];
+                    array[i] = array[i - 1];
+                    array[i - 1] = tempVariable;
+                }
+            }
+            left++;
+        } while (left < right);
         return new NumberArray(array);
     }
 
