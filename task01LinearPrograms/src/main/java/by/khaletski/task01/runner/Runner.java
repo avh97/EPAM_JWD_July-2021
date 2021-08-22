@@ -30,7 +30,5 @@ public class Runner {
         TaskSwitcher taskSwitcher = new TaskSwitcher();
         taskSwitcher.startApplication();
         logger.info("Application has been successfully executed");
-        System.out.println(24 % 5 + 1);
-
     }
 }
