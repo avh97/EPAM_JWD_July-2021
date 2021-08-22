@@ -40,7 +40,7 @@ public class CocktailSortService implements ISortService {
                     array[i + 1] = tempVariable;
                 }
             }
-            right--;
+            right--; //TODO запомнить момент последнего обмена
             for (int i = right; i > left; i--) {
                 if (array[i] < array[i - 1]) {
                     tempVariable = array[i];

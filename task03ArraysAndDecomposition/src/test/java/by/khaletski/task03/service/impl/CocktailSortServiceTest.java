@@ -21,6 +21,7 @@ public class CocktailSortServiceTest {
                         new int[]{3, 5, 5, 10, 12, 12, 12, 25, 99, 333}},
                 {new NumberArray(new int[]{-5, 12, 3, 55, -55, 55, 66, 3, 8, 9}),
                         new int[]{-55, -5, 3, 3, 8, 9, 12, 55, 55, 66}}};
+        //TODO 1,2 элемента, из одного
     }
 
     @Test(dataProvider = "dataProvider")
