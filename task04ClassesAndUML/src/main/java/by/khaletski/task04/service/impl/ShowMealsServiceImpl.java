@@ -6,20 +6,19 @@ import by.khaletski.task04.entity.TourList;
 import by.khaletski.task04.entity.enums.Meals;
 import by.khaletski.task04.service.ShowMealsService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class ShowMealsServiceImpl implements ShowMealsService {
 
     @Override
     public final TourList showMeals(TourList tourList, Meals meals) {
-        List<Tour> tourArrayList = new ArrayList<>();
-        for (int i = 0; i < tourList.getSize(); i++) {
-            if (tourList.getTours().get(i).getMeals().equals(meals)) {
-                tourArrayList.add(tourList.getTours().get(i));
-            }
-        }
-        return new TourList(tourArrayList);
+        tourList.setTours(tourList.getTours()
+                .stream()
+                .filter(s -> s.getMeals() == meals)
+                .sorted(Comparator.comparing(Tour::getType))
+                .collect(Collectors.toList()));
+        return tourList;
     }
 
     @Override

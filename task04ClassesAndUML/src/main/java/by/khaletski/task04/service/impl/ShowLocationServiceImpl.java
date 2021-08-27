@@ -6,20 +6,19 @@ import by.khaletski.task04.entity.TourList;
 import by.khaletski.task04.entity.enums.Location;
 import by.khaletski.task04.service.ShowLocationService;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Comparator;
+import java.util.stream.Collectors;
 
 public class ShowLocationServiceImpl implements ShowLocationService {
 
     @Override
     public final TourList showLocation(TourList tourList, Location location) {
-        List<Tour> tourArrayList = new ArrayList<>();
-        for (int i = 0; i < tourList.getSize(); i++) {
-            if (tourList.getTours().get(i).getLocation().equals(location)) {
-                tourArrayList.add(tourList.getTours().get(i));
-            }
-        }
-        return new TourList(tourArrayList);
+        tourList.setTours(tourList.getTours()
+                .stream()
+                .filter(s -> s.getLocation() == location)
+                .sorted(Comparator.comparing(Tour::getType))
+                .collect(Collectors.toList()));
+        return tourList;
     }
 
     @Override

@@ -2,6 +2,8 @@ package by.khaletski.task04.controller;
 
 import by.khaletski.task04.controller.command.Command;
 import by.khaletski.task04.controller.command.CommandName;
+import by.khaletski.task04.controller.command.impl.Exit;
+import by.khaletski.task04.controller.command.impl.WrongRequest;
 import by.khaletski.task04.controller.command.impl.location.ShowLocationGreece;
 import by.khaletski.task04.controller.command.impl.location.ShowLocationRussia;
 import by.khaletski.task04.controller.command.impl.location.ShowLocationTurkey;
@@ -23,11 +25,7 @@ import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodOne;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodThree;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodSeven;
 import by.khaletski.task04.controller.command.impl.period.SortByPeriod;
-import by.khaletski.task04.controller.command.impl.type.ShowTypeCruise;
-import by.khaletski.task04.controller.command.impl.type.ShowTypeHealing;
-import by.khaletski.task04.controller.command.impl.type.ShowTypeRecreation;
-import by.khaletski.task04.controller.command.impl.type.ShowTypeShopping;
-import by.khaletski.task04.controller.command.impl.type.SortByType;
+import by.khaletski.task04.controller.command.impl.type.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -63,8 +61,8 @@ public class CommandProvider {
         repository.put(CommandName.SORT_BY_TRANSPORT, new SortByTransport());
         repository.put(CommandName.SORT_BY_PERIOD, new SortByPeriod());
         repository.put(CommandName.SORT_BY_PRICE, new SortByPrice());
-//        repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
-//        repository.put(CommandName.EXIT, new Exit());
+        repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
+        repository.put(CommandName.EXIT, new Exit());
     }
 
     final Command getCommand(final String name) {
