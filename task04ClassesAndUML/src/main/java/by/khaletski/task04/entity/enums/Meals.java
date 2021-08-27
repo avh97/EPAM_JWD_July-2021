@@ -3,7 +3,6 @@ package by.khaletski.task04.entity.enums;
 public enum Meals {
     NONE("none"),
     ONE("one"),
-    TWO("two"),
     THREE("three");
 
 

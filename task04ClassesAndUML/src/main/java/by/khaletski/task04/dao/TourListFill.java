@@ -2,7 +2,6 @@ package by.khaletski.task04.dao;
 
 import by.khaletski.task04.entity.Tour;
 import by.khaletski.task04.entity.TourList;
-import by.khaletski.task04.entity.enums.Hotel;
 import by.khaletski.task04.entity.enums.Location;
 import by.khaletski.task04.entity.enums.Meals;
 import by.khaletski.task04.entity.enums.Transport;
@@ -28,11 +27,10 @@ public class TourListFill {
                 String[] strings = string.split(", ");
                 tour.setType(Type.valueOf(strings[0]));
                 tour.setLocation(Location.valueOf(strings[1]));
-                tour.setHotel(Hotel.valueOf(strings[2]));
-                tour.setMeals(Meals.valueOf(strings[3]));
-                tour.setTransport(Transport.valueOf(strings[4]));
-                tour.setPeriod(Integer.parseInt(strings[5]));
-                tour.setPrice(Integer.parseInt(strings[6]));
+                tour.setMeals(Meals.valueOf(strings[2]));
+                tour.setTransport(Transport.valueOf(strings[3]));
+                tour.setPeriod(Integer.parseInt(strings[4]));
+                tour.setPrice(Integer.parseInt(strings[5]));
                 tours.add(tour);
             }
         } catch (IOException e) {

@@ -1,9 +1,7 @@
 package by.khaletski.task04.entity.enums;
 
 public enum Location {
-    CROATIA("Croatia"),
     GREECE("Greece"),
-    LITHUANIA("Lithuania"),
     RUSSIA("Russia"),
     UKRAINE("Ukraine"),
     TURKEY("Turkey");

@@ -7,7 +7,6 @@ import java.util.Objects;
 public class Tour {
     private Type type;
     private Location location;
-    private Hotel hotel;
     private Meals meals;
     private Transport transport;
     private int period;
@@ -17,10 +16,9 @@ public class Tour {
 
     }
 
-    public Tour(Type type, Location location, Hotel hotel, Meals meals, Transport transport, int period, int price) {
+    public Tour(Type type, Location location, Meals meals, Transport transport, int period, int price) {
         this.type = type;
         this.location = location;
-        this.hotel = hotel;
         this.meals = meals;
         this.transport = transport;
         this.period = period;
@@ -41,14 +39,6 @@ public class Tour {
 
     public void setLocation(Location location) {
         this.location = location;
-    }
-
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
     }
 
     public Meals getMeals() {
@@ -92,21 +82,19 @@ public class Tour {
                 && getPrice() == tour.getPrice()
                 && getType() == tour.getType()
                 && getLocation() == tour.getLocation()
-                && getHotel() == tour.getHotel()
                 && getMeals() == tour.getMeals()
                 && getTransport() == tour.getTransport();
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getType(), getLocation(), getHotel(), getMeals(), getTransport(), getPeriod(), getPrice());
+        return Objects.hash(getType(), getLocation(), getMeals(), getTransport(), getPeriod(), getPrice());
     }
 
     @Override
     public String toString() {
         return "Tour: type - " + type + ", "
                 + "location - " + location + ", "
-                + "hotel - " + hotel + ", "
                 + "meals - " + meals + ", "
                 + "transport - " + transport + ", "
                 + "price - " + price + " USD" + ", "
