@@ -31,5 +31,4 @@ public enum CommandName {
     SORT_BY_TRANSPORT,
     SORT_BY_TYPE,
     WRONG_REQUEST,
-    EXIT
 }

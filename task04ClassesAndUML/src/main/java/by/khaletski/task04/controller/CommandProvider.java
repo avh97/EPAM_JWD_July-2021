@@ -2,7 +2,6 @@ package by.khaletski.task04.controller;
 
 import by.khaletski.task04.controller.command.Command;
 import by.khaletski.task04.controller.command.CommandName;
-import by.khaletski.task04.controller.command.impl.Exit;
 import by.khaletski.task04.controller.command.impl.WrongRequest;
 import by.khaletski.task04.controller.command.impl.location.ShowLocationGreece;
 import by.khaletski.task04.controller.command.impl.location.ShowLocationRussia;
@@ -62,7 +61,6 @@ public class CommandProvider {
         repository.put(CommandName.SORT_BY_PERIOD, new SortByPeriod());
         repository.put(CommandName.SORT_BY_PRICE, new SortByPrice());
         repository.put(CommandName.WRONG_REQUEST, new WrongRequest());
-        repository.put(CommandName.EXIT, new Exit());
     }
 
     final Command getCommand(final String name) {
