@@ -9,6 +9,6 @@ public class SortByMeals implements Command {
     @Override
     public TourList execute(final String request) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getSortByTypeServiceImpl().sortByType();
+        return serviceFactory.getSortByMealsServiceImpl().sortByMeals();
     }
 }

@@ -1,6 +1,5 @@
 package by.khaletski.task04.service.factory;
 
-import by.khaletski.task04.service.SelectLocaleService;
 import by.khaletski.task04.service.ShowLocationService;
 import by.khaletski.task04.service.ShowMaxPriceService;
 import by.khaletski.task04.service.ShowMealsService;
@@ -13,24 +12,13 @@ import by.khaletski.task04.service.SortByPeriodService;
 import by.khaletski.task04.service.SortByPriceService;
 import by.khaletski.task04.service.SortByTransportService;
 import by.khaletski.task04.service.SortByTypeService;
-import by.khaletski.task04.service.impl.SelectLocaleServiceImpl;
-import by.khaletski.task04.service.impl.ShowLocationServiceImpl;
-import by.khaletski.task04.service.impl.ShowMaxPriceServiceImpl;
-import by.khaletski.task04.service.impl.ShowMealsServiceImpl;
-import by.khaletski.task04.service.impl.ShowMinPeriodServiceImpl;
-import by.khaletski.task04.service.impl.ShowTransportServiceImpl;
-import by.khaletski.task04.service.impl.ShowTypeServiceImpl;
-import by.khaletski.task04.service.impl.SortByLocationServiceImpl;
-import by.khaletski.task04.service.impl.SortByMealsServiceImpl;
-import by.khaletski.task04.service.impl.SortByPeriodServiceImpl;
-import by.khaletski.task04.service.impl.SortByPriceServiceImpl;
-import by.khaletski.task04.service.impl.SortByTransportServiceImpl;
-import by.khaletski.task04.service.impl.SortByTypeServiceImpl;
+import by.khaletski.task04.service.impl.*;
 
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final SelectLocaleService selectLocaleService = new SelectLocaleServiceImpl();
+    private final PrintCommandsImpl printCommands = new PrintCommandsImpl();
+    private final PrintTourListImpl printTourList = new PrintTourListImpl();
     private final ShowTypeService showTypeService = new ShowTypeServiceImpl();
     private final ShowLocationService showLocationService = new ShowLocationServiceImpl();
     private final ShowMealsService showMealsService = new ShowMealsServiceImpl();
@@ -52,8 +40,12 @@ public class ServiceFactory {
         return INSTANCE;
     }
 
-    public SelectLocaleService getSelectLocaleServiceImpl() {
-        return selectLocaleService;
+    public PrintCommandsImpl getPrintCommandsImpl() {
+        return printCommands;
+    }
+
+    public PrintTourListImpl getPrintTourListImpl() {
+        return printTourList;
     }
 
     public ShowTypeService getShowTypeServiceImpl() {

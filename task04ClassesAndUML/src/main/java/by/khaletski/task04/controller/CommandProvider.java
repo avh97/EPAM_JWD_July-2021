@@ -33,21 +33,21 @@ public class CommandProvider {
     private final Map<CommandName, Command> repository = new HashMap<>();
 
     CommandProvider() {
-        repository.put(CommandName.SHOW_CRUISE, new ShowTypeCruise());
-        repository.put(CommandName.SHOW_EXCURSION, new ShowTypeCruise());
-        repository.put(CommandName.SHOW_HEALING, new ShowTypeHealing());
-        repository.put(CommandName.SHOW_RECREATION, new ShowTypeRecreation());
-        repository.put(CommandName.SHOW_SHOPPING, new ShowTypeShopping());
-        repository.put(CommandName.SHOW_GREECE, new ShowLocationGreece());
-        repository.put(CommandName.SHOW_RUSSIA, new ShowLocationRussia());
-        repository.put(CommandName.SHOW_TURKEY, new ShowLocationTurkey());
-        repository.put(CommandName.SHOW_UKRAINE, new ShowLocationUkraine());
+        repository.put(CommandName.SHOW_TYPE_CRUISE, new ShowTypeCruise());
+        repository.put(CommandName.SHOW_TYPE_EXCURSION, new ShowTypeCruise());
+        repository.put(CommandName.SHOW_TYPE_HEALING, new ShowTypeHealing());
+        repository.put(CommandName.SHOW_TYPE_RECREATION, new ShowTypeRecreation());
+        repository.put(CommandName.SHOW_TYPE_SHOPPING, new ShowTypeShopping());
+        repository.put(CommandName.SHOW_LOCATION_GREECE, new ShowLocationGreece());
+        repository.put(CommandName.SHOW_LOCATION_RUSSIA, new ShowLocationRussia());
+        repository.put(CommandName.SHOW_LOCATION_TURKEY, new ShowLocationTurkey());
+        repository.put(CommandName.SHOW_LOCATION_UKRAINE, new ShowLocationUkraine());
         repository.put(CommandName.SHOW_NONE_MEAL, new ShowMealNone());
         repository.put(CommandName.SHOW_ONE_MEAL, new ShowMealOne());
         repository.put(CommandName.SHOW_THREE_MEAL, new ShowMealThree());
-        repository.put(CommandName.SHOW_AIRPLANE, new ShowTransportAirplane());
-        repository.put(CommandName.SHOW_BUS, new ShowTransportBus());
-        repository.put(CommandName.SHOW_TRAIN, new ShowTransportTrain());
+        repository.put(CommandName.SHOW_TRANSPORT_AIRPLANE, new ShowTransportAirplane());
+        repository.put(CommandName.SHOW_TRANSPORT_BUS, new ShowTransportBus());
+        repository.put(CommandName.SHOW_TRANSPORT_TRAIN, new ShowTransportTrain());
         repository.put(CommandName.SHOW_MIN_PERIOD_1_DAY, new ShowMinPeriodOne());
         repository.put(CommandName.SHOW_MIN_PERIOD_3_DAY, new ShowMinPeriodThree());
         repository.put(CommandName.SHOW_MIN_PERIOD_7_DAY, new ShowMinPeriodSeven());
