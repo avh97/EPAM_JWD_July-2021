@@ -20,7 +20,7 @@ import by.khaletski.task04.controller.command.impl.transport.ShowTransportAirpla
 import by.khaletski.task04.controller.command.impl.transport.ShowTransportBus;
 import by.khaletski.task04.controller.command.impl.transport.ShowTransportTrain;
 import by.khaletski.task04.controller.command.impl.transport.SortByTransport;
-import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodOne;
+import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodTen;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodThree;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodSeven;
 import by.khaletski.task04.controller.command.impl.period.SortByPeriod;
@@ -52,9 +52,9 @@ public class CommandProvider {
         repository.put(CommandName.SHOW_TRANSPORT_AIRPLANE, new ShowTransportAirplane());
         repository.put(CommandName.SHOW_TRANSPORT_BUS, new ShowTransportBus());
         repository.put(CommandName.SHOW_TRANSPORT_TRAIN, new ShowTransportTrain());
-        repository.put(CommandName.SHOW_MIN_PERIOD_1_DAY, new ShowMinPeriodOne());
         repository.put(CommandName.SHOW_MIN_PERIOD_3_DAY, new ShowMinPeriodThree());
         repository.put(CommandName.SHOW_MIN_PERIOD_7_DAY, new ShowMinPeriodSeven());
+        repository.put(CommandName.SHOW_MIN_PERIOD_10_DAY, new ShowMinPeriodTen());
         repository.put(CommandName.SHOW_MAX_PRICE_100_USD, new ShowMaxPrice100());
         repository.put(CommandName.SHOW_MAX_PRICE_500_USD, new ShowMaxPrice500());
         repository.put(CommandName.SHOW_MAX_PRICE_1000_USD, new ShowMaxPrice1000());

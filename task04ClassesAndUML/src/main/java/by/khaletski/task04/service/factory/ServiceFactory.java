@@ -7,7 +7,7 @@ import by.khaletski.task04.service.ShowMinPeriodService;
 import by.khaletski.task04.service.ShowTransportService;
 import by.khaletski.task04.service.ShowTypeService;
 import by.khaletski.task04.service.SortByLocationService;
-import by.khaletski.task04.service.SortByMealsService;
+import by.khaletski.task04.service.SortByMealService;
 import by.khaletski.task04.service.SortByPeriodService;
 import by.khaletski.task04.service.SortByPriceService;
 import by.khaletski.task04.service.SortByTransportService;
@@ -20,7 +20,7 @@ import by.khaletski.task04.service.impl.ShowMinPeriodServiceImpl;
 import by.khaletski.task04.service.impl.ShowTransportServiceImpl;
 import by.khaletski.task04.service.impl.ShowTypeServiceImpl;
 import by.khaletski.task04.service.impl.SortByLocationServiceImpl;
-import by.khaletski.task04.service.impl.SortByMealsServiceImpl;
+import by.khaletski.task04.service.impl.SortByMealServiceImpl;
 import by.khaletski.task04.service.impl.SortByPeriodServiceImpl;
 import by.khaletski.task04.service.impl.SortByPriceServiceImpl;
 import by.khaletski.task04.service.impl.SortByTransportServiceImpl;
@@ -38,7 +38,7 @@ public final class ServiceFactory {
     private final ShowMaxPriceService showMaxPriceService = new ShowMaxPriceServiceImpl();
     private final SortByTypeService sortByTypeService = new SortByTypeServiceImpl();
     private final SortByLocationService sortByLocationService = new SortByLocationServiceImpl();
-    private final SortByMealsService sortByMealsService = new SortByMealsServiceImpl();
+    private final SortByMealService sortByMealService = new SortByMealServiceImpl();
     private final SortByTransportService sortByTransportService = new SortByTransportServiceImpl();
     private final SortByPeriodService sortByPeriodService = new SortByPeriodServiceImpl();
     private final SortByPriceService sortByPriceService = new SortByPriceServiceImpl();
@@ -87,8 +87,8 @@ public final class ServiceFactory {
         return sortByLocationService;
     }
 
-    public SortByMealsService getSortByMealsServiceImpl() {
-        return sortByMealsService;
+    public SortByMealService getSortByMealsServiceImpl() {
+        return sortByMealService;
     }
 
     public SortByTransportService getSortByTransportServiceImpl() {

@@ -4,10 +4,10 @@ import by.khaletski.task04.controller.command.Command;
 import by.khaletski.task04.entity.TourList;
 import by.khaletski.task04.service.factory.ServiceFactory;
 
-public class ShowMinPeriodOne implements Command {
+public class ShowMinPeriodTen implements Command {
 
     @Override
     public final TourList execute(final String request) {
-        return ServiceFactory.getInstance().getShowMinPeriodServiceImpl().showMinPeriod(1);
+        return ServiceFactory.getInstance().getShowMinPeriodServiceImpl().showMinPeriod(10);
     }
 }

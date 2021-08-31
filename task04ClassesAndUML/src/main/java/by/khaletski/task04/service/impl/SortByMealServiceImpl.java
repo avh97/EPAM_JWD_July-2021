@@ -3,7 +3,7 @@ package by.khaletski.task04.service.impl;
 import by.khaletski.task04.dao.factory.DAOFactory;
 import by.khaletski.task04.entity.Tour;
 import by.khaletski.task04.entity.TourList;
-import by.khaletski.task04.service.SortByMealsService;
+import by.khaletski.task04.service.SortByMealService;
 
 import java.util.Comparator;
 
@@ -12,7 +12,7 @@ import java.util.Comparator;
  * @version 1.0
  */
 
-public class SortByMealsServiceImpl implements SortByMealsService {
+public class SortByMealServiceImpl implements SortByMealService {
 
     /**
      * This method sorts tours by quantity of meals per day.

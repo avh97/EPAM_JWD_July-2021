@@ -12,7 +12,7 @@ public class Runner {
     public static void main(String[] args) {
         LOGGER.debug("Program started.");
         Controller controller = new Controller();
-        controller.startApplication(Localization.RU);
+        controller.startApplication(Localization.US);
         LOGGER.debug("Program executed.");
     }
 }
