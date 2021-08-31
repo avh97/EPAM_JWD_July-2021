@@ -10,9 +10,9 @@ public class Runner {
     static final Logger LOGGER = LogManager.getLogger(Runner.class);
 
     public static void main(String[] args) {
-        LOGGER.info("Program started.");
+        LOGGER.debug("Program started.");
         Controller controller = new Controller();
-        controller.startApplication(Localization.US);
-        LOGGER.info("Program executed.");
+        controller.startApplication(Localization.RU);
+        LOGGER.debug("Program executed.");
     }
 }

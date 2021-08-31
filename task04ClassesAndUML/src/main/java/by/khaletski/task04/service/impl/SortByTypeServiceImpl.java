@@ -7,7 +7,18 @@ import by.khaletski.task04.service.SortByTypeService;
 
 import java.util.Comparator;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class SortByTypeServiceImpl implements SortByTypeService {
+
+    /**
+     * This method sorts tours by type.
+     * @param tourList
+     * @return sorted tour list by type
+     */
 
     @Override
     public final TourList sortByType(TourList tourList) {

@@ -7,7 +7,18 @@ import by.khaletski.task04.service.SortByLocationService;
 
 import java.util.Comparator;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class SortByLocationServiceImpl implements SortByLocationService {
+
+    /**
+     * This method sorts tours by location.
+     * @param tourList
+     * @return sorted tour list by location
+     */
 
     @Override
     public final TourList sortByLocation(TourList tourList) {

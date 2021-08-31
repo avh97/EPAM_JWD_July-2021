@@ -7,7 +7,18 @@ import by.khaletski.task04.service.SortByMealsService;
 
 import java.util.Comparator;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class SortByMealsServiceImpl implements SortByMealsService {
+
+    /**
+     * This method sorts tours by quantity of meals per day.
+     * @param tourList
+     * @return sorted tour list by quantity of meals per day
+     */
 
     @Override
     public final TourList sortByMeals(TourList tourList) {

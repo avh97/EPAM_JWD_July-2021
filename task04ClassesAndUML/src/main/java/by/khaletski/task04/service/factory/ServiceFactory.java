@@ -12,7 +12,6 @@ import by.khaletski.task04.service.SortByPeriodService;
 import by.khaletski.task04.service.SortByPriceService;
 import by.khaletski.task04.service.SortByTransportService;
 import by.khaletski.task04.service.SortByTypeService;
-import by.khaletski.task04.service.impl.PrintCommandsImpl;
 import by.khaletski.task04.service.impl.PrintTourListImpl;
 import by.khaletski.task04.service.impl.ShowLocationServiceImpl;
 import by.khaletski.task04.service.impl.ShowMaxPriceServiceImpl;
@@ -30,7 +29,6 @@ import by.khaletski.task04.service.impl.SortByTypeServiceImpl;
 public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final PrintCommandsImpl printCommands = new PrintCommandsImpl();
     private final PrintTourListImpl printTourList = new PrintTourListImpl();
     private final ShowTypeService showTypeService = new ShowTypeServiceImpl();
     private final ShowLocationService showLocationService = new ShowLocationServiceImpl();
@@ -51,10 +49,6 @@ public final class ServiceFactory {
 
     public static ServiceFactory getInstance() {
         return INSTANCE;
-    }
-
-    public PrintCommandsImpl getPrintCommandsImpl() {
-        return printCommands;
     }
 
     public PrintTourListImpl getPrintTourListImpl() {

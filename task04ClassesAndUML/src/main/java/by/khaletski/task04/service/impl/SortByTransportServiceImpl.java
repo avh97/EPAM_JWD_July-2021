@@ -7,7 +7,18 @@ import by.khaletski.task04.service.SortByTransportService;
 
 import java.util.Comparator;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class SortByTransportServiceImpl implements SortByTransportService {
+
+    /**
+     * This method sorts tours by transportation type.
+     * @param tourList
+     * @return sorted tour list by transport
+     */
 
     @Override
     public final TourList sortByTransport(final TourList tourList) {

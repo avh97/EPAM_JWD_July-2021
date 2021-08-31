@@ -7,7 +7,18 @@ import by.khaletski.task04.service.SortByPriceService;
 
 import java.util.Comparator;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class SortByPriceServiceImpl implements SortByPriceService {
+
+    /**
+     * This method sorts tours by price.
+     * @param tourList
+     * @return sorted tour list by price
+     */
 
     @Override
     public final TourList sortByPrice(TourList tourList) {

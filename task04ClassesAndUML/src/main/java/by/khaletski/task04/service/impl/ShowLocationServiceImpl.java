@@ -1,15 +1,25 @@
 package by.khaletski.task04.service.impl;
 
 import by.khaletski.task04.dao.factory.DAOFactory;
-import by.khaletski.task04.entity.Tour;
 import by.khaletski.task04.entity.TourList;
 import by.khaletski.task04.entity.enums.Location;
 import by.khaletski.task04.service.ShowLocationService;
 
-import java.util.Comparator;
 import java.util.stream.Collectors;
 
+/**
+ * @author Anton Khaletski
+ * @version 1.0
+ */
+
 public class ShowLocationServiceImpl implements ShowLocationService {
+
+    /**
+     * This method gets all tours with a particular location.
+     * @param tourList
+     * @param location
+     * @return tour list with particular location
+     */
 
     @Override
     public final TourList showLocation(final TourList tourList, final Location location) {
