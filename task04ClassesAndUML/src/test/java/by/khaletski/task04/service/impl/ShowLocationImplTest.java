@@ -1,4 +1,4 @@
-package by.khaletski.task04.service;
+package by.khaletski.task04.service.impl;
 
 import by.khaletski.task04.entity.Tour;
 import by.khaletski.task04.entity.TourList;
@@ -11,10 +11,10 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class ShowTypeServiceTest {
+class ShowLocationImplTest {
 
     @Test
-    void ShowTypeTest() {
+    void showLocationTest() {
         TourList unsorted = new TourList();
         unsorted.addTour(new Tour(Type.EXCURSION, Location.RUSSIA, Meals.NONE, Transport.TRAIN,
                 5, 100 ));
@@ -31,8 +31,9 @@ class ShowTypeServiceTest {
         TourList sorted = new TourList();
         sorted.addTour(new Tour(Type.HEALING, Location.UKRAINE, Meals.THREE, Transport.BUS,
                 14, 800));
-        sorted.addTour(new Tour(Type.HEALING, Location.TURKEY, Meals.THREE, Transport.AIRPLANE,
-                10, 700));
-        assertEquals(ServiceFactory.getInstance().getShowTypeServiceImpl().showType(unsorted, Type.HEALING), sorted);
+        sorted.addTour(new Tour(Type.SHOPPING, Location.UKRAINE, Meals.NONE, Transport.BUS,
+                3, 90));
+        assertEquals(ServiceFactory.getInstance().getShowLocationServiceImpl()
+                .showLocation(unsorted, Location.UKRAINE), sorted);
     }
 }

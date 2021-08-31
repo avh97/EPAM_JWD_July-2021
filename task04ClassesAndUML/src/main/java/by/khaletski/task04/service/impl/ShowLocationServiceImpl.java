@@ -16,7 +16,6 @@ public class ShowLocationServiceImpl implements ShowLocationService {
         tourList.setTours(tourList.getTours()
                 .stream()
                 .filter(s -> s.getLocation() == location)
-                .sorted(Comparator.comparing(Tour::getType))
                 .collect(Collectors.toList()));
         return tourList;
     }

@@ -16,7 +16,6 @@ public class ShowTypeServiceImpl implements ShowTypeService {
         tourList.setTours(tourList.getTours()
                 .stream()
                 .filter(s -> s.getType() == type)
-                .sorted(Comparator.comparing(Tour::getLocation))
                 .collect(Collectors.toList()));
         return tourList;
     }

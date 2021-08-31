@@ -14,8 +14,7 @@ public class ShowMinPeriodServiceImpl implements ShowMinPeriodService {
     public final TourList showMinPeriod(TourList tourList, int minPeriod) {
         tourList.setTours(tourList.getTours()
                 .stream()
-                .filter(s -> s.getPeriod() == minPeriod)
-                .sorted(Comparator.comparing(Tour::getType))
+                .filter(s -> s.getPeriod() >= minPeriod)
                 .collect(Collectors.toList()));
         return tourList;
     }

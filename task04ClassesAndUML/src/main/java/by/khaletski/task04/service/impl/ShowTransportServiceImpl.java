@@ -16,7 +16,6 @@ public class ShowTransportServiceImpl implements ShowTransportService {
         tourList.setTours(tourList.getTours()
                 .stream()
                 .filter(s -> s.getTransport() == transport)
-                .sorted(Comparator.comparing(Tour::getType))
                 .collect(Collectors.toList()));
         return tourList;
     }

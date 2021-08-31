@@ -16,7 +16,6 @@ public class ShowMealsServiceImpl implements ShowMealsService {
         tourList.setTours(tourList.getTours()
                 .stream()
                 .filter(s -> s.getMeals() == meals)
-                .sorted(Comparator.comparing(Tour::getType))
                 .collect(Collectors.toList()));
         return tourList;
     }

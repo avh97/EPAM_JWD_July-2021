@@ -14,8 +14,7 @@ public class ShowMaxPriceServiceImpl implements ShowMaxPriceService {
     public final TourList showMaxPrice(TourList tourList, int maxPrice) {
         tourList.setTours(tourList.getTours()
                 .stream()
-                .filter(s -> s.getPrice() == maxPrice)
-                .sorted(Comparator.comparing(Tour::getType))
+                .filter(s -> s.getPrice() <= maxPrice)
                 .collect(Collectors.toList()));
         return tourList;
     }
