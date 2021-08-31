@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class PrintCommandsImpl implements by.khaletski.task04.service.PrintCommands {
 
     @Override
-    public void printCommands() {
+    public final void printCommands() {
         String[] string = Arrays.toString(CommandName.values())
                 .replaceAll("^.|.$", "")
                 .split(", ");

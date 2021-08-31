@@ -17,8 +17,7 @@ public class SortByPriceServiceImpl implements SortByPriceService {
 
     @Override
     public final TourList sortByPrice() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByPrice(tourList);
     }
 }

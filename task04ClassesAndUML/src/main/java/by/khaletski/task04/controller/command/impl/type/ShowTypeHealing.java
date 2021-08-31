@@ -8,8 +8,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowTypeHealing implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowTypeServiceImpl().showType(Type.HEALING);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowTypeServiceImpl().showType(Type.HEALING);
     }
 }

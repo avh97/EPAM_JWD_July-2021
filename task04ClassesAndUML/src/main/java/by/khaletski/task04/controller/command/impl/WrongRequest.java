@@ -6,7 +6,7 @@ import by.khaletski.task04.entity.TourList;
 public final class WrongRequest implements Command {
 
     @Override
-    public TourList execute(final String request) {
+    public final TourList execute(final String request) {
         return new TourList();
     }
 }

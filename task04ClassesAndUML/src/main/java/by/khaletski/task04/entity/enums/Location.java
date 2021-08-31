@@ -8,13 +8,13 @@ public enum Location {
 
 
 
-    private final String string;
+    private final String value;
 
-    private Location(String string) {
-        this.string = string;
+    Location(final String newValue) {
+        value = newValue;
     }
 
     @Override public String toString() {
-        return string;
+        return value;
     }
 }

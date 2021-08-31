@@ -1,6 +1,9 @@
 package by.khaletski.task04.entity;
 
-import by.khaletski.task04.entity.enums.*;
+import by.khaletski.task04.entity.enums.Location;
+import by.khaletski.task04.entity.enums.Meals;
+import by.khaletski.task04.entity.enums.Transport;
+import by.khaletski.task04.entity.enums.Type;
 
 import java.util.Objects;
 
@@ -16,67 +19,72 @@ public class Tour {
 
     }
 
-    public Tour(Type type, Location location, Meals meals, Transport transport, int period, int price) {
-        this.type = type;
-        this.location = location;
-        this.meals = meals;
-        this.transport = transport;
-        this.period = period;
-        this.price = price;
+    public Tour(final Type newType, final Location newLocation, final Meals newMeals, final Transport newTransport,
+                final int newPeriod, final int newPrice) {
+        type = newType;
+        location = newLocation;
+        meals = newMeals;
+        transport = newTransport;
+        period = newPeriod;
+        price = newPrice;
     }
 
-    public Type getType() {
+    public final Type getType() {
         return type;
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public final void setType(final Type newType) {
+        type = newType;
     }
 
-    public Location getLocation() {
+    public final Location getLocation() {
         return location;
     }
 
-    public void setLocation(Location location) {
-        this.location = location;
+    public final void setLocation(final Location newLocation) {
+        location = newLocation;
     }
 
-    public Meals getMeals() {
+    public final Meals getMeals() {
         return meals;
     }
 
-    public void setMeals(Meals meals) {
-        this.meals = meals;
+    public final void setMeals(final Meals newMeals) {
+        meals = newMeals;
     }
 
-    public Transport getTransport() {
+    public final Transport getTransport() {
         return transport;
     }
 
-    public void setTransport(Transport transport) {
-        this.transport = transport;
+    public final void setTransport(final Transport newTransport) {
+        transport = newTransport;
     }
 
-    public int getPeriod() {
+    public final int getPeriod() {
         return period;
     }
 
-    public void setPeriod(int period) {
-        this.period = period;
+    public final void setPeriod(final int newPeriod) {
+        period = newPeriod;
     }
 
-    public int getPrice() {
+    public final int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
+    public final void setPrice(final int newPrice) {
+        price = newPrice;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public final boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
         Tour tour = (Tour) o;
         return getPeriod() == tour.getPeriod()
                 && getPrice() == tour.getPrice()
@@ -87,12 +95,12 @@ public class Tour {
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         return Objects.hash(getType(), getLocation(), getMeals(), getTransport(), getPeriod(), getPrice());
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return "Tour: type - " + type + ", "
                 + "location - " + location + ", "
                 + "meals - " + meals + ", "

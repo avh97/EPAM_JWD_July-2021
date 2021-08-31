@@ -7,8 +7,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowMaxPrice100 implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowMaxPriceServiceImpl().showMaxPrice(100);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowMaxPriceServiceImpl().showMaxPrice(100);
     }
 }

@@ -7,8 +7,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class SortByTransport implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getSortByTransportServiceImpl().sortByTransport();
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getSortByTransportServiceImpl().sortByTransport();
     }
 }

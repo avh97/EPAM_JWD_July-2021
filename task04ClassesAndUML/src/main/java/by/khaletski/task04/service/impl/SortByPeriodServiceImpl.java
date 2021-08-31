@@ -17,8 +17,7 @@ public class SortByPeriodServiceImpl implements SortByPeriodService {
 
     @Override
     public final TourList sortByPeriod() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByPeriod(tourList);
     }
 }

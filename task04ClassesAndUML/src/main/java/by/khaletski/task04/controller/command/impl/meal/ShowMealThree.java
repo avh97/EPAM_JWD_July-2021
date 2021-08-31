@@ -8,8 +8,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowMealThree implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowMealsServiceImpl().showMeals(Meals.THREE);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowMealsServiceImpl().showMeals(Meals.THREE);
     }
 }

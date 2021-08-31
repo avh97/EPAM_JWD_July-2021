@@ -23,8 +23,7 @@ public class ShowMealsServiceImpl implements ShowMealsService {
 
     @Override
     public final TourList showMeals(Meals meals) {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return showMeals(tourList, meals);
     }
 }

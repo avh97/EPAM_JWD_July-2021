@@ -17,8 +17,7 @@ public class SortByTypeServiceImpl implements SortByTypeService {
 
     @Override
     public final TourList sortByType() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByType(tourList);
     }
 }

@@ -8,8 +8,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowTypeCruise implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowTypeServiceImpl().showType(Type.CRUISE);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowTypeServiceImpl().showType(Type.CRUISE);
     }
 }

@@ -17,8 +17,7 @@ public class SortByLocationServiceImpl implements SortByLocationService {
 
     @Override
     public final TourList sortByLocation() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByLocation(tourList);
     }
 }

@@ -24,7 +24,11 @@ import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodOne;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodThree;
 import by.khaletski.task04.controller.command.impl.period.ShowMinPeriodSeven;
 import by.khaletski.task04.controller.command.impl.period.SortByPeriod;
-import by.khaletski.task04.controller.command.impl.type.*;
+import by.khaletski.task04.controller.command.impl.type.ShowTypeCruise;
+import by.khaletski.task04.controller.command.impl.type.ShowTypeHealing;
+import by.khaletski.task04.controller.command.impl.type.ShowTypeRecreation;
+import by.khaletski.task04.controller.command.impl.type.ShowTypeShopping;
+import by.khaletski.task04.controller.command.impl.type.SortByType;
 
 import java.util.HashMap;
 import java.util.Map;

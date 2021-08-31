@@ -21,15 +21,12 @@ public class Controller {
         return executionCommand.execute(request);
     }
 
-    public void startApplication(Locale locale) {
-        ResourceBundle resourceBundle = null;
+    public final void startApplication(final Locale locale) {
+        java.util.Locale usLocale = new java.util.Locale("us", "US");
+        ResourceBundle resourceBundle = ResourceBundle.getBundle("locale_US", usLocale);
         if (locale.equals(Locale.RU)) {
             java.util.Locale ruLocale = new java.util.Locale("ru", "RU");
             resourceBundle = ResourceBundle.getBundle("locale_RU", ruLocale);
-        }
-        if (locale.equals(Locale.US)) {
-            java.util.Locale usLocale = new java.util.Locale("us", "US");
-            resourceBundle = ResourceBundle.getBundle("locale_US", usLocale);
         }
         System.out.print(resourceBundle.getString("start"));
         Controller controller = new Controller();
@@ -47,7 +44,7 @@ public class Controller {
 
 
 
-    public String getTaskName() {
+    public final String getTaskName() {
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
     }

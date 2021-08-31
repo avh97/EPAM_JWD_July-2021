@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 public class ShowLocationServiceImpl implements ShowLocationService {
 
     @Override
-    public final TourList showLocation(TourList tourList, Location location) {
+    public final TourList showLocation(final TourList tourList, final Location location) {
         tourList.setTours(tourList.getTours()
                 .stream()
                 .filter(s -> s.getLocation() == location)
@@ -22,9 +22,8 @@ public class ShowLocationServiceImpl implements ShowLocationService {
     }
 
     @Override
-    public final TourList showLocation(Location location) {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+    public final TourList showLocation(final Location location) {
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return showLocation(tourList, location);
     }
 }

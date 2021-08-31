@@ -6,13 +6,14 @@ public enum Meals {
     THREE("three");
 
 
-    private final String string;
+    private final String value;
 
-    private Meals(String string) {
-        this.string = string;
+    Meals(final String newValue) {
+        value = newValue;
     }
 
-    @Override public String toString() {
-        return string;
+    @Override
+    public String toString() {
+        return value;
     }
 }

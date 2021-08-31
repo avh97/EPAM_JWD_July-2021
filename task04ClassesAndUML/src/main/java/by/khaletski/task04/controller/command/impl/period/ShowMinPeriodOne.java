@@ -7,8 +7,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowMinPeriodOne implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowMinPeriodServiceImpl().showMinPeriod(1);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowMinPeriodServiceImpl().showMinPeriod(1);
     }
 }

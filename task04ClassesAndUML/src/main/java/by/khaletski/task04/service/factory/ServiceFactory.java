@@ -12,9 +12,22 @@ import by.khaletski.task04.service.SortByPeriodService;
 import by.khaletski.task04.service.SortByPriceService;
 import by.khaletski.task04.service.SortByTransportService;
 import by.khaletski.task04.service.SortByTypeService;
-import by.khaletski.task04.service.impl.*;
+import by.khaletski.task04.service.impl.PrintCommandsImpl;
+import by.khaletski.task04.service.impl.PrintTourListImpl;
+import by.khaletski.task04.service.impl.ShowLocationServiceImpl;
+import by.khaletski.task04.service.impl.ShowMaxPriceServiceImpl;
+import by.khaletski.task04.service.impl.ShowMealsServiceImpl;
+import by.khaletski.task04.service.impl.ShowMinPeriodServiceImpl;
+import by.khaletski.task04.service.impl.ShowTransportServiceImpl;
+import by.khaletski.task04.service.impl.ShowTypeServiceImpl;
+import by.khaletski.task04.service.impl.SortByLocationServiceImpl;
+import by.khaletski.task04.service.impl.SortByMealsServiceImpl;
+import by.khaletski.task04.service.impl.SortByPeriodServiceImpl;
+import by.khaletski.task04.service.impl.SortByPriceServiceImpl;
+import by.khaletski.task04.service.impl.SortByTransportServiceImpl;
+import by.khaletski.task04.service.impl.SortByTypeServiceImpl;
 
-public class ServiceFactory {
+public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
     private final PrintCommandsImpl printCommands = new PrintCommandsImpl();

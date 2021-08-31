@@ -17,8 +17,7 @@ public class SortByTransportServiceImpl implements SortByTransportService {
 
     @Override
     public final TourList sortByTransport() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByTransport(tourList);
     }
 }

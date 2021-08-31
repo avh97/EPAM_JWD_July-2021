@@ -8,8 +8,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class ShowLocationTurkey implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getShowLocationServiceImpl().showLocation(Location.TURKEY);
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getShowLocationServiceImpl().showLocation(Location.TURKEY);
     }
 }

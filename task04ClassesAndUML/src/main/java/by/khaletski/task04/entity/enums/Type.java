@@ -8,13 +8,13 @@ public enum Type {
     SHOPPING("shopping");
 
 
-    private final String string;
+    private final String value;
 
-    private Type(String string) {
-        this.string = string;
+    Type(final String newValue) {
+        value = newValue;
     }
 
     @Override public String toString() {
-        return string;
+        return value;
     }
 }

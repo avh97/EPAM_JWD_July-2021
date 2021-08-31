@@ -7,8 +7,7 @@ import by.khaletski.task04.service.factory.ServiceFactory;
 public class SortByLocation implements Command {
 
     @Override
-    public TourList execute(final String request) {
-        ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        return serviceFactory.getSortByLocationServiceImpl().sortByLocation();
+    public final TourList execute(final String request) {
+        return ServiceFactory.getInstance().getSortByLocationServiceImpl().sortByLocation();
     }
 }

@@ -5,13 +5,13 @@ public enum Transport {
     BUS("bus"),
     TRAIN("train");
 
-    private final String string;
+    private final String value;
 
-    private Transport(String string) {
-        this.string = string;
+    Transport(final String newValue) {
+        value = newValue;
     }
 
     @Override public String toString() {
-        return string;
+        return value;
     }
 }

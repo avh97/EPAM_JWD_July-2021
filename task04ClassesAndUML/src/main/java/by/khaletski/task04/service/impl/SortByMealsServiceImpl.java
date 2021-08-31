@@ -17,8 +17,7 @@ public class SortByMealsServiceImpl implements SortByMealsService {
 
     @Override
     public final TourList sortByMeals() {
-        DAOFactory daoFactory = DAOFactory.getInstance();
-        TourList tourList = daoFactory.getTourListFill().fill();
+        TourList tourList = DAOFactory.getInstance().getTourListFill().fill();
         return sortByMeals(tourList);
     }
 }
