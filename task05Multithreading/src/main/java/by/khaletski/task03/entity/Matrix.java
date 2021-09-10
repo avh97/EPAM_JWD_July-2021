@@ -1,6 +1,5 @@
 package by.khaletski.task03.entity;
 
-import by.khaletski.task03.exception.MatrixException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +12,10 @@ public class Matrix {
         matrix = newA;
     }
 
+    public Matrix(int lines, int columns) {
+        matrix = new int[lines][columns];
+    }
+
     public final int getVerticalSize() {
         return matrix.length;
     }
@@ -21,26 +24,18 @@ public class Matrix {
         return matrix[0].length;
     }
 
-    public final int getElement(final int i, final int j) throws MatrixException {
-        if (checkRange(i, j)) {
-            return matrix[i][j];
-        } else {
-            throw new MatrixException();
-        }
+    public final int getElement(final int i, final int j) {
+        return matrix[i][j];
     }
 
-    public final void setElement(final int i, final int j, final int value) throws MatrixException {
-        if (checkRange(i, j)) {
-            matrix[i][j] = value;
-        } else {
-            throw new MatrixException();
-        }
+    public final void setElement(final int i, final int j, final int value) {
+        matrix[i][j] = value;
     }
 
     @Override
     public final String toString() {
         final String blank = " ";
-        StringBuilder s = new StringBuilder("\nMatrix: " + matrix.length + "x"
+        StringBuilder s = new StringBuilder("Matrix: " + matrix.length + "x"
                 + matrix[0].length + "\n");
         for (int[] row : matrix) {
             for (int value : row) {
@@ -49,9 +44,5 @@ public class Matrix {
             s.append("\n");
         }
         return s.toString();
-    }
-
-    private boolean checkRange(final int i, final int j) {
-        return (i >= 0 && i < matrix.length && j >= 0 && j < matrix[0].length);
     }
 }

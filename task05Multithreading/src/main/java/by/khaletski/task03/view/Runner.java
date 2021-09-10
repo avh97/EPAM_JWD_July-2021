@@ -1,5 +1,10 @@
 package by.khaletski.task03.view;
 
+import by.khaletski.task03.entity.Matrix;
+import by.khaletski.task03.service.creator.MatrixRandomServiceCreator;
+import by.khaletski.task03.service.impl.MatrixDiagonalCountDownLatchServiceImpl;
+import by.khaletski.task03.service.impl.MatrixDiagonalTwoThreadServiceImpl;
+
 public class Runner {
 
     /**
@@ -39,7 +44,19 @@ public class Runner {
      * Предложить 4 или более решений задачи.
      */
 
-    public static void main(String[] args) {
-        System.out.println("Hello There!");
+    public static void main(String[] args) throws InterruptedException {
+        MatrixRandomServiceCreator matrixRandomServiceCreator = new MatrixRandomServiceCreator();
+        MatrixDiagonalTwoThreadServiceImpl twoThreadImpl = new MatrixDiagonalTwoThreadServiceImpl();
+        MatrixDiagonalCountDownLatchServiceImpl countDownLatchImpl = new MatrixDiagonalCountDownLatchServiceImpl();
+
+        Matrix matrix;
+        matrix = matrixRandomServiceCreator.createRandomized(10, 1, 10);
+        System.out.println(matrix);
+
+//        twoThreadImpl.setMainDiagonal(matrix, 000);
+//        System.out.println(matrix);
+
+        countDownLatchImpl.setMainDiagonal(matrix, 111);
+        System.out.println(matrix);
     }
 }
