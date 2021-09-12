@@ -6,10 +6,10 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class MatrixDiagonalCountDownLatchServiceImpl {
+public class MatrixCountDownLatchServiceImpl {
     public Matrix setMainDiagonal(Matrix matrix, int value) throws InterruptedException {
         int width = matrix.getHorizontalSize();
-        ExecutorService executor = Executors.newFixedThreadPool(width);
+        ExecutorService executor = Executors.newFixedThreadPool(5);
         CountDownLatch latch = new CountDownLatch(width);
         for (int i = 0; i < width; i++) {
             int finalI = i;

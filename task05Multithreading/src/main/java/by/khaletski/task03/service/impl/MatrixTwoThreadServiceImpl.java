@@ -2,7 +2,7 @@ package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.Matrix;
 
-public class MatrixDiagonalTwoThreadServiceImpl {
+public class MatrixTwoThreadServiceImpl {
     public Matrix setMainDiagonal(Matrix matrix, int value) {
         MyThread thread0 = new MyThread(matrix, value, false);
         MyThread thread1 = new MyThread(matrix, value, true);
