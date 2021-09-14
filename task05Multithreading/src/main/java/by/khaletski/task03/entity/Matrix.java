@@ -38,10 +38,6 @@ public class Matrix {
         }
     }
 
-    public final int[][] getElements() {
-        return a;
-    }
-
     public final void setElement(final int i, final int j, final int value) throws MatrixException {
         if (checkRange(i, j)) {
             a[i][j] = value;
