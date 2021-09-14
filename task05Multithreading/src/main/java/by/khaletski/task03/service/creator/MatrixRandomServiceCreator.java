@@ -1,9 +1,10 @@
 package by.khaletski.task03.service.creator;
 
 import by.khaletski.task03.entity.Matrix;
+import by.khaletski.task03.entity.MatrixException;
 
 public class MatrixRandomServiceCreator {
-    public Matrix createRandomized(int size, int minValue, int maxValue) {
+    public Matrix createRandomized(int size, int minValue, int maxValue) throws MatrixException {
         Matrix matrix = new Matrix(new int[size][size]);
         int v = matrix.getVerticalSize();
         int h = matrix.getHorizontalSize();

@@ -1,7 +1,8 @@
 package by.khaletski.task03.view;
 
 import by.khaletski.task03.entity.Matrix;
-import by.khaletski.task03.service.creator.MatrixRandomServiceCreator;
+import by.khaletski.task03.entity.MatrixException;
+import by.khaletski.task03.service.creator.MatrixFillServiceCreator;
 import by.khaletski.task03.service.impl.*;
 
 public class Runner {
@@ -44,32 +45,33 @@ public class Runner {
      */
 
     public static void main(String[] args) throws InterruptedException {
-        MatrixRandomServiceCreator matrixRandomServiceCreator = new MatrixRandomServiceCreator();
-        Matrix matrix = matrixRandomServiceCreator.createRandomized(10, 1, 10);
+        MatrixFillServiceCreator matrixCreator = new MatrixFillServiceCreator();
+        Matrix matrix = null;
+        try {
+            matrix = matrixCreator.fillFrom("src/main/resources/matrix.txt");
+        } catch (MatrixException e) {
+            e.printStackTrace();
+        }
         System.out.println(matrix);
+        Thread.sleep(1000);
 
-        MatrixCountDownLatchServiceImpl matrixCountDownLatchService = new MatrixCountDownLatchServiceImpl();
+        MatrixCyclicBarrierServiceImpl matrixCyclicBarrierService = new MatrixCyclicBarrierServiceImpl();
         MatrixExecutorServiceImpl matrixExecutorService = new MatrixExecutorServiceImpl();
         MatrixReentrantLockServiceImpl matrixReentrantLockService = new MatrixReentrantLockServiceImpl();
         MatrixSemaphoreServiceImpl matrixSemaphoreService = new MatrixSemaphoreServiceImpl();
-        MatrixTwoThreadServiceImpl matrixTwoThreadService = new MatrixTwoThreadServiceImpl();
+        MatrixAtomicServiceImpl matrixAtomicService = new MatrixAtomicServiceImpl();
 
-
-//        matrixCountDownLatchService.setMainDiagonal(matrix, 111);
-//        System.out.println(matrix);
+//        matrixCyclicBarrierService.setMainDiagonal(matrix, 111, 3);
 
 //        matrixExecutorService.setMainDiagonal(matrix, 111);
-//        System.out.println(matrix);
 
-//        matrixReentrantLockService.setMainDiagonal(matrix, 111);
-//        System.out.println(matrix);
+//        matrixSemaphoreService.setMainDiagonal(matrix, 999, 3);
 
-        matrixSemaphoreService.setMainDiagonal(matrix, 111);
+//        matrixAtomicService.setMainDiagonal(matrix, 111, 3);
+
+        matrixReentrantLockService.setMainDiagonal(matrix, 111, 3);
+
+        Thread.sleep(3000);
         System.out.println(matrix);
-
-//        matrixTwoThreadService.setMainDiagonal(matrix, 111);
-//        System.out.println(matrix);
-
-
     }
 }

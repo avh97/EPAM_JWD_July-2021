@@ -1,6 +1,7 @@
 package by.khaletski.task03.service.creator;
 
 import by.khaletski.task03.entity.Matrix;
+import by.khaletski.task03.entity.MatrixException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -14,7 +15,7 @@ public class MatrixFillServiceCreator {
 
     static final Logger LOGGER = LogManager.getLogger(MatrixFillServiceCreator.class);
 
-    public final Matrix fillFrom(final String path) {
+    public final Matrix fillFrom(final String path) throws MatrixException {
         File file = new File(path);
         Matrix p = null;
         Scanner scanner;

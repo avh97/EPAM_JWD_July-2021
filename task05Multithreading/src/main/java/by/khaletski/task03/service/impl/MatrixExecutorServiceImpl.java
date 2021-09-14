@@ -1,6 +1,7 @@
 package by.khaletski.task03.service.impl;
 
 import by.khaletski.task03.entity.Matrix;
+import by.khaletski.task03.entity.MatrixException;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -28,8 +29,12 @@ public class MatrixExecutorServiceImpl {
 
         @Override
         public void run() {
-                System.out.println(Thread.currentThread().getName() + " " + index);
+                System.out.println(Thread.currentThread().getName() + " element-" + index);
+            try {
                 matrix.setElement(index, index, value);
+            } catch (MatrixException e) {
+                e.printStackTrace();
+            }
         }
     }
 }
