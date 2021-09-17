@@ -3,6 +3,7 @@ package by.khaletski.task06.entity;
 import java.util.Objects;
 
 public class Cone {
+    //TODO три точки
     private Point innerPoint;
     private Point outerPoint;
     private Point lowerPoint;

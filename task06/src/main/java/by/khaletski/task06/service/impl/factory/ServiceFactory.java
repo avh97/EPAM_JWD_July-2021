@@ -14,11 +14,11 @@ import by.khaletski.task06.service.impl.IsConeValidServiceImpl;
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final IsConeValidService isConeValidService = new IsConeValidServiceImpl();
-    private final IsConeBaseService isConeBaseService = new IsConeBaseServiceImpl();
-    private final ConeAreaService coneAreaService = new ConeAreaServiceImpl();
-    private final ConeVolumeService coneVolumeService = new ConeVolumeServiceImpl();
-    private final ConeDissectionService coneDissectionService = new ConeDissectionServiceImpl();
+    private final IsConeValidServiceImpl isConeValidService = new IsConeValidServiceImpl();
+    private final IsConeBaseServiceImpl isConeBaseService = new IsConeBaseServiceImpl();
+    private final ConeAreaServiceImpl coneAreaService = new ConeAreaServiceImpl();
+    private final ConeVolumeServiceImpl coneVolumeService = new ConeVolumeServiceImpl();
+    private final ConeDissectionServiceImpl coneDissectionService = new ConeDissectionServiceImpl();
 
     private ServiceFactory() {
 

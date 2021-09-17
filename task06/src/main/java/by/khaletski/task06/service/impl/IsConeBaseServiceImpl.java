@@ -7,6 +7,7 @@ import by.khaletski.task06.service.IsConeValidService;
 public class IsConeBaseServiceImpl implements IsConeBaseService {
     @Override
     public boolean isConeBase(Cone cone) {
+        //TODO predicate
         IsConeValidService icConeValidService = new IsConeValidServiceImpl();
         if (!icConeValidService.isConeValid(cone)) {
             return false;
