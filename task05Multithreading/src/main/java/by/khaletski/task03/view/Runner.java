@@ -5,6 +5,8 @@ import by.khaletski.task03.entity.MatrixException;
 import by.khaletski.task03.service.creator.MatrixFillServiceCreator;
 import by.khaletski.task03.service.impl.*;
 
+import java.util.concurrent.TimeUnit;
+
 public class Runner {
 
     /**
@@ -53,15 +55,12 @@ public class Runner {
             e.printStackTrace();
         }
         System.out.println(matrix);
-        Thread.sleep(1000);
+        TimeUnit.SECONDS.sleep(1);
 
-        MatrixCyclicBarrierServiceImpl matrixCyclicBarrierService = new MatrixCyclicBarrierServiceImpl();
         MatrixExecutorServiceImpl matrixExecutorService = new MatrixExecutorServiceImpl();
         MatrixReentrantLockServiceImpl matrixReentrantLockService = new MatrixReentrantLockServiceImpl();
         MatrixSemaphoreServiceImpl matrixSemaphoreService = new MatrixSemaphoreServiceImpl();
         MatrixAtomicServiceImpl matrixAtomicService = new MatrixAtomicServiceImpl();
-
-//        matrixCyclicBarrierService.setMainDiagonal(matrix, 111, 3);
 
 //        matrixExecutorService.setMainDiagonal(matrix, 111);
 
@@ -71,7 +70,7 @@ public class Runner {
 
         matrixReentrantLockService.setMainDiagonal(matrix, 111, 3);
 
-        Thread.sleep(3000);
+        TimeUnit.SECONDS.sleep(3);
         System.out.println(matrix);
     }
 }

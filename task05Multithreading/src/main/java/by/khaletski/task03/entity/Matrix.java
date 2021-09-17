@@ -3,6 +3,8 @@ package by.khaletski.task03.entity;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Arrays;
+
 public class Matrix {
     private int[][] a;
 
@@ -15,7 +17,7 @@ public class Matrix {
 
     public Matrix(final int n, final int m) throws MatrixException {
         if (n < 1 || m < 1) {
-            LOGGER.error("Matrix has not been successfully created");
+//            LOGGER.debug("Matrix has not been successfully created");
             throw new MatrixException();
         }
         a = new int[n][m];
@@ -62,5 +64,18 @@ public class Matrix {
 
     private boolean checkRange(final int i, final int j) {
         return (i >= 0 && i < a.length && j >= 0 && j < a[0].length);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Matrix matrix = (Matrix) o;
+        return Arrays.deepEquals(a, matrix.a);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.deepHashCode(a);
     }
 }

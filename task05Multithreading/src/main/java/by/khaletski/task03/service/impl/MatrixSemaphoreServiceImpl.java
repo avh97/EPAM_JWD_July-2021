@@ -4,6 +4,7 @@ import by.khaletski.task03.entity.Matrix;
 import by.khaletski.task03.entity.MatrixException;
 
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MatrixSemaphoreServiceImpl {
@@ -37,26 +38,23 @@ public class MatrixSemaphoreServiceImpl {
 
         @Override
         public void run() {
-            while (atomicCounter.get() < matrix.getHorizontalSize()) {
+            System.out.println("Start " + Thread.currentThread().getName());
+            System.out.println(Thread.currentThread().getName() + " is running");
+            for (int i = 0; i < matrix.getHorizontalSize(); i++) {
                 try {
-                    matrix.setElement(atomicCounter.get(), atomicCounter.get(), value);
-                } catch (MatrixException e) {
+                    semaphore.acquire();
+                    if (matrix.getElement(i, i) != value) {
+                        matrix.setElement(i, i, value);
+                        TimeUnit.MILLISECONDS.sleep(100);
+                    }
+                } catch (InterruptedException | MatrixException e) {
                     e.printStackTrace();
-                }
-                increaseCounterAndLock();
-            }
-        }
+                } finally {
+                    semaphore.release();
 
-        private void increaseCounterAndLock() {
-            try {
-                semaphore.acquire();
-                System.out.println(Thread.currentThread().getName() + " changed element "
-                        + atomicCounter.getAndIncrement());
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            } finally {
-                semaphore.release();
+                }
             }
+            System.out.println(Thread.currentThread().getName() + " stopped");
         }
     }
 }
