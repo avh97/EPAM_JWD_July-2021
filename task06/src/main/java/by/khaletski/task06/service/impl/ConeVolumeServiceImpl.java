@@ -6,6 +6,6 @@ import by.khaletski.task06.service.ConeVolumeService;
 public class ConeVolumeServiceImpl implements ConeVolumeService {
     @Override
     public double getConeVolume(Cone cone) {
-        return 0;
+        return (Math.PI / 3) * cone.getRadius() * cone.getRadius() * cone.getHeight();
     }
 }

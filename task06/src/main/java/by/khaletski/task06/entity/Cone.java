@@ -3,60 +3,70 @@ package by.khaletski.task06.entity;
 import java.util.Objects;
 
 public class Cone {
-    Point radiusPoint1;
-    Point radiusPoint2;
-    Point heightPoint1;
-    Point heightPoint2;
+    private Point innerPoint;
+    private Point outerPoint;
+    private Point lowerPoint;
+    private Point upperPoint;
 
-    public Cone(Point newRadiusPoint1, Point newRadiusPoint2, Point newHeightPoint1, Point newHeightPoint2) {
-        radiusPoint1 = newRadiusPoint1;
-        radiusPoint2 = newRadiusPoint2;
-        heightPoint1 = newHeightPoint1;
-        heightPoint2 = newHeightPoint2;
+    public Cone(Point newRadiusPoint1, Point newRadiusPoint2, Point newFormingPoint1, Point newFormingPoint2) {
+        innerPoint = newRadiusPoint1;
+        outerPoint = newRadiusPoint2;
+        lowerPoint = newFormingPoint1;
+        upperPoint = newFormingPoint2;
     }
 
     public double getRadius() {
-        return Math.sqrt((radiusPoint1.getX() - radiusPoint2.getX())
-                + (radiusPoint1.getY() - radiusPoint2.getY())
-                + (radiusPoint1.getZ() - radiusPoint2.getZ()));
+        return Math.sqrt((Math.pow(innerPoint.getX() - outerPoint.getX(), 2))
+                + (Math.pow(innerPoint.getY() - outerPoint.getY(), 2))
+                + (Math.pow(innerPoint.getZ() - outerPoint.getZ(), 2)));
+    }
+
+    public double getForming() {
+        return Math.sqrt((Math.pow(lowerPoint.getX() - upperPoint.getX(), 2))
+                + (Math.pow(lowerPoint.getY() - upperPoint.getY(), 2))
+                + (Math.pow(lowerPoint.getZ() - upperPoint.getZ(), 2)));
     }
 
     public double getHeight() {
-        return Math.sqrt((heightPoint1.getX() - heightPoint2.getX())
-                + (heightPoint1.getY() - heightPoint2.getY())
-                + (heightPoint1.getZ() - heightPoint2.getZ()));
+        return Math.sqrt((Math.pow(upperPoint.getX() - innerPoint.getX(), 2))
+        + (Math.pow(upperPoint.getY() - innerPoint.getY(), 2))
+                + (Math.pow(upperPoint.getZ() - innerPoint.getZ(), 2)));
     }
 
-    public Point getRadiusPoint1() {
-        return radiusPoint1;
+    public double getBaseAngle() {
+        return Math.toDegrees(Math.tan(getRadius() / (2 * getForming())));
     }
 
-    public void setRadiusPoint1(Point radiusPoint1) {
-        this.radiusPoint1 = radiusPoint1;
+    public Point getInnerPoint() {
+        return innerPoint;
     }
 
-    public Point getRadiusPoint2() {
-        return radiusPoint2;
+    public void setInnerPoint(Point innerPoint) {
+        this.innerPoint = innerPoint;
     }
 
-    public void setRadiusPoint2(Point radiusPoint2) {
-        this.radiusPoint2 = radiusPoint2;
+    public Point getOuterPoint() {
+        return outerPoint;
     }
 
-    public Point getHeightPoint1() {
-        return heightPoint1;
+    public void setOuterPoint(Point outerPoint) {
+        this.outerPoint = outerPoint;
     }
 
-    public void setHeightPoint1(Point heightPoint1) {
-        this.heightPoint1 = heightPoint1;
+    public Point getLowerPoint() {
+        return lowerPoint;
     }
 
-    public Point getHeightPoint2() {
-        return heightPoint2;
+    public void setLowerPoint(Point lowerPoint) {
+        this.lowerPoint = lowerPoint;
     }
 
-    public void setHeightPoint2(Point heightPoint2) {
-        this.heightPoint2 = heightPoint2;
+    public Point getUpperPoint() {
+        return upperPoint;
+    }
+
+    public void setUpperPoint(Point upperPoint) {
+        this.upperPoint = upperPoint;
     }
 
     @Override
@@ -66,18 +76,18 @@ public class Cone {
 
         Cone cone = (Cone) o;
 
-        if (!Objects.equals(radiusPoint1, cone.radiusPoint1)) return false;
-        if (!Objects.equals(radiusPoint2, cone.radiusPoint2)) return false;
-        if (!Objects.equals(heightPoint1, cone.heightPoint1)) return false;
-        return Objects.equals(heightPoint2, cone.heightPoint2);
+        if (!Objects.equals(innerPoint, cone.innerPoint)) return false;
+        if (!Objects.equals(outerPoint, cone.outerPoint)) return false;
+        if (!Objects.equals(lowerPoint, cone.lowerPoint)) return false;
+        return Objects.equals(upperPoint, cone.upperPoint);
     }
 
     @Override
     public int hashCode() {
-        int result = radiusPoint1 != null ? radiusPoint1.hashCode() : 0;
-        result = 31 * result + (radiusPoint2 != null ? radiusPoint2.hashCode() : 0);
-        result = 31 * result + (heightPoint1 != null ? heightPoint1.hashCode() : 0);
-        result = 31 * result + (heightPoint2 != null ? heightPoint2.hashCode() : 0);
+        int result = innerPoint != null ? innerPoint.hashCode() : 0;
+        result = 31 * result + (outerPoint != null ? outerPoint.hashCode() : 0);
+        result = 31 * result + (lowerPoint != null ? lowerPoint.hashCode() : 0);
+        result = 31 * result + (upperPoint != null ? upperPoint.hashCode() : 0);
         return result;
     }
 

@@ -6,6 +6,6 @@ import by.khaletski.task06.service.ConeAreaService;
 public class ConeAreaServiceImpl implements ConeAreaService {
     @Override
     public double getConeArea(Cone cone) {
-        return 0;
+        return Math.PI * cone.getRadius() * (cone.getRadius() + cone.getForming());
     }
 }
