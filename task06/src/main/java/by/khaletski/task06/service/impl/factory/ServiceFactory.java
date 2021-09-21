@@ -1,15 +1,6 @@
 package by.khaletski.task06.service.impl.factory;
 
-import by.khaletski.task06.service.ConeAreaService;
-import by.khaletski.task06.service.ConeDissectionService;
-import by.khaletski.task06.service.ConeVolumeService;
-import by.khaletski.task06.service.IsConeBaseService;
-import by.khaletski.task06.service.IsConeValidService;
-import by.khaletski.task06.service.impl.ConeAreaServiceImpl;
-import by.khaletski.task06.service.impl.ConeDissectionServiceImpl;
-import by.khaletski.task06.service.impl.ConeVolumeServiceImpl;
-import by.khaletski.task06.service.impl.IsConeBaseServiceImpl;
-import by.khaletski.task06.service.impl.IsConeValidServiceImpl;
+import by.khaletski.task06.service.impl.*;
 
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
@@ -19,6 +10,7 @@ public class ServiceFactory {
     private final ConeAreaServiceImpl coneAreaService = new ConeAreaServiceImpl();
     private final ConeVolumeServiceImpl coneVolumeService = new ConeVolumeServiceImpl();
     private final ConeDissectionServiceImpl coneDissectionService = new ConeDissectionServiceImpl();
+    private final SpecificationFilterServiceImpl specificationFilterService = new SpecificationFilterServiceImpl();
 
     private ServiceFactory() {
 
@@ -28,23 +20,27 @@ public class ServiceFactory {
         return INSTANCE;
     }
 
-    public IsConeValidService getIsConeValidService() {
+    public IsConeValidServiceImpl getIsConeValidService() {
         return isConeValidService;
     }
 
-    public IsConeBaseService getIsConeBaseService() {
+    public IsConeBaseServiceImpl getIsConeBaseService() {
         return isConeBaseService;
     }
 
-    public ConeAreaService getConeAreaService() {
-        return getConeAreaService();
+    public ConeAreaServiceImpl getConeAreaService() {
+        return coneAreaService;
     }
 
-    public ConeVolumeService getConeVolumeService() {
-        return getConeVolumeService();
+    public ConeVolumeServiceImpl getConeVolumeService() {
+        return coneVolumeService;
     }
 
-    public ConeDissectionService getConeDissectionService() {
-        return getConeDissectionService();
+    public ConeDissectionServiceImpl getConeDissectionService() {
+        return coneDissectionService;
+    }
+
+    public SpecificationFilterServiceImpl getSpecificationFilterService() {
+        return specificationFilterService;
     }
 }

@@ -1,19 +1,17 @@
 package by.khaletski.task06.entity;
 
 import java.util.Objects;
+import java.util.StringJoiner;
 
 public class Cone {
-    //TODO три точки
     private Point innerPoint;
     private Point outerPoint;
-    private Point lowerPoint;
     private Point upperPoint;
 
-    public Cone(Point newRadiusPoint1, Point newRadiusPoint2, Point newFormingPoint1, Point newFormingPoint2) {
-        innerPoint = newRadiusPoint1;
-        outerPoint = newRadiusPoint2;
-        lowerPoint = newFormingPoint1;
-        upperPoint = newFormingPoint2;
+    public Cone(Point newInnerPoint, Point newOuterPoint, Point newFormingPoint) {
+        innerPoint = newInnerPoint;
+        outerPoint = newOuterPoint;
+        upperPoint = newFormingPoint;
     }
 
     public double getRadius() {
@@ -23,14 +21,14 @@ public class Cone {
     }
 
     public double getForming() {
-        return Math.sqrt((Math.pow(lowerPoint.getX() - upperPoint.getX(), 2))
-                + (Math.pow(lowerPoint.getY() - upperPoint.getY(), 2))
-                + (Math.pow(lowerPoint.getZ() - upperPoint.getZ(), 2)));
+        return Math.sqrt((Math.pow(outerPoint.getX() - upperPoint.getX(), 2))
+                + (Math.pow(outerPoint.getY() - upperPoint.getY(), 2))
+                + (Math.pow(outerPoint.getZ() - upperPoint.getZ(), 2)));
     }
 
     public double getHeight() {
         return Math.sqrt((Math.pow(upperPoint.getX() - innerPoint.getX(), 2))
-        + (Math.pow(upperPoint.getY() - innerPoint.getY(), 2))
+                + (Math.pow(upperPoint.getY() - innerPoint.getY(), 2))
                 + (Math.pow(upperPoint.getZ() - innerPoint.getZ(), 2)));
     }
 
@@ -54,14 +52,6 @@ public class Cone {
         this.outerPoint = outerPoint;
     }
 
-    public Point getLowerPoint() {
-        return lowerPoint;
-    }
-
-    public void setLowerPoint(Point lowerPoint) {
-        this.lowerPoint = lowerPoint;
-    }
-
     public Point getUpperPoint() {
         return upperPoint;
     }
@@ -79,7 +69,6 @@ public class Cone {
 
         if (!Objects.equals(innerPoint, cone.innerPoint)) return false;
         if (!Objects.equals(outerPoint, cone.outerPoint)) return false;
-        if (!Objects.equals(lowerPoint, cone.lowerPoint)) return false;
         return Objects.equals(upperPoint, cone.upperPoint);
     }
 
@@ -87,9 +76,17 @@ public class Cone {
     public int hashCode() {
         int result = innerPoint != null ? innerPoint.hashCode() : 0;
         result = 31 * result + (outerPoint != null ? outerPoint.hashCode() : 0);
-        result = 31 * result + (lowerPoint != null ? lowerPoint.hashCode() : 0);
         result = 31 * result + (upperPoint != null ? upperPoint.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return new StringJoiner(", ", Cone.class.getSimpleName() + "[", "]")
+                .add("innerPoint=" + innerPoint)
+                .add("outerPoint=" + outerPoint)
+                .add("upperPoint=" + upperPoint)
+                .toString();
     }
 
     public static class Point {
@@ -150,6 +147,15 @@ public class Cone {
             temp = Double.doubleToLongBits(z);
             result = 31 * result + (int) (temp ^ (temp >>> 32));
             return result;
+        }
+
+        @Override
+        public String toString() {
+            return new StringJoiner(", ", Point.class.getSimpleName() + "[", "]")
+                    .add("x=" + x)
+                    .add("y=" + y)
+                    .add("z=" + z)
+                    .toString();
         }
     }
 }
