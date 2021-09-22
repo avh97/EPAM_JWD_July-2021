@@ -5,8 +5,8 @@ import by.khaletski.task06.service.impl.*;
 public class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();
 
-    private final IsConeValidServiceImpl isConeValidService = new IsConeValidServiceImpl();
-    private final IsConeBaseServiceImpl isConeBaseService = new IsConeBaseServiceImpl();
+    private final ConeValidationServiceImpl isConeValidService = new ConeValidationServiceImpl();
+    private final ConeBaseServiceImpl isConeBaseService = new ConeBaseServiceImpl();
     private final ConeAreaServiceImpl coneAreaService = new ConeAreaServiceImpl();
     private final ConeVolumeServiceImpl coneVolumeService = new ConeVolumeServiceImpl();
     private final ConeDissectionServiceImpl coneDissectionService = new ConeDissectionServiceImpl();
@@ -20,11 +20,11 @@ public class ServiceFactory {
         return INSTANCE;
     }
 
-    public IsConeValidServiceImpl getIsConeValidService() {
+    public ConeValidationServiceImpl getConeValidationService() {
         return isConeValidService;
     }
 
-    public IsConeBaseServiceImpl getIsConeBaseService() {
+    public ConeBaseServiceImpl getConeBaseService() {
         return isConeBaseService;
     }
 

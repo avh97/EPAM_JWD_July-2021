@@ -7,9 +7,11 @@ import by.khaletski.task06.service.impl.factory.ServiceFactory;
 public class ConeAreaServiceImpl {
     //TODO Function
     public double getConeArea(Cone cone) throws ConeServiceException {
-        if (!ServiceFactory.getInstance().getIsConeValidService().isConeValid(cone)) {
+        if (!ServiceFactory.getInstance().getConeValidationService().isConeValid(cone)) {
             throw new ConeServiceException();
         }
-        return Math.PI * cone.getRadius() * (cone.getRadius() + cone.getForming());
+        double radius = cone.getRadius();
+        double forming = cone.getForming();
+        return Math.PI * radius * (radius + forming);
     }
 }

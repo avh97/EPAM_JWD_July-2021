@@ -33,7 +33,7 @@ public class Runner {
         System.out.println(serviceFactory.getSpecificationFilterService()
                 .filter(TextFileReader.getInstance().read(), coneSelector));
         Cone cone0 = new Cone(new Cone.Point(0, 0, 0),
-                new Cone.Point(10, 10, 0),
+                new Cone.Point(10, 0, 0),
                 new Cone.Point(0, 0, 25));
         Cone cone1 = new Cone(new Cone.Point(-5, -5, -5),
                 new Cone.Point(10, 10, -5),
@@ -49,9 +49,10 @@ public class Runner {
             System.out.println(serviceFactory.getConeAreaService().getConeArea(cone1));
             System.out.println(serviceFactory.getConeAreaService().getConeArea(cone2));
             System.out.println(serviceFactory.getConeAreaService().getConeArea(cone3));
+            System.out.println(serviceFactory.getConeDissectionService()
+                    .getDissectionProportion(cone0, new Cone.Point(-7, -5, 15)));
         } catch (ConeServiceException e) {
             e.printStackTrace();
         }
-
     }
 }
