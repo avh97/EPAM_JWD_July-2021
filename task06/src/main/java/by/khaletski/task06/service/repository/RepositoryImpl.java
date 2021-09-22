@@ -1,11 +1,13 @@
-package by.khaletski.task06.dao.repository;
+package by.khaletski.task06.service.repository;
 
-import by.khaletski.task06.dao.files.TextFileReader;
+import by.khaletski.task06.dao.TextFileReader;
 import by.khaletski.task06.entity.Cone;
+import by.khaletski.task06.service.impl.ConeAreaServiceImpl;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class RepositoryImpl implements Repository {
     static final Logger LOGGER = LogManager.getLogger(RepositoryImpl.class);
@@ -50,5 +52,10 @@ public class RepositoryImpl implements Repository {
         } else {
             LOGGER.info("Element has not been deleted. There is no such element in read.");
         }
+    }
+
+    public Map<Integer, Cone> findById(final int id) {
+        return storage.entrySet().stream().filter(s -> s.getKey() == id)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }
 }

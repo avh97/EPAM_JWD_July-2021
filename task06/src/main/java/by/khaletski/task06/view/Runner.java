@@ -1,18 +1,12 @@
 package by.khaletski.task06.view;
 
-import by.khaletski.task06.dao.files.TextFileReader;
-import by.khaletski.task06.dao.repository.RepositoryImpl;
-import by.khaletski.task06.service.impl.*;
+import by.khaletski.task06.dao.TextFileReader;
 import by.khaletski.task06.service.impl.exception.ConeServiceException;
 import by.khaletski.task06.service.impl.factory.ServiceFactory;
-import by.khaletski.task06.service.impl.specification.AreaGreaterThanSelector;
+import by.khaletski.task06.service.specification.AreaGreaterThanSelector;
 import by.khaletski.task06.entity.Cone;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import java.util.*;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class Runner {
 

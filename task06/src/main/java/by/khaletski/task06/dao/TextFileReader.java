@@ -1,4 +1,4 @@
-package by.khaletski.task06.dao.files;
+package by.khaletski.task06.dao;
 
 import by.khaletski.task06.entity.Cone;
 import org.apache.logging.log4j.LogManager;

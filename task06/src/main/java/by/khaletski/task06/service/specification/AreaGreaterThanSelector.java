@@ -1,4 +1,4 @@
-package by.khaletski.task06.service.impl.specification;
+package by.khaletski.task06.service.specification;
 
 import by.khaletski.task06.entity.Cone;
 import by.khaletski.task06.service.impl.exception.ConeServiceException;

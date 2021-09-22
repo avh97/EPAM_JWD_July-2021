@@ -1,4 +1,4 @@
-package by.khaletski.task06.service.impl.specification;
+package by.khaletski.task06.service.specification;
 
 public class NotSelector<T> extends AbstractSelector<T> {
 
