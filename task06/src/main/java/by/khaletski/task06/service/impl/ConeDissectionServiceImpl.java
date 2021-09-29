@@ -1,13 +1,15 @@
 package by.khaletski.task06.service.impl;
 
 import by.khaletski.task06.entity.Cone;
-import by.khaletski.task06.service.impl.exception.ConeServiceException;
-import by.khaletski.task06.service.impl.factory.ServiceFactory;
+import by.khaletski.task06.service.Dissectable;
+import by.khaletski.task06.service.exception.ConeServiceException;
+import by.khaletski.task06.service.factory.ServiceFactory;
 
-public class ConeDissectionServiceImpl {
-    public double getDissectionProportion(Cone cone, Cone.Point point) throws ConeServiceException {
+public class ConeDissectionServiceImpl implements Dissectable {
+    @Override
+    public final double dissect(final Cone cone, final Cone.Point point) throws ConeServiceException {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
-        if (!(serviceFactory.getConeValidationService().isConeValid(cone)
+        if (!(serviceFactory.getConeValidationService().validate(cone)
                 || point.getZ() > cone.getInnerPoint().getZ() && point.getZ() < cone.getUpperPoint().getZ())) {
             throw new ConeServiceException();
         }
@@ -17,7 +19,7 @@ public class ConeDissectionServiceImpl {
         double smallRadius = fullRadius - 2 * truncatedHeight * (fullRadius / fullHeight);
         double truncatedConeVolume = Math.PI / 3 * truncatedHeight
                 * (fullRadius * fullRadius + fullRadius * smallRadius + smallRadius * smallRadius);
-        double upperConeVolume = serviceFactory.getConeVolumeService().getConeVolume(cone) - truncatedConeVolume;
+        double upperConeVolume = serviceFactory.getConeVolumeService().calculate(cone) - truncatedConeVolume;
         return upperConeVolume / truncatedConeVolume;
     }
 }

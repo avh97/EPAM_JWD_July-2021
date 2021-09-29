@@ -1,4 +1,4 @@
-package by.khaletski.task06.service.impl.exception;
+package by.khaletski.task06.service.exception;
 
 public class ConeServiceException extends Exception {
     public ConeServiceException() {

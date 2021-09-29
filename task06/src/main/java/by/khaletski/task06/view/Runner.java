@@ -1,8 +1,8 @@
 package by.khaletski.task06.view;
 
-import by.khaletski.task06.dao.TextFileReader;
-import by.khaletski.task06.service.impl.exception.ConeServiceException;
-import by.khaletski.task06.service.impl.factory.ServiceFactory;
+import by.khaletski.task06.dao.Storage;
+import by.khaletski.task06.service.exception.ConeServiceException;
+import by.khaletski.task06.service.factory.ServiceFactory;
 import by.khaletski.task06.service.specification.AreaGreaterThanSelector;
 import by.khaletski.task06.entity.Cone;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +25,7 @@ public class Runner {
 
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         System.out.println(serviceFactory.getSpecificationFilterService()
-                .filter(TextFileReader.getInstance().read(), coneSelector));
+                .find(Storage.getInstance().read(), coneSelector));
         Cone cone0 = new Cone(new Cone.Point(0, 0, 0),
                 new Cone.Point(10, 0, 0),
                 new Cone.Point(0, 0, 25));
@@ -39,12 +39,12 @@ public class Runner {
                 new Cone.Point(3, 3, -30),
                 new Cone.Point(-45, -45, -5));
         try {
-            System.out.println(serviceFactory.getConeAreaService().getConeArea(cone0));
-            System.out.println(serviceFactory.getConeAreaService().getConeArea(cone1));
-            System.out.println(serviceFactory.getConeAreaService().getConeArea(cone2));
-            System.out.println(serviceFactory.getConeAreaService().getConeArea(cone3));
+            System.out.println(serviceFactory.getConeAreaService().calculate(cone0));
+            System.out.println(serviceFactory.getConeAreaService().calculate(cone1));
+            System.out.println(serviceFactory.getConeAreaService().calculate(cone2));
+            System.out.println(serviceFactory.getConeAreaService().calculate(cone3));
             System.out.println(serviceFactory.getConeDissectionService()
-                    .getDissectionProportion(cone0, new Cone.Point(-7, -5, 15)));
+                    .dissect(cone0, new Cone.Point(-7, -5, 15)));
         } catch (ConeServiceException e) {
             e.printStackTrace();
         }

@@ -1,8 +1,8 @@
 package by.khaletski.task06.service.repository;
 
-import by.khaletski.task06.dao.TextFileReader;
+import by.khaletski.task06.dao.Storage;
 import by.khaletski.task06.entity.Cone;
-import by.khaletski.task06.service.impl.ConeAreaServiceImpl;
+import by.khaletski.task06.service.Repository;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,7 +13,7 @@ public class RepositoryImpl implements Repository {
     static final Logger LOGGER = LogManager.getLogger(RepositoryImpl.class);
 
     private static final RepositoryImpl INSTANCE = new RepositoryImpl();
-    private Map<Integer, Cone> storage = TextFileReader.getInstance().read();
+    private Map<Integer, Cone> storage = Storage.getInstance().read();
 
     public static RepositoryImpl getInstance() {
         return INSTANCE;
@@ -54,7 +54,7 @@ public class RepositoryImpl implements Repository {
         }
     }
 
-    public Map<Integer, Cone> findById(final int id) {
+    public final Map<Integer, Cone> findById(final int id) {
         return storage.entrySet().stream().filter(s -> s.getKey() == id)
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
     }

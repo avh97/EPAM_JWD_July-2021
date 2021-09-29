@@ -1,8 +1,8 @@
 package by.khaletski.task06.service.impl;
 
 import by.khaletski.task06.entity.Cone;
-import by.khaletski.task06.service.impl.exception.ConeServiceException;
-import by.khaletski.task06.service.impl.factory.ServiceFactory;
+import by.khaletski.task06.service.exception.ConeServiceException;
+import by.khaletski.task06.service.factory.ServiceFactory;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 
@@ -32,7 +32,7 @@ public class ConeAreaServiceImplTest {
     void coneAreaServiceImplTest(Cone cone, double expected) {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         try {
-            assertEquals(serviceFactory.getConeAreaService().getConeArea(cone), expected, 0.1);
+            assertEquals(serviceFactory.getConeAreaService().calculate(cone), expected, 0.1);
         } catch (ConeServiceException e) {
             e.printStackTrace();
         }

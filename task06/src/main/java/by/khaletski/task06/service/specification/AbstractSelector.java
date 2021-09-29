@@ -4,15 +4,15 @@ import java.util.function.Predicate;
 
 public abstract class AbstractSelector<T> implements Predicate<T> {
 
-    public AbstractSelector<T> and(AbstractSelector<T> other) {
+    public final AbstractSelector<T> and(final AbstractSelector<T> other) {
         return new AndSelector<>(this, other);
     }
 
-    public AbstractSelector<T> or(AbstractSelector<T> other) {
+    public final AbstractSelector<T> or(final AbstractSelector<T> other) {
         return new OrSelector<>(this, other);
     }
 
-    public AbstractSelector<T> not() {
+    public final AbstractSelector<T> not() {
         return new NotSelector<>(this);
     }
 }

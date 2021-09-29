@@ -8,72 +8,75 @@ public class Cone {
     private Point outerPoint;
     private Point upperPoint;
 
-    public Cone(Point newInnerPoint, Point newOuterPoint, Point newFormingPoint) {
+    public Cone(final Point newInnerPoint, final Point newOuterPoint, final Point newFormingPoint) {
         innerPoint = newInnerPoint;
         outerPoint = newOuterPoint;
         upperPoint = newFormingPoint;
     }
 
-    public double getRadius() {
+    public final double getRadius() {
         return Math.sqrt((Math.pow(innerPoint.getX() - outerPoint.getX(), 2))
                 + (Math.pow(innerPoint.getY() - outerPoint.getY(), 2))
                 + (Math.pow(innerPoint.getZ() - outerPoint.getZ(), 2)));
     }
 
-    public double getForming() {
+    public final double getForming() {
         return Math.sqrt((Math.pow(outerPoint.getX() - upperPoint.getX(), 2))
                 + (Math.pow(outerPoint.getY() - upperPoint.getY(), 2))
                 + (Math.pow(outerPoint.getZ() - upperPoint.getZ(), 2)));
     }
 
-    public double getHeight() {
+    public final double getHeight() {
         return Math.sqrt((Math.pow(upperPoint.getX() - innerPoint.getX(), 2))
                 + (Math.pow(upperPoint.getY() - innerPoint.getY(), 2))
                 + (Math.pow(upperPoint.getZ() - innerPoint.getZ(), 2)));
     }
 
-    public double getBaseAngle() {
-        return Math.toDegrees(Math.tan(getRadius() / (2 * getForming())));
-    }
-
-    public Point getInnerPoint() {
+    public final Point getInnerPoint() {
         return innerPoint;
     }
 
-    public void setInnerPoint(Point innerPoint) {
-        this.innerPoint = innerPoint;
+    public final void setInnerPoint(final Point newInnerPoint) {
+        innerPoint = newInnerPoint;
     }
 
-    public Point getOuterPoint() {
+    public final Point getOuterPoint() {
         return outerPoint;
     }
 
-    public void setOuterPoint(Point outerPoint) {
-        this.outerPoint = outerPoint;
+    public final void setOuterPoint(final Point newOuterPoint) {
+        outerPoint = newOuterPoint;
     }
 
-    public Point getUpperPoint() {
+    public final Point getUpperPoint() {
         return upperPoint;
     }
 
-    public void setUpperPoint(Point upperPoint) {
-        this.upperPoint = upperPoint;
+    public final void setUpperPoint(final Point newUpperPoint) {
+        upperPoint = newUpperPoint;
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+    public final boolean equals(final Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (this == o) {
+            return true;
+        }
+        if (!(o instanceof Cone)) {
+            return false;
+        }
 
         Cone cone = (Cone) o;
 
-        if (!Objects.equals(innerPoint, cone.innerPoint)) return false;
-        if (!Objects.equals(outerPoint, cone.outerPoint)) return false;
-        return Objects.equals(upperPoint, cone.upperPoint);
+        return Objects.equals(innerPoint, cone.innerPoint)
+                && Objects.equals(outerPoint, cone.outerPoint)
+                && Objects.equals(upperPoint, cone.upperPoint);
     }
 
     @Override
-    public int hashCode() {
+    public final int hashCode() {
         int result = innerPoint != null ? innerPoint.hashCode() : 0;
         result = 31 * result + (outerPoint != null ? outerPoint.hashCode() : 0);
         result = 31 * result + (upperPoint != null ? upperPoint.hashCode() : 0);
@@ -81,7 +84,7 @@ public class Cone {
     }
 
     @Override
-    public String toString() {
+    public final String toString() {
         return new StringJoiner(", ", Cone.class.getSimpleName() + "[", "]")
                 .add("innerPoint=" + innerPoint)
                 .add("outerPoint=" + outerPoint)
@@ -90,9 +93,9 @@ public class Cone {
     }
 
     public static class Point {
-        double x;
-        double y;
-        double z;
+        private double x;
+        private double y;
+        private double z;
 
         public Point(final double newX, final double newY, final double newZ) {
             x = newX;
@@ -100,44 +103,49 @@ public class Cone {
             z = newZ;
         }
 
-        public double getX() {
+        public final double getX() {
             return x;
         }
 
-        public void setX(double x) {
-            this.x = x;
+        public final void setX(final double newX) {
+            x = newX;
         }
 
-        public double getY() {
+        public final double getY() {
             return y;
         }
 
-        public void setY(double y) {
-            this.y = y;
+        public final void setY(final double newY) {
+            y = newY;
         }
 
-        public double getZ() {
+        public final double getZ() {
             return z;
         }
 
-        public void setZ(double z) {
-            this.z = z;
+        public final void setZ(final double newZ) {
+            z = newZ;
         }
 
         @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
+        public final boolean equals(final Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null) {
+                return false;
+            }
+            if (!(o instanceof Point)) {
+                return false;
+            }
 
             Point point = (Point) o;
 
-            if (Double.compare(point.x, x) != 0) return false;
-            if (Double.compare(point.y, y) != 0) return false;
-            return Double.compare(point.z, z) == 0;
+            return point.x != x || point.y != y || point.z != z;
         }
 
         @Override
-        public int hashCode() {
+        public final int hashCode() {
             int result;
             long temp;
             temp = Double.doubleToLongBits(x);
@@ -150,7 +158,7 @@ public class Cone {
         }
 
         @Override
-        public String toString() {
+        public final String toString() {
             return new StringJoiner(", ", Point.class.getSimpleName() + "[", "]")
                     .add("x=" + x)
                     .add("y=" + y)

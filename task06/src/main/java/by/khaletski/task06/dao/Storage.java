@@ -13,20 +13,19 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class TextFileReader {
-    static final Logger LOGGER = LogManager.getLogger(TextFileReader.class);
-    private static final TextFileReader INSTANCE = new TextFileReader();
+public class Storage {
+    static final Logger LOGGER = LogManager.getLogger(Storage.class);
+    private static final Storage INSTANCE = new Storage();
 
-    public static final TextFileReader getInstance() {
+    public static Storage getInstance() {
         return INSTANCE;
     }
 
-    public Map<Integer, Cone> read() {
+    public final Map<Integer, Cone> read() {
         Map<Integer, Cone> storage = new HashMap<>();
-        Path path = Paths.get("src/main/java/by/khaletski/task06/dao/files/storage.txt");
+        Path path = Paths.get("src/main/java/by/khaletski/task06/dao/storage.txt");
         List<String> lines = new ArrayList<>();
         try (Stream<String> lineStream = Files.lines(path)) {
             lines = lineStream.
@@ -34,7 +33,7 @@ public class TextFileReader {
                             .replace(", inner point: ", " ")
                             .replace(", outer point: ", " ")
                             .replace(", upper point: ", " "))
-                    .collect(Collectors.toList());
+                    .toList();
         } catch (IOException e) {
             e.printStackTrace();
         }

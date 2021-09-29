@@ -7,12 +7,12 @@ public class OrSelector<T> extends AbstractSelector<T> {
     private final List<AbstractSelector<T>> leafComponents;
 
     @SafeVarargs
-    OrSelector(AbstractSelector<T>... selectors) {
+    OrSelector(final AbstractSelector<T>... selectors) {
         this.leafComponents = List.of(selectors);
     }
 
     @Override
-    public boolean test(T t) {
+    public final boolean test(final T t) {
         return leafComponents.stream().anyMatch(comp -> comp.test(t));
     }
 }

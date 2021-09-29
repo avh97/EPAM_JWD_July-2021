@@ -1,4 +1,4 @@
-package by.khaletski.task06.service.repository;
+package by.khaletski.task06.service;
 
 import by.khaletski.task06.entity.Cone;
 
