@@ -1,16 +1,7 @@
 package by.khaletski.task06.service.factory;
 
-import by.khaletski.task06.service.Calculable;
-import by.khaletski.task06.service.Checkable;
-import by.khaletski.task06.service.Dissectable;
-import by.khaletski.task06.service.Specification;
-import by.khaletski.task06.service.Validatable;
-import by.khaletski.task06.service.impl.ConeAreaServiceImpl;
-import by.khaletski.task06.service.impl.ConeBaseServiceImpl;
-import by.khaletski.task06.service.impl.ConeDissectionServiceImpl;
-import by.khaletski.task06.service.impl.ConeValidationServiceImpl;
-import by.khaletski.task06.service.impl.ConeVolumeServiceImpl;
-import by.khaletski.task06.service.impl.SpecificationFilterServiceImpl;
+import by.khaletski.task06.service.*;
+import by.khaletski.task06.service.impl.*;
 
 public final class ServiceFactory {
     private static final ServiceFactory INSTANCE = new ServiceFactory();

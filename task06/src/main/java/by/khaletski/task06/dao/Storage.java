@@ -8,11 +8,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Stream;
 
 public class Storage {
@@ -25,7 +21,7 @@ public class Storage {
 
     public final Map<Integer, Cone> read() {
         Map<Integer, Cone> storage = new HashMap<>();
-        Path path = Paths.get("src/main/java/by/khaletski/task06/dao/storage.txt");
+        Path path = Paths.get("src/main/resources/storage.txt");
         List<String> lines = new ArrayList<>();
         try (Stream<String> lineStream = Files.lines(path)) {
             lines = lineStream.

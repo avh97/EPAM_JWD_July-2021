@@ -45,8 +45,8 @@ public class ConeBaseServiceImplTest {
         ServiceFactory serviceFactory = ServiceFactory.getInstance();
         try {
             assertEquals(serviceFactory.getConeBaseService().check(cone), expected);
-        } catch (ConeServiceException e) {
-            e.printStackTrace();
+        } catch (ConeServiceException ignored) {
+
         }
     }
 }

@@ -20,7 +20,7 @@ public class ConeVolumeServiceImplTest {
                         new Cone.Point(-5, -5, 15.5)), 9660.4},
                 {new Cone(new Cone.Point(12.3, 12.3, 12.3),
                         new Cone.Point(7, 7, 12.3),
-                        new Cone.Point(12.3, 12.3, 40)),1629.6},
+                        new Cone.Point(12.3, 12.3, 40)), 1629.6},
                 {new Cone(new Cone.Point(-45, -45, -30),
                         new Cone.Point(3, 3, -30),
                         new Cone.Point(-45, -45, -5)), 120637.2}
