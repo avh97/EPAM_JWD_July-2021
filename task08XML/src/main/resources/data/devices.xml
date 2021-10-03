@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<devices>
+
+    <students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://www.example.com/students"
+              xsi:schemaLocation="http://www.example.com/students person.xsd">
+
+    <device>
+        <name>Monitor</name>
+        <price>200</price>
+        <origin>UK</origin>
+        <type>
+            <periferial>y</periferial>
+            <electric>400</electric>
+            <cooler>no</cooler>
+            <complect_group>multimedia</complect_group>
+            <port>usb</port>
+        </type>
+
+        <criteria>yes</criteria>
+    </device>
+
+
+
+
+
+</devices>
