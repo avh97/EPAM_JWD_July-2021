@@ -1,6 +1,6 @@
 package by.khaletski.task07.entity;
 
-import by.khaletski.task07.parser.Component;
+import by.khaletski.task07.service.Component;
 
 public class Symbol implements Component {
     private static Type type = Type.SYMBOL;

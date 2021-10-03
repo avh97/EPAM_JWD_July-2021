@@ -1,4 +1,4 @@
-package by.khaletski.task07.parser;
+package by.khaletski.task07.service;
 
 import by.khaletski.task07.entity.Symbol;
 import by.khaletski.task07.entity.Type;
@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class Parser {
 
@@ -17,6 +16,9 @@ public class Parser {
             return new Symbol(string.charAt(0));
         }
         Composite composite = new Composite(type);
+        if (type.getRegexForSplit() == null) {
+            return new Symbol(string.charAt(0));
+        }
         String[] splitted = string.split(type.getRegexForSplit());
         for (String s : splitted) {
             Component parse = parse(s, type.getChild());

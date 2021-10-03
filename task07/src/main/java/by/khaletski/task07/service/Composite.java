@@ -1,4 +1,4 @@
-package by.khaletski.task07.parser;
+package by.khaletski.task07.service;
 
 import by.khaletski.task07.entity.Type;
 

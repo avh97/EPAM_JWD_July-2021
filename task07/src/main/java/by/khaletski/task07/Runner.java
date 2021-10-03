@@ -1,37 +1,30 @@
 package by.khaletski.task07;
 
-import by.khaletski.task07.parser.Composite;
-import by.khaletski.task07.parser.Parser;
+import by.khaletski.task07.dao.TextReader;
 import by.khaletski.task07.entity.Type;
-
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import by.khaletski.task07.service.Composite;
+import by.khaletski.task07.service.Parser;
 
 public class Runner {
     public static void main(String[] args) {
-
-        Path path = Path.of("src/main/java/by/khaletski/task07/dao/text.txt");
-        String text = "";
-        try {
-            text = Files.readString(path, StandardCharsets.UTF_8);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
+        String text = new TextReader().readText();
         Parser parser = new Parser();
+
         Composite textComposite = (Composite) parser.parse(text, Type.TEXT);
-//        System.out.println(textComposite.toString());
-//        System.out.println(textComposite.collect());
+        System.out.println(textComposite.collect());
+        System.out.println();
 
-//        Composite paragraghComposite = (Composite) textComposite.getComponents().get(0);
-//        System.out.println(paragraghComposite.toString());
-//        System.out.println(paragraghComposite.collect());
+        Composite paragraphComposite = (Composite) textComposite.getComponents().get(0);
+        System.out.println(paragraphComposite.collect());
+        System.out.println();
 
-//        parser.getNumberOfSentences(textComposite);
-//        System.out.println((parser.sortByNumberOfSentences(textComposite);
-//        System.out.println(parser.getSortedWordsBySize(textComposite));
-        System.out.println(parser.getParagraphs(textComposite));
+        Composite sentenceComposite = (Composite) paragraphComposite.getComponents().get(1);
+        System.out.println(sentenceComposite.collect());
+        System.out.println();
+
+        Composite wordComposite = (Composite) sentenceComposite.getComponents().get(3);
+        System.out.println(wordComposite.collect());
+
+        System.out.println(parser.getSortedWordsBySize(textComposite));
     }
 }
