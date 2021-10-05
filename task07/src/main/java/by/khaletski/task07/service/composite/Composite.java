@@ -4,8 +4,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Composite implements Component {
-    private List<Component> componentList = new LinkedList<>();
-    private Type type;
+    private final List<Component> componentList = new LinkedList<>();
+    private final Type type;
 
     public Composite(Type type) {
         this.type = type;

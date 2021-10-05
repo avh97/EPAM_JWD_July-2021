@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class LexemeParser implements Parser {
     private static final String LEXEME_REGEX = "([^\\s]+)";
-    private SymbolParser symbolParser = new SymbolParser();
+    private final SymbolParser symbolParser = new SymbolParser();
 
     @Override
     public void parse(Composite sentenceComposite, String sentence) {

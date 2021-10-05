@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class ParagraphParser implements Parser {
     private static final String PARAGRAPH_REGEX = "(=?([A-z-()0-9<>|&~,.' ]+))";
-    private SentenceParser sentenceParser = new SentenceParser();
+    private final SentenceParser sentenceParser = new SentenceParser();
 
     @Override
     public void parse(Composite textComposite, String text) {

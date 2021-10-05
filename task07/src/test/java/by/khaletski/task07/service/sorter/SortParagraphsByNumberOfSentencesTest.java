@@ -16,7 +16,8 @@ public class SortParagraphsByNumberOfSentencesTest {
     public void sortParagraphsByNumberOfSentencesTest() {
         String wholeText = new ReadText().read();
         Composite textComposite = new Composite(Type.TEXT);
-        new TextParser().parse(textComposite, wholeText);
+        TextParser textParser = new TextParser();
+        textParser.parse(textComposite, wholeText);
         List<Component> sortedParagraphList = new SortParagraphsByNumberOfSentences().sort(textComposite);
         List<String> result = new ArrayList<>();
         for (int i = 0; i < sortedParagraphList.size(); i++) {

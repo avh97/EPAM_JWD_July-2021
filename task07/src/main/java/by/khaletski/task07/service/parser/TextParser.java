@@ -6,7 +6,7 @@ import org.apache.logging.log4j.Logger;
 
 public class TextParser implements Parser {
     private static final Logger LOGGER = LogManager.getLogger();
-    private ParagraphParser paragraphParser = new ParagraphParser();
+    private final ParagraphParser paragraphParser = new ParagraphParser();
 
     @Override
     public void parse(Composite textComposite, String text) {

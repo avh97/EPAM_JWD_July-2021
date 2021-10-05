@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<devices>
+
+    <students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xmlns="http://www.example.com/students"
+              xsi:schemaLocation="http://www.example.com/students person.xsd">
+
+    <tariffs>
+        <name>Comfort S</name>
+        <operator>A1</operator>
+        <payroll>13.83</payroll>
+
+        <prices>
+            <includedMinutes>500</includedMinutes>
+            <includedTraffic>1</includedTraffic>
+            <insideNetwork>unlimited</insideNetwork>
+            <outsideNetwork>0.104</outsideNetwork>
+            <trafficPerMb>0.0208</trafficPerMb>
+        </prices>
+
+        <parameters>
+            <favouriteNumber>none</favouriteNumber>
+            <connectionFee>none</connectionFee>
+        </parameters>
+    </tariffs>
+
+    <tariffs>
+        <name>Comfort M</name>
+        <operator>A1</operator>
+        <payroll>13.83</payroll>
+
+        <prices>
+            <includedMinutes>500</includedMinutes>
+            <includedTraffic>1</includedTraffic>
+            <insideNetwork>unlimited</insideNetwork>
+            <outsideNetwork>0.104</outsideNetwork>
+            <trafficPerMb>0.0208</trafficPerMb>
+        </prices>
+
+        <parameters>
+            <favouriteNumber>none</favouriteNumber>
+            <connectionFee>none</connectionFee>
+        </parameters>
+    </tariffs>
+
+
+</devices>

@@ -16,11 +16,12 @@ public class SentenceParserTest {
 
     @Test
     public void sentenceParserTest() {
-        List<String> expectedNumbers = Arrays.asList("2", "2", "1", "1");
-        String wholeText = new ReadText().read();
+        List<String> expected = Arrays.asList("2", "2", "1", "1");
+        List<String> actual = new ArrayList<>();
+        String textString = new ReadText().read();
+        TextParser textParser = new TextParser();
         Composite textComposite = new Composite(Type.TEXT);
-        new TextParser().parse(textComposite, wholeText);
-        List<String> numbersOfSentences = new ArrayList<>();
+        textParser.parse(textComposite, textString);
         for (Component paragraph : textComposite.getComponentList()) {
             if (paragraph.getType() == Type.PARAGRAPH) {
                 Composite paragraphComposite = (Composite) paragraph;
@@ -30,9 +31,9 @@ public class SentenceParserTest {
                         number++;
                     }
                 }
-                numbersOfSentences.add(String.valueOf(number));
+                actual.add(String.valueOf(number));
             }
         }
-        assertEquals(numbersOfSentences, expectedNumbers);
+        assertEquals(actual, expected);
     }
 }

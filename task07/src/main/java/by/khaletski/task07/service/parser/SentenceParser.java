@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class SentenceParser implements Parser {
     private static final String SENTENCE_REGEX = "\\b[^.!?]+[.!?]+";
-    private LexemeParser lexemeParser = new LexemeParser();
+    private final LexemeParser lexemeParser = new LexemeParser();
 
     @Override
     public void parse(Composite paragraphComposite, String paragraph) {

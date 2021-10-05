@@ -11,10 +11,12 @@ public class ParagraphParserTest {
 
     @Test
     public void paragraphParserTest() {
-        int expectedSize = 4;
         String text = new ReadText().read();
+        TextParser textParser = new TextParser();
         Composite textComposite = new Composite(Type.TEXT);
-        new TextParser().parse(textComposite, text);
-        assertEquals(textComposite.size(), expectedSize);
+        textParser.parse(textComposite, text);
+        int expected = 4;
+        int actual = textComposite.size();
+        assertEquals(actual, expected);
     }
 }

@@ -2,12 +2,12 @@ package by.khaletski.task07.service.composite;
 
 public class Symbol implements Component {
     private static final int SINGLE_SYMBOL = 1;
-    private String symbol;
+    private String stringSymbol;
     private Type type;
 
-    public Symbol(String symbol, Type type) {
-        if (symbol.length() == SINGLE_SYMBOL) {
-            this.symbol = symbol;
+    public Symbol(String stringSymbol, Type type) {
+        if (stringSymbol.length() == SINGLE_SYMBOL) {
+            this.stringSymbol = stringSymbol;
             this.type = type;
         }
     }
@@ -19,6 +19,6 @@ public class Symbol implements Component {
 
     @Override
     public String toString() {
-        return symbol;
+        return stringSymbol;
     }
 }
