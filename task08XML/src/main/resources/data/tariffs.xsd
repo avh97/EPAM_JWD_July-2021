@@ -1,12 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.epam.tc.com/note" xmlns:tns="http://www.epam.tc.com/note">
-<element name="tariffs">
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.training.by/tariffs"
+        xmlns:tns="http://www.training.by/tariffs"
+        elementFormDefault="qualified">
 
-    <complexType>
+    <element name="tariffs">
+        <complexType>
+            <sequence>
+                <element name="tariff" type="tns:Tariff"
+                         minOccurs="0"
+                         maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Tariff">
         <sequence>
+            <element name="operator" type="tns:Operator"/>
+            <element name="name" type="string"/>
+            <element name="payroll" type="double"/>
+            <element name="callPrices" type="tns:CallPrice"/>
+            <element name="traffic" type="double"/>
+            <element name="parameters" type="tns:Parameter"/>
+        </sequence>
+        <attribute name="id" type="tns:tariffID" use="required"/>
+    </complexType>
 
+    <simpleType name="tariffID">
+        <restriction base="ID">
+            <pattern value="\w+-[0-9]+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Operator">
+        <restriction base="string">
+            <enumeration value="A1"/>
+            <enumeration value="MTS"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="name">
+        <restriction base="string">
+            <pattern value="\w+"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="payroll">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="250"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="CallPrice">
+        <sequence>
+            <element name="insideNetwork" type="double"/>
+            <element name="outsideNetwork" type="double"/>
+            <element name="stationaryNetwork" type="double"/>
         </sequence>
     </complexType>
 
-</element>
+    <simpleType name="insideNetwork">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="500"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="outsideNetwork">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="500"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="stationaryNetwork">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="500"/>
+        </restriction>
+    </simpleType>
+
+
+    <simpleType name="traffic">
+        <restriction base="double">
+            <minInclusive value="0"/>
+            <maxInclusive value="1000"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="Parameter">
+        <sequence>
+            <element name="favouriteNumbers" type="int"/>
+            <element name="tarificationType" type="tns:Tarification"/>
+            <element name="connectionFee" type="double"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="favouriteNumbers">
+        <restriction base="int">
+            <minInclusive value="0"/>
+            <maxInclusive value="10"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="connectionFee">
+        <restriction base="int">
+            <minInclusive value="0"/>
+            <maxInclusive value="20"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Tarification">
+        <restriction base="string">
+            <enumeration value="for_each_twelve_seconds"/>
+            <enumeration value="for_each_minute"/>
+        </restriction>
+    </simpleType>
+
 </schema>
