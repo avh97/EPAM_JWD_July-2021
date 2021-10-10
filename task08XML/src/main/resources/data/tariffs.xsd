@@ -92,7 +92,7 @@
     <complexType name="Parameter">
         <sequence>
             <element name="favouriteNumbers" type="int"/>
-            <element name="tarificationType" type="tns:Tarification"/>
+            <element name="tarificationType" type="tns:tarification"/>
             <element name="connectionFee" type="double"/>
         </sequence>
     </complexType>
@@ -111,7 +111,7 @@
         </restriction>
     </simpleType>
 
-    <simpleType name="Tarification">
+    <simpleType name="tarification">
         <restriction base="string">
             <enumeration value="for_each_twelve_seconds"/>
             <enumeration value="for_each_minute"/>
