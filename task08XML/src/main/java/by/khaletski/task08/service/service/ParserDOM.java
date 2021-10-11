@@ -1,5 +1,6 @@
 package by.khaletski.task08.service.service;
 
+import by.khaletski.task08.service.entity.Tariff;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -10,6 +11,8 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ParserDOM {
     public void parse() throws ParserConfigurationException, SAXException, IOException {
@@ -17,10 +20,16 @@ public class ParserDOM {
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document document = documentBuilder.parse(new File("src/main/resources/data/tariffs.xml"));
 
-        NodeList tariffNodeList = document.getElementsByTagName("tariff");
+        NodeList privateTariffNodeList = document.getElementsByTagName("privateTariff");
+        NodeList commercialTariffNodeList = document.getElementsByTagName("commercialTariff");
         NodeList callPricesNodeList = document.getElementsByTagName("callPrices");
         NodeList parametersNodeList = document.getElementsByTagName("parameters");
 
+        parseNode(privateTariffNodeList, callPricesNodeList, parametersNodeList);
+        parseNode(commercialTariffNodeList, callPricesNodeList, parametersNodeList);
+    }
+
+    public void parseNode(NodeList tariffNodeList, NodeList callPricesNodeList, NodeList parametersNodeList) {
         String id = "";
         String name = "";
         String tarificationType = "";
@@ -34,11 +43,14 @@ public class ParserDOM {
         int i = -1;
         int j = -1;
         int k = -1;
+        List<Tariff> tariffList = new ArrayList<>();
 
         while (i < tariffNodeList.getLength() - 1) {
+            Tariff tariff = new Tariff();
             i++;
             Element element1 = (Element) tariffNodeList.item(i);
 
+            id = element1.getAttribute("id");
             name = element1
                     .getElementsByTagName("name").item(0)
                     .getChildNodes().item(0).getNodeValue();
@@ -79,18 +91,19 @@ public class ParserDOM {
                         .item(0).getChildNodes().item(0).getNodeValue());
 
             }
-            System.out.println("\nid: " + id
-                    + "\nname: " + name
-                    + "\npayroll: " + payroll
-                    + "\ncallPrices: "
-                    + "\n\tinsideNetwork: " + insideNetwork
-                    + "\n\toutsideNetwork: " + outsideNetwork
-                    + "\n\tstationaryNetwork: " + stationaryNetwork
-                    + "\ntraffic: " + traffic
-                    + "\nparameters: "
-                    + "\n\tfavouriteNumbers: " + favouriteNumbers
-                    + "\n\ttarificationType: " + tarificationType
-                    + "\n\tconnectionFee: " + connectionFee);
+
+            tariff.setId(id);
+            tariff.setName(name);
+            tariff.setPayroll(payroll);
+            tariff.setTraffic(traffic);
+            tariff.callPrices.setInsideNetwork(insideNetwork);
+            tariff.callPrices.setOutsideNetwork(outsideNetwork);
+            tariff.callPrices.setStationaryNetwork(stationaryNetwork);
+            tariff.parameters.setFavouriteNumbers(favouriteNumbers);
+            tariff.parameters.setTarificationType(tarificationType);
+            tariff.parameters.setConnectionFee(connectionFee);
+            tariffList.add(tariff);
+            System.out.println(tariff);
         }
     }
 }

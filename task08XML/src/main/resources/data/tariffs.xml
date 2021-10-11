@@ -3,7 +3,7 @@
          xmlns="http://www.training.by/tariffs"
          xsi:schemaLocation="http://www.training.by/tariffs tariffs.xsd">
 
-    <tariff id="a1-000">
+    <privateTariff id="a1-000">
         <operator>A1</operator>
         <name>Comfort S</name>
         <payroll>9.99</payroll>
@@ -18,9 +18,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>5</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="a1-001">
+    <privateTariff id="a1-001">
         <operator>A1</operator>
         <name>Comfort M</name>
         <payroll>12.99</payroll>
@@ -35,9 +35,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>5</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="a1-002">
+    <privateTariff id="a1-002">
         <operator>A1</operator>
         <name>Comfort L</name>
         <payroll>13.99</payroll>
@@ -52,9 +52,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>5</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="a1-003">
+    <privateTariff id="a1-003">
         <operator>A1</operator>
         <name>Lemon Z</name>
         <payroll>10.99</payroll>
@@ -69,9 +69,9 @@
             <tarificationType>for_each_twelve_seconds</tarificationType>
             <connectionFee>0</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="a1-004">
+    <privateTariff id="a1-004">
     <operator>A1</operator>
     <name>Lemon Y</name>
     <payroll>11.99</payroll>
@@ -86,9 +86,9 @@
         <tarificationType>for_each_twelve_seconds</tarificationType>
         <connectionFee>3</connectionFee>
     </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="a1-005">
+    <privateTariff id="a1-005">
         <operator>A1</operator>
         <name>Lemon X</name>
         <payroll>12.99</payroll>
@@ -103,62 +103,13 @@
             <tarificationType>for_each_twelve_seconds</tarificationType>
             <connectionFee>3</connectionFee>
         </parameters>
-    </tariff>
-
-    <tariff id="a1-006">
-        <operator>A1</operator>
-        <name>Business Start</name>
-        <payroll>14.99</payroll>
-        <callPrices>
-            <insideNetwork>0.015</insideNetwork>
-            <outsideNetwork>0.015</outsideNetwork>
-            <stationaryNetwork>0.015</stationaryNetwork>
-        </callPrices>
-        <traffic>10</traffic>
-        <parameters>
-            <favouriteNumbers>0</favouriteNumbers>
-            <tarificationType>for_each_minute</tarificationType>
-            <connectionFee>10</connectionFee>
-        </parameters>
-    </tariff>
-
-    <tariff id="a1-007">
-        <operator>A1</operator>
-        <name>Business Basic</name>
-        <payroll>17.99</payroll>
-        <callPrices>
-            <insideNetwork>0.010</insideNetwork>
-            <outsideNetwork>0.010</outsideNetwork>
-            <stationaryNetwork>0.010</stationaryNetwork>
-        </callPrices>
-        <traffic>15</traffic>
-        <parameters>
-            <favouriteNumbers>0</favouriteNumbers>
-            <tarificationType>for_each_minute</tarificationType>
-            <connectionFee>10</connectionFee>
-        </parameters>
-    </tariff>
-
-    <tariff id="a1-008">
-        <operator>A1</operator>
-        <name>Business Plus</name>
-        <payroll>19.99</payroll>
-        <callPrices>
-            <insideNetwork>0.005</insideNetwork>
-            <outsideNetwork>0.005</outsideNetwork>
-            <stationaryNetwork>0.005</stationaryNetwork>
-        </callPrices>
-        <traffic>20</traffic>
-        <parameters>
-            <favouriteNumbers>0</favouriteNumbers>
-            <tarificationType>for_each_minute</tarificationType>
-            <connectionFee>10</connectionFee>
-        </parameters>
-    </tariff>
+    </privateTariff>
 
 
 
-    <tariff id="mts-000">
+
+
+    <privateTariff id="mts-000">
         <operator>MTS</operator>
         <name>Super</name>
         <payroll>8.99</payroll>
@@ -173,9 +124,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>4</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-001">
+    <privateTariff id="mts-001">
         <operator>MTS</operator>
         <name>Super 25</name>
         <payroll>11.99</payroll>
@@ -190,9 +141,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>4</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-002">
+    <privateTariff id="mts-002">
         <operator>MTS</operator>
         <name>Super 50</name>
         <payroll>12.99</payroll>
@@ -207,9 +158,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>4</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-003">
+    <privateTariff id="mts-003">
         <operator>MTS</operator>
         <name>Ultra C</name>
         <payroll>11.99</payroll>
@@ -224,9 +175,9 @@
             <tarificationType>for_each_twelve_seconds</tarificationType>
             <connectionFee>3</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-004">
+    <privateTariff id="mts-004">
         <operator>MTS</operator>
         <name>Ultra B</name>
         <payroll>12.99</payroll>
@@ -241,9 +192,9 @@
             <tarificationType>for_each_twelve_seconds</tarificationType>
             <connectionFee>3</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-005">
+    <privateTariff id="mts-005">
         <operator>MTS</operator>
         <name>Ultra A</name>
         <payroll>13.99</payroll>
@@ -258,9 +209,60 @@
             <tarificationType>for_each_twelve_seconds</tarificationType>
             <connectionFee>3</connectionFee>
         </parameters>
-    </tariff>
+    </privateTariff>
 
-    <tariff id="mts-006">
+    <commercialTariff id="a1-006">
+        <operator>A1</operator>
+        <name>Business Start</name>
+        <payroll>14.99</payroll>
+        <callPrices>
+            <insideNetwork>0.015</insideNetwork>
+            <outsideNetwork>0.015</outsideNetwork>
+            <stationaryNetwork>0.015</stationaryNetwork>
+        </callPrices>
+        <traffic>10</traffic>
+        <parameters>
+            <favouriteNumbers>0</favouriteNumbers>
+            <tarificationType>for_each_minute</tarificationType>
+            <connectionFee>10</connectionFee>
+        </parameters>
+    </commercialTariff>
+
+    <commercialTariff id="a1-007">
+        <operator>A1</operator>
+        <name>Business Basic</name>
+        <payroll>17.99</payroll>
+        <callPrices>
+            <insideNetwork>0.010</insideNetwork>
+            <outsideNetwork>0.010</outsideNetwork>
+            <stationaryNetwork>0.010</stationaryNetwork>
+        </callPrices>
+        <traffic>15</traffic>
+        <parameters>
+            <favouriteNumbers>0</favouriteNumbers>
+            <tarificationType>for_each_minute</tarificationType>
+            <connectionFee>10</connectionFee>
+        </parameters>
+    </commercialTariff>
+
+    <commercialTariff id="a1-008">
+        <operator>A1</operator>
+        <name>Business Plus</name>
+        <payroll>19.99</payroll>
+        <callPrices>
+            <insideNetwork>0.005</insideNetwork>
+            <outsideNetwork>0.005</outsideNetwork>
+            <stationaryNetwork>0.005</stationaryNetwork>
+        </callPrices>
+        <traffic>20</traffic>
+        <parameters>
+            <favouriteNumbers>0</favouriteNumbers>
+            <tarificationType>for_each_minute</tarificationType>
+            <connectionFee>10</connectionFee>
+        </parameters>
+    </commercialTariff>
+
+    <commercialTariff id="mts-006">
         <operator>MTS</operator>
         <name>Enterprise 1</name>
         <payroll>14.99</payroll>
@@ -275,9 +277,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>15</connectionFee>
         </parameters>
-    </tariff>
+    </commercialTariff>
 
-    <tariff id="mts-007">
+    <commercialTariff id="mts-007">
         <operator>MTS</operator>
         <name>Enterprise 2</name>
         <payroll>14.99</payroll>
@@ -292,9 +294,9 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>15</connectionFee>
         </parameters>
-    </tariff>
+    </commercialTariff>
 
-    <tariff id="mts-008">
+    <commercialTariff id="mts-008">
         <operator>MTS</operator>
         <name>Enterprise 3</name>
         <payroll>14.99</payroll>
@@ -309,6 +311,6 @@
             <tarificationType>for_each_minute</tarificationType>
             <connectionFee>15</connectionFee>
         </parameters>
-    </tariff>
+    </commercialTariff>
 
 </tariffs>

@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class ParserStAX {
     public void parse() throws FileNotFoundException, XMLStreamException {
-        ArrayList<Tariff> tariffSet = new ArrayList<>();
+        ArrayList<Tariff> tariffList = new ArrayList<>();
         Tariff currentTariff = new Tariff();
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
         XMLEventReader reader = inputFactory.createXMLEventReader(
@@ -25,7 +25,8 @@ public class ParserStAX {
             XMLEvent event = reader.nextEvent();
             if (event.isStartElement()) {
                 StartElement startElement = event.asStartElement();
-                if (startElement.getName().getLocalPart().equals("tariff")) {
+                if (startElement.getName().getLocalPart().equals("privateTariff")
+                        || startElement.getName().getLocalPart().equals("commercialTariff")) {
                     currentTariff = new Tariff();
                     Attribute id = startElement.getAttributeByName(new QName("id"));
                     currentTariff.setId(id.getValue());
@@ -71,13 +72,14 @@ public class ParserStAX {
             }
             if (event.isEndElement()) {
                 EndElement endElement = event.asEndElement();
-                if (endElement.getName().getLocalPart().equals("tariff")) {
-                    tariffSet.add(currentTariff);
+                if (endElement.getName().getLocalPart().equals("privateTariff")
+                        || endElement.getName().getLocalPart().equals("commercialTariff")) {
+                    tariffList.add(currentTariff);
                 }
             }
         }
-        for (int i = 0; i < tariffSet.size(); i++) {
-            System.out.println(tariffSet.get(i));
+        for (int i = 0; i < tariffList.size(); i++) {
+            System.out.println(tariffList.get(i));
         }
     }
 }

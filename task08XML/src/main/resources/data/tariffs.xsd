@@ -4,10 +4,17 @@
         xmlns:tns="http://www.training.by/tariffs"
         elementFormDefault="qualified">
 
+    <element name="tariff" type="tns:Tariff" abstract="true"/>
+    <element name="commercialTariff" type="tns:CommercialTariff" substitutionGroup="tns:tariff"/>
+    <element name="privateTariff" type="tns:PrivateTariff" substitutionGroup="tns:tariff"/>
+
     <element name="tariffs">
         <complexType>
             <sequence>
-                <element name="tariff" type="tns:Tariff"
+                <element name="privateTariff" type="tns:Tariff"
+                         minOccurs="0"
+                         maxOccurs="unbounded"/>
+                <element name="commercialTariff" type="tns:Tariff"
                          minOccurs="0"
                          maxOccurs="unbounded"/>
             </sequence>
@@ -24,6 +31,18 @@
             <element name="parameters" type="tns:Parameter"/>
         </sequence>
         <attribute name="id" type="tns:tariffID" use="required"/>
+    </complexType>
+
+    <complexType name="CommercialTariff">
+        <complexContent>
+            <extension base="tns:Tariff"/>
+        </complexContent>
+    </complexType>
+
+    <complexType name="PrivateTariff">
+        <complexContent>
+            <extension base="tns:Tariff"/>
+        </complexContent>
     </complexType>
 
     <simpleType name="tariffID">

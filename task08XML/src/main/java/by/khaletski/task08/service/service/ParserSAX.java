@@ -38,7 +38,7 @@ public class ParserSAX {
         @Override
         public void startElement(String uri, String localName, String qName,
                                  Attributes attributes) {
-            if (qName.equals("tariff")) {
+            if (qName.equals("privateTariff") || qName.equals("commercialTariff")) {
                 currentTariff = new Tariff();
                 currentTariff.setId(attributes.getValue(0));
             }
@@ -64,7 +64,7 @@ public class ParserSAX {
 
         @Override
         public void endElement(String uri, String localName, String qName) {
-            if (qName.equals("tariff"))
+            if (qName.equals("privateTariff") || qName.equals("commercialTariff"))
                 tariffList.add(currentTariff);
         }
 

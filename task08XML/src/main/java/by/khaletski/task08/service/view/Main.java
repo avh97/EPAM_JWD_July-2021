@@ -22,23 +22,25 @@ public class Main {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        ParserSAX parserSAX = new ParserSAX();
-        try {
-            parserSAX.parse();
-        } catch (ParserConfigurationException e) {
-            e.printStackTrace();
-        } catch (SAXException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        ParserStAX parserStAX = new ParserStAX();
-        try {
-            parserStAX.parse();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (XMLStreamException e) {
-            e.printStackTrace();
-        }
+
+//        ParserSAX parserSAX = new ParserSAX();
+//        try {
+//            parserSAX.parse();
+//        } catch (ParserConfigurationException e) {
+//            e.printStackTrace();
+//        } catch (SAXException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+
+//        ParserStAX parserStAX = new ParserStAX();
+//        try {
+//            parserStAX.parse();
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (XMLStreamException e) {
+//            e.printStackTrace();
+//        }
     }
 }
