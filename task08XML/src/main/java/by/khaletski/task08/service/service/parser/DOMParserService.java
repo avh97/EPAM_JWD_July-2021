@@ -1,6 +1,7 @@
-package by.khaletski.task08.service.service;
+package by.khaletski.task08.service.service.parser;
 
 import by.khaletski.task08.service.entity.Tariff;
+import by.khaletski.task08.service.service.Parsable;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -14,8 +15,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ParserDOM {
-    public void parse() throws ParserConfigurationException, SAXException, IOException {
+public class DOMParserService implements Parsable {
+
+    public List<Tariff> parse() throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
         Document document = documentBuilder.parse(new File("src/main/resources/data/tariffs.xml"));
@@ -25,11 +27,15 @@ public class ParserDOM {
         NodeList callPricesNodeList = document.getElementsByTagName("callPrices");
         NodeList parametersNodeList = document.getElementsByTagName("parameters");
 
-        parseNode(privateTariffNodeList, callPricesNodeList, parametersNodeList);
-        parseNode(commercialTariffNodeList, callPricesNodeList, parametersNodeList);
+        List<Tariff> privateTariffs = parseChild(privateTariffNodeList, callPricesNodeList, parametersNodeList);
+        List<Tariff> commercialTariffs = parseChild(commercialTariffNodeList, callPricesNodeList, parametersNodeList);
+        List<Tariff> allTariffs = new ArrayList<>();
+        allTariffs.addAll(privateTariffs);
+        allTariffs.addAll(commercialTariffs);
+        return allTariffs;
     }
 
-    public void parseNode(NodeList tariffNodeList, NodeList callPricesNodeList, NodeList parametersNodeList) {
+    public List<Tariff> parseChild(NodeList tariffNodeList, NodeList callPricesNodeList, NodeList parametersNodeList) {
         String id = "";
         String name = "";
         String tarificationType = "";
@@ -95,16 +101,17 @@ public class ParserDOM {
             tariff.setId(id);
             tariff.setName(name);
             tariff.setPayroll(payroll);
-            tariff.setTraffic(traffic);
             tariff.callPrices.setInsideNetwork(insideNetwork);
             tariff.callPrices.setOutsideNetwork(outsideNetwork);
             tariff.callPrices.setStationaryNetwork(stationaryNetwork);
+            tariff.setTraffic(traffic);
             tariff.parameters.setFavouriteNumbers(favouriteNumbers);
             tariff.parameters.setTarificationType(tarificationType);
             tariff.parameters.setConnectionFee(connectionFee);
             tariffList.add(tariff);
-            System.out.println(tariff);
+
         }
+        return tariffList;
     }
 }
 

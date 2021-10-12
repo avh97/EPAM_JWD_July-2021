@@ -1,6 +1,7 @@
-package by.khaletski.task08.service.service;
+package by.khaletski.task08.service.service.parser;
 
 import by.khaletski.task08.service.entity.Tariff;
+import by.khaletski.task08.service.service.Parsable;
 
 import javax.xml.namespace.QName;
 import javax.xml.stream.XMLEventReader;
@@ -13,9 +14,11 @@ import javax.xml.stream.events.XMLEvent;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 
-public class ParserStAX {
-    public void parse() throws FileNotFoundException, XMLStreamException {
+public class StAXParserService implements Parsable {
+
+    public List<Tariff> parse() throws FileNotFoundException, XMLStreamException {
         ArrayList<Tariff> tariffList = new ArrayList<>();
         Tariff currentTariff = new Tariff();
         XMLInputFactory inputFactory = XMLInputFactory.newInstance();
@@ -78,8 +81,6 @@ public class ParserStAX {
                 }
             }
         }
-        for (int i = 0; i < tariffList.size(); i++) {
-            System.out.println(tariffList.get(i));
-        }
+        return tariffList;
     }
 }

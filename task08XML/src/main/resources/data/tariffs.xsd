@@ -23,11 +23,11 @@
 
     <complexType name="Tariff">
         <sequence>
-            <element name="operator" type="tns:Operator"/>
-            <element name="name" type="string"/>
-            <element name="payroll" type="double"/>
+            <element name="operator" type="tns:Operator" default="none"/>
+            <element name="name" type="string" default="none"/>
+            <element name="payroll" type="double" default="0"/>
             <element name="callPrices" type="tns:CallPrice"/>
-            <element name="traffic" type="double"/>
+            <element name="traffic" type="double" default="0"/>
             <element name="parameters" type="tns:Parameter"/>
         </sequence>
         <attribute name="id" type="tns:tariffID" use="required"/>
@@ -55,6 +55,7 @@
         <restriction base="string">
             <enumeration value="A1"/>
             <enumeration value="MTS"/>
+            <enumeration value="none"/>
         </restriction>
     </simpleType>
 
@@ -73,9 +74,9 @@
 
     <complexType name="CallPrice">
         <sequence>
-            <element name="insideNetwork" type="double"/>
-            <element name="outsideNetwork" type="double"/>
-            <element name="stationaryNetwork" type="double"/>
+            <element name="insideNetwork" type="double" default="0"/>
+            <element name="outsideNetwork" type="double" default="0"/>
+            <element name="stationaryNetwork" type="double" default="0"/>
         </sequence>
     </complexType>
 
@@ -110,9 +111,9 @@
 
     <complexType name="Parameter">
         <sequence>
-            <element name="favouriteNumbers" type="int"/>
-            <element name="tarificationType" type="tns:tarification"/>
-            <element name="connectionFee" type="double"/>
+            <element name="favouriteNumbers" type="int" default="0"/>
+            <element name="tarificationType" type="tns:tarification" default="for_each_minute"/>
+            <element name="connectionFee" type="double" default="0"/>
         </sequence>
     </complexType>
 
