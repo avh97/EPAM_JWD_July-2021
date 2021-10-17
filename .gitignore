@@ -1,7 +1,17 @@
-# содержимое файла .gitignore для IDEA
-*.iml
-.DS_Store/
-.idea/
+﻿# содержимое файла .gitignore
 out/
-target/
 logs/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Maven
+log/
+target/
