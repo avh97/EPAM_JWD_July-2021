@@ -1,8 +1,7 @@
 package by.khaletski.task08.service;
 
-import by.khaletski.task08.service.entity.Tariff;
-import by.khaletski.task08.service.service.Parsable;
-import by.khaletski.task08.service.service.parser.StAXParserService;
+import by.khaletski.task08.controller.Controller;
+import by.khaletski.task08.entity.Tariff;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.xml.sax.SAXException;
@@ -13,14 +12,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StAXParserServiceTest {
+public class DOMTariffsBuilderTest {
 
     @Test
     public void testParse() {
-        Parsable parser = new StAXParserService();
+        Parsable parser = new DOMTariffsBuilder();
         List<Tariff> tariffList = new ArrayList<>();
         try {
-            tariffList = parser.parse();
+            tariffList = parser.build(Controller.pathName);
         } catch (XMLStreamException | ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }

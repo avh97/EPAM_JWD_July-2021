@@ -1,4 +1,4 @@
-package by.khaletski.task08.service.entity;
+package by.khaletski.task08.entity;
 
 public class Tariff {
     private String name;

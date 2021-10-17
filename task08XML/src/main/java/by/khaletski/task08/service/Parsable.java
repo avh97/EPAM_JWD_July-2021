@@ -1,6 +1,6 @@
-package by.khaletski.task08.service.service;
+package by.khaletski.task08.service;
 
-import by.khaletski.task08.service.entity.Tariff;
+import by.khaletski.task08.entity.Tariff;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
@@ -9,5 +9,6 @@ import java.io.IOException;
 import java.util.List;
 
 public interface Parsable {
-    List<Tariff> parse() throws ParserConfigurationException, SAXException, IOException, XMLStreamException;
+    List<Tariff> build(String pathName)
+            throws ParserConfigurationException, SAXException, IOException, XMLStreamException;
 }

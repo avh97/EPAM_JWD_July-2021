@@ -1,7 +1,6 @@
-package by.khaletski.task08.service.service.parser;
+package by.khaletski.task08.service;
 
-import by.khaletski.task08.service.entity.Tariff;
-import by.khaletski.task08.service.service.Parsable;
+import by.khaletski.task08.entity.Tariff;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
@@ -13,14 +12,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SAXParserService implements Parsable {
+public class SAXTariffsBuilder implements Parsable {
 
-    public List<Tariff> parse() throws ParserConfigurationException, SAXException, IOException {
+    public List<Tariff> build(String pathName) throws ParserConfigurationException, SAXException, IOException {
         SAXParser parser = SAXParserFactory.newInstance().newSAXParser();
         TariffHandler tariffHandler = new TariffHandler();
         List<Tariff> tariffList;
         if (tariffHandler != null) {
-            parser.parse("src/main/resources/data/tariffs.xml", tariffHandler);
+            parser.parse(pathName, tariffHandler);
         }
         tariffList = tariffHandler.getNotes();
         return tariffList;

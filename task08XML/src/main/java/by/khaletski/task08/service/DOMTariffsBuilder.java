@@ -1,7 +1,6 @@
-package by.khaletski.task08.service.service.parser;
+package by.khaletski.task08.service;
 
-import by.khaletski.task08.service.entity.Tariff;
-import by.khaletski.task08.service.service.Parsable;
+import by.khaletski.task08.entity.Tariff;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -15,12 +14,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DOMParserService implements Parsable {
+public class DOMTariffsBuilder implements Parsable {
 
-    public List<Tariff> parse() throws ParserConfigurationException, SAXException, IOException {
+    public List<Tariff> build(String pathname) throws ParserConfigurationException, SAXException, IOException {
         DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
         DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
-        Document document = documentBuilder.parse(new File("src/main/resources/data/tariffs.xml"));
+        Document document = documentBuilder.parse(new File(pathname));
 
         NodeList privateTariffNodeList = document.getElementsByTagName("privateTariff");
         NodeList commercialTariffNodeList = document.getElementsByTagName("commercialTariff");
