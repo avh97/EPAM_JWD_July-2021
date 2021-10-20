@@ -26,9 +26,9 @@ public class SAXTariffsBuilder implements Parsable {
     }
 
     public class TariffHandler extends DefaultHandler {
-        List<Tariff> tariffList = new ArrayList();
-        Tariff currentTariff = new Tariff();
-        int currentIndex = -1;
+        private List<Tariff> tariffList = new ArrayList();
+        private Tariff currentTariff = new Tariff();
+        private int currentIndex = -1;
 
         public List getNotes() {
             return tariffList;

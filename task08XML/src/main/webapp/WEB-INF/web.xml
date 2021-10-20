@@ -5,24 +5,24 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <servlet>
-    <servlet-name>Parser</servlet-name>
-    <servlet-class>by.khaletski.task08.controller.Controller</servlet-class>
-  </servlet>
+<!--  <servlet>-->
+<!--    <servlet-name>Parser</servlet-name>-->
+<!--    <servlet-class>by.khaletski.task08.controller.XMLServlet</servlet-class>-->
+<!--  </servlet>-->
 
-  <servlet>
-    <servlet-name>FileUploadServlet</servlet-name>
-    <servlet-class>by.khaletski.task08.controller.FileUploadServlet</servlet-class>
-  </servlet>
+<!--  <servlet>-->
+<!--    <servlet-name>FileUploadServlet</servlet-name>-->
+<!--    <servlet-class>by.khaletski.task08.controller.FileUploadServlet</servlet-class>-->
+<!--  </servlet>-->
 
-  <servlet-mapping>
-    <servlet-name>Parser</servlet-name>
-    <url-pattern>/parser</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>Parser</servlet-name>-->
+<!--    <url-pattern>/XMLServlet</url-pattern>-->
+<!--  </servlet-mapping>-->
 
-  <servlet-mapping>
-    <servlet-name>FileUploadServlet</servlet-name>
-    <url-pattern>/fileuploadservlet</url-pattern>
-  </servlet-mapping>
+<!--  <servlet-mapping>-->
+<!--    <servlet-name>FileUploadServlet</servlet-name>-->
+<!--    <url-pattern>/fileuploadservlet</url-pattern>-->
+<!--  </servlet-mapping>-->
 
 </web-app>

@@ -4,17 +4,18 @@
 </head>
 <body>
 <h2>Welcome!</h2>
-  <form method="post" action="fileuploadservlet" enctype="multipart/form-data">
+<p><%= new java.util.Date() %></p>
+<form method="post" action="fileuploadservlet" enctype="multipart/form-data">
     <input type="file" name="file" />
     <input type="submit" value="Upload" />
-  </form>
-<form action="parser" method="post" enctype="multipart/form-data">
-<select name="parserType" title="Parser type">
-<option selected="selected" value="dom">DOM<option/>
-<option value="sax" value="sax">SAX<option/>
-<option value="stax" value="stax">StAX<option/>
-</select>
-<input type="submit" value="Parse!"
+</form>
+<form action="xmlservlet">
+    <select name="switchParser">
+        <option value="DOM">DOM</option>
+        <option value="SAX">SAX</option>
+        <option value="StAX">StAX</option>
+    </select>
+    <input type="submit" value="Parse">
 <form/>
 </body>
 </html>

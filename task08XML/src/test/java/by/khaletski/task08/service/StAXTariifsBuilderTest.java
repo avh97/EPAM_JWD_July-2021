@@ -1,6 +1,6 @@
 package by.khaletski.task08.service;
 
-import by.khaletski.task08.controller.Controller;
+import by.khaletski.task08.controller.XMLServlet;
 import by.khaletski.task08.entity.Tariff;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -19,7 +19,7 @@ public class StAXTariifsBuilderTest {
         Parsable parser = new StAXTariifsBuilder();
         List<Tariff> tariffList = new ArrayList<>();
         try {
-            tariffList = parser.build(Controller.pathName);
+            tariffList = parser.build("src/main/resources/data/tariffs.xml");
         } catch (XMLStreamException | ParserConfigurationException | IOException | SAXException e) {
             e.printStackTrace();
         }

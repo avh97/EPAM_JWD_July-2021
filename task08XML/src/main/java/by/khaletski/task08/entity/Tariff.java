@@ -25,6 +25,22 @@ public class Tariff {
         this.traffic = traffic;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public double getPayroll() {
+        return payroll;
+    }
+
+    public double getTraffic() {
+        return traffic;
+    }
+
     @Override
     public String toString() {
         return "\nid: " + id
@@ -42,9 +58,9 @@ public class Tariff {
     }
 
     public class CallPrices {
-        double insideNetwork;
-        double outsideNetwork;
-        double stationaryNetwork;
+        private double insideNetwork;
+        private double outsideNetwork;
+        private double stationaryNetwork;
 
         public void setInsideNetwork(double insideNetwork) {
             this.insideNetwork = insideNetwork;
@@ -57,12 +73,24 @@ public class Tariff {
         public void setStationaryNetwork(double stationaryNetwork) {
             this.stationaryNetwork = stationaryNetwork;
         }
+
+        public double getInsideNetwork() {
+            return insideNetwork;
+        }
+
+        public double getOutsideNetwork() {
+            return outsideNetwork;
+        }
+
+        public double getStationaryNetwork() {
+            return stationaryNetwork;
+        }
     }
 
     public class Parameters {
-        String tarificationType;
-        int favouriteNumbers;
-        double connectionFee;
+        private String tarificationType;
+        private int favouriteNumbers;
+        private double connectionFee;
 
         public void setTarificationType(String tarificationType) {
             this.tarificationType = tarificationType;
@@ -76,6 +104,17 @@ public class Tariff {
             this.connectionFee = connectionFee;
         }
 
+        public String getTarificationType() {
+            return tarificationType;
+        }
+
+        public int getFavouriteNumbers() {
+            return favouriteNumbers;
+        }
+
+        public double getConnectionFee() {
+            return connectionFee;
+        }
     }
 }
 
