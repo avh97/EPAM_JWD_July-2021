@@ -1,6 +1,5 @@
 package by.khaletski.task08.service;
 
-import by.khaletski.task08.controller.XMLServlet;
 import by.khaletski.task08.entity.Tariff;
 import org.testng.Assert;
 import org.testng.annotations.Test;

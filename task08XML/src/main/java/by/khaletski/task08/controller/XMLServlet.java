@@ -3,7 +3,7 @@ package by.khaletski.task08.controller;
 import by.khaletski.task08.entity.Tariff;
 import by.khaletski.task08.service.DOMTariffsBuilder;
 import by.khaletski.task08.service.SAXTariffsBuilder;
-import by.khaletski.task08.service.StAXTariifsBuilder;
+import by.khaletski.task08.service.StAXTariffsBuilder;
 import org.xml.sax.SAXException;
 
 import javax.servlet.annotation.WebServlet;
@@ -30,28 +30,20 @@ public class XMLServlet extends HttpServlet {
             throws IOException {
         String requestParameter = request.getParameter("switchParser");
         List<Tariff> tariffList = new ArrayList<>();
-        switch (requestParameter) {
-            case "DOM":
-                try {
+        try {
+            switch (requestParameter) {
+                case "DOM":
                     tariffList = new DOMTariffsBuilder().build(PATH_NAME);
-                } catch (ParserConfigurationException | SAXException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case "SAX":
-                try {
+                    break;
+                case "SAX":
                     tariffList = new SAXTariffsBuilder().build(PATH_NAME);
-                } catch (ParserConfigurationException | SAXException e) {
-                    e.printStackTrace();
-                }
-                break;
-            case "StAX":
-                try {
-                    tariffList = new StAXTariifsBuilder().build(PATH_NAME);
-                } catch (XMLStreamException e) {
-                    e.printStackTrace();
-                }
-                break;
+                    break;
+                case "StAX":
+                    tariffList = new StAXTariffsBuilder().build(PATH_NAME);
+                    break;
+            }
+        } catch (XMLStreamException | ParserConfigurationException | SAXException e) {
+            e.printStackTrace();
         }
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();

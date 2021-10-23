@@ -15,7 +15,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StAXTariifsBuilder implements Parsable {
+public class StAXTariffsBuilder implements Parsable {
 
     public List<Tariff> build(String pathName) throws FileNotFoundException, XMLStreamException {
         ArrayList<Tariff> tariffList = new ArrayList<>();

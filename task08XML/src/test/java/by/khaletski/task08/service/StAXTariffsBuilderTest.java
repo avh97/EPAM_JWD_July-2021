@@ -1,6 +1,5 @@
 package by.khaletski.task08.service;
 
-import by.khaletski.task08.controller.XMLServlet;
 import by.khaletski.task08.entity.Tariff;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,11 +11,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class StAXTariifsBuilderTest {
+public class StAXTariffsBuilderTest {
 
     @Test
     public void testParse() {
-        Parsable parser = new StAXTariifsBuilder();
+        Parsable parser = new StAXTariffsBuilder();
         List<Tariff> tariffList = new ArrayList<>();
         try {
             tariffList = parser.build("src/main/resources/data/tariffs.xml");

@@ -18,7 +18,7 @@ import java.nio.file.Paths;
 )
 public class FileUploadServlet extends HttpServlet {
     public static String PATH_NAME;
-    public static String pathToFile;
+    public static String pathToFile = "D:\\upload\\";
 
     static {
         PATH_NAME = "D:\\upload\\";
