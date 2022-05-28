@@ -1,4 +1,4 @@
-﻿# содержимое файла .gitignore
+﻿# .gitignore
 out/
 logs/
 
